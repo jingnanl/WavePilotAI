@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+build
+.next
+out
+
+# Generated files
+*.generated.ts
+*.generated.js
+
+# Python
+*.pyc
+__pycache__
+.venv
+*.egg-info
+
+# Nx
+.nx
+
+# Logs
+*.log

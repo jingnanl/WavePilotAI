@@ -1,13 +1,18 @@
 import { AppSyncResolverHandler } from 'aws-lambda';
+import { InfluxDBClient } from '@influxdata/influxdb3-client';
 import {
-  TimestreamQueryClient,
-  QueryCommand,
-} from '@aws-sdk/client-timestream-query';
-
-const timestreamClient = new TimestreamQueryClient({});
+  SecretsManagerClient,
+  GetSecretValueCommand,
+} from '@aws-sdk/client-secrets-manager';
 
 // Environment variables
-const DATABASE_NAME = process.env.TIMESTREAM_DATABASE || 'wavepilot-db';
+const INFLUXDB_ENDPOINT = process.env.INFLUXDB_ENDPOINT || '';
+const INFLUXDB_SECRET_ARN = process.env.INFLUXDB_SECRET_ARN || '';
+const DATABASE = 'market-data';
+
+// Clients
+let influxClient: InfluxDBClient | null = null;
+const secretsClient = new SecretsManagerClient({});
 
 interface GetHistoricalPricesArgs {
   ticker: string;
@@ -28,32 +33,81 @@ interface KlineData {
 }
 
 /**
+ * Initialize InfluxDB client with credentials from Secrets Manager
+ */
+async function getInfluxClient(): Promise<InfluxDBClient> {
+  if (influxClient) return influxClient;
+
+  const secretResponse = await secretsClient.send(
+    new GetSecretValueCommand({ SecretId: INFLUXDB_SECRET_ARN })
+  );
+
+  if (!secretResponse.SecretString) {
+    throw new Error('Failed to retrieve InfluxDB credentials');
+  }
+
+  const credentials = JSON.parse(secretResponse.SecretString);
+  const token = credentials.token || credentials.password;
+
+  influxClient = new InfluxDBClient({
+    host: `https://${INFLUXDB_ENDPOINT}:8181`,
+    token: token,
+    database: DATABASE,
+  });
+
+  console.log('[InfluxDB] Client initialized');
+  return influxClient;
+}
+
+/**
  * AppSync Resolver: getHistoricalPrices
  *
- * Queries Timestream for K-line data based on the requested interval.
- * - For intervals < 1d: Query stock_quotes_raw
- * - For intervals >= 1d: Query stock_quotes_aggregated
+ * Queries InfluxDB for K-line data based on the requested interval.
  */
 export const handler: AppSyncResolverHandler<GetHistoricalPricesArgs, KlineData[]> = async (
   event
 ) => {
   const { ticker, market, interval = '1d', startTime, endTime, limit = 500 } = event.arguments;
-
   console.log(`[getHistoricalPrices] ${ticker} (${market}) - ${interval}`);
 
   try {
-    // Determine which table to query based on interval
-    const tableName = getTableForInterval(interval);
-    const query = buildQuery(tableName, ticker, market, interval, startTime, endTime, limit);
+    const client = await getInfluxClient();
 
-    const command = new QueryCommand({ QueryString: query });
-    const response = await timestreamClient.send(command);
+    // Build query based on interval
+    const measurement = interval === '1d' || interval === '1w' || interval === '1M'
+      ? 'stock_quotes_aggregated'
+      : 'stock_quotes_raw';
 
-    // Parse Timestream response
-    const klines = parseTimestreamResponse(response);
+    const timeFilter = buildTimeFilter(interval, startTime, endTime);
 
-    console.log(`[getHistoricalPrices] Returned ${klines.length} records`);
-    return klines;
+    const query = `
+      SELECT time, open, high, low, close, volume 
+      FROM ${measurement}
+      WHERE ticker = '${ticker}' 
+        AND market = '${market}'
+        ${timeFilter}
+      ORDER BY time DESC
+      LIMIT ${limit}
+    `;
+
+    console.log('[getHistoricalPrices] Query:', query);
+
+    const results: KlineData[] = [];
+    const reader = client.query(query, DATABASE);
+
+    for await (const row of reader) {
+      results.push({
+        time: row.time?.toString() || '',
+        open: parseFloat(row.open) || 0,
+        high: parseFloat(row.high) || 0,
+        low: parseFloat(row.low) || 0,
+        close: parseFloat(row.close) || 0,
+        volume: parseInt(row.volume) || 0,
+      });
+    }
+
+    console.log(`[getHistoricalPrices] Returned ${results.length} records`);
+    return results;
 
   } catch (error) {
     console.error('[getHistoricalPrices] Error:', error);
@@ -62,145 +116,25 @@ export const handler: AppSyncResolverHandler<GetHistoricalPricesArgs, KlineData[
 };
 
 /**
- * Determine which Timestream table to query based on interval
+ * Build time filter clause for InfluxDB query
  */
-function getTableForInterval(interval: string): string {
-  const dailyIntervals = ['1d', '1w', '1M'];
-  return dailyIntervals.includes(interval) ? 'stock_quotes_aggregated' : 'stock_quotes_raw';
-}
-
-/**
- * Build Timestream query string
- */
-function buildQuery(
-  tableName: string,
-  ticker: string,
-  market: string,
-  interval: string,
-  startTime?: string,
-  endTime?: string,
-  limit?: number
-): string {
-  const now = new Date().toISOString();
-  const defaultStart = getDefaultStartTime(interval);
-
-  let query = `
-    SELECT 
-      time,
-      open,
-      high,
-      low,
-      close,
-      volume
-    FROM "${DATABASE_NAME}"."${tableName}"
-    WHERE ticker = '${ticker}'
-      AND market = '${market}'
-      AND time >= '${startTime || defaultStart}'
-      AND time <= '${endTime || now}'
-  `;
-
-  // For raw table, filter by interval if applicable
-  if (tableName === 'stock_quotes_raw' && interval !== '1m') {
-    // Aggregation needed for 5m, 15m, 1h intervals
-    query = buildAggregatedQuery(ticker, market, interval, startTime || defaultStart, endTime || now, limit);
-  } else {
-    query += ` ORDER BY time DESC LIMIT ${limit || 500}`;
-  }
-
-  return query;
-}
-
-/**
- * Build aggregated query for sub-daily intervals (5m, 15m, 1h)
- */
-function buildAggregatedQuery(
-  ticker: string,
-  market: string,
-  interval: string,
-  startTime: string,
-  endTime: string,
-  limit?: number
-): string {
-  const binSize = intervalToBinSize(interval);
-
-  return `
-    SELECT 
-      bin(time, ${binSize}) AS time,
-      FIRST(price, time) AS open,
-      MAX(high) AS high,
-      MIN(low) AS low,
-      LAST(price, time) AS close,
-      SUM(volume) AS volume
-    FROM "${DATABASE_NAME}"."stock_quotes_raw"
-    WHERE ticker = '${ticker}'
-      AND market = '${market}'
-      AND time >= '${startTime}'
-      AND time <= '${endTime}'
-    GROUP BY bin(time, ${binSize})
-    ORDER BY time DESC
-    LIMIT ${limit || 500}
-  `;
-}
-
-/**
- * Convert interval string to Timestream bin size
- */
-function intervalToBinSize(interval: string): string {
-  const mapping: Record<string, string> = {
-    '1m': '1m',
-    '5m': '5m',
-    '15m': '15m',
-    '1h': '1h',
-    '1d': '1d',
-  };
-  return mapping[interval] || '1d';
-}
-
-/**
- * Get default start time based on interval
- */
-function getDefaultStartTime(interval: string): string {
+function buildTimeFilter(interval: string, startTime?: string, endTime?: string): string {
   const now = new Date();
-  const mapping: Record<string, number> = {
-    '1m': 1,      // 1 day
-    '5m': 5,      // 5 days
-    '15m': 7,     // 7 days
-    '1h': 30,     // 30 days
-    '1d': 365,    // 1 year
-    '1w': 365 * 2, // 2 years
-    '1M': 365 * 5, // 5 years
+  const defaultDays: Record<string, number> = {
+    '1m': 1,
+    '5m': 5,
+    '15m': 7,
+    '1h': 30,
+    '1d': 365,
+    '1w': 730,
+    '1M': 1825,
   };
-  const days = mapping[interval] || 365;
-  now.setDate(now.getDate() - days);
-  return now.toISOString();
-}
 
-/**
- * Parse Timestream query response to KlineData array
- */
-function parseTimestreamResponse(response: any): KlineData[] {
-  if (!response.Rows || response.Rows.length === 0) {
-    return [];
-  }
+  const days = defaultDays[interval] || 365;
+  const defaultStart = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
 
-  const columnInfo = response.ColumnInfo || [];
-  const columnNames = columnInfo.map((col: any) => col.Name);
+  const start = startTime ? new Date(startTime) : defaultStart;
+  const end = endTime ? new Date(endTime) : now;
 
-  return response.Rows.map((row: any) => {
-    const data: Record<string, any> = {};
-    row.Data.forEach((cell: any, index: number) => {
-      const colName = columnNames[index];
-      const value = cell.ScalarValue;
-      data[colName] = colName === 'time' ? value : parseFloat(value) || 0;
-    });
-
-    return {
-      time: data.time,
-      open: data.open,
-      high: data.high,
-      low: data.low,
-      close: data.close,
-      volume: data.volume,
-    };
-  });
+  return `AND time >= '${start.toISOString()}' AND time <= '${end.toISOString()}'`;
 }

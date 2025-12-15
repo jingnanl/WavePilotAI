@@ -35,7 +35,7 @@
 - ✅ **[M]** 创建 Amplify Gen 2 项目结构（统一架构）
 - ✅ **[M]** 在 amplify/backend.ts 中定义所有资源
 - ✅ **[L]** 实现基础设施资源：
-  - ✅ Timestream 数据库（Candles, Fundamentals, News）
+  - ✅ Timestream for InfluxDB（Candles, Fundamentals, News）
   - ✅ S3 存储桶（raw, processed, knowledge-base）
   - ✅ DynamoDB 表（watchlist, trades, analysis）
   - ✅ Secrets Manager（API 密钥）
@@ -60,14 +60,15 @@
   - ✅ src/services/ 目录结构
 - ⬜ **[L]** 实现 Alpaca WebSocket 监听
   - ⬜ 实时获取美股行情
-  - ⬜ 写入 Timestream (1m bar)
+  - ⬜ 写入 InfluxDB (1m bar)
 - ⬜ **[M]** 实现 Massive API 集成
   - ⬜ **[EOD]** 全市场日线回补 (`Grouped Daily` -> `stock_quotes_aggregated`)
   - ⬜ **[EOD]** 自选股分钟修正 (`Aggregates` -> `stock_quotes_raw`)
   - ⬜ **[EOD]** 非自选股分钟数据清理
   - ⬜ **[Event]** 自选股添加自动回补 (Massive SIP + Alpaca IEX)
   - ⬜ **[Intraday]** 全市场快照 (5m Polling, 15m Delayed)
-  - ⬜ 实时/历史新闻获取
+  - ⬜ **[Intraday]** 全市场快照 (5m Polling, 15m Delayed)
+  - 🟦 实时/历史新闻获取 (Service implemented, Integration pending)
 - ⬜ **[M]** 实现 Akshare 轮询（A 股实时行情）
 - ⬜ **[M]** 在 Amplify 中定义 Fargate 资源
 
@@ -156,7 +157,7 @@
 
 ### 4.4 Agent 工具集成 🔴
 - 🟦 **[M]** 封装数据获取工具
-  - ✅ tools/timestream.ts（查询 Timestream）
+  - ✅ tools/timestream.ts（查询 InfluxDB）
   - ✅ tools/indicators.ts（技术指标计算）
 - ⬜ **[S]** 配置工具权限（IAM）
 - ⬜ **[S]** 实现工具调用日志

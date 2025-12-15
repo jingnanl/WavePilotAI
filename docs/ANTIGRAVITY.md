@@ -11,7 +11,7 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude LLM 的智能股票分析与
 - **前端与 API**: 使用 **Amplify Gen 2 (Serverless)**。利用 Next.js 和 Lambda 提供易于维护的 Web 界面和 API。
 - **数据摄取**: 使用 **AWS Fargate (Serverless Container)**。运行常驻的 TypeScript Worker，维护与 Alpaca 的 WebSocket 长连接，实现毫秒级数据摄取。
 - **AI Agents**: 使用 **Strands Agents TypeScript SDK + Bedrock AgentCore**。Agent 代码打包成容器部署到 AgentCore Runtime。
-- **数据存储**: **Amazon Timestream** 作为单一事实来源 (Single Source of Truth)。
+- **数据存储**: **Amazon Timestream for InfluxDB** 作为单一事实来源 (Single Source of Truth)。
 
 ## 技术栈
 
@@ -33,9 +33,9 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude LLM 的智能股票分析与
 - **US Recent History (Last 15m)**: **Alpaca (IEX REST)** to fill the gap caused by Massive's delay.
 - **US Whole Market (Intraday)**: **Massive** `Snapshot` API (15m delayed) for broad market overview.
 - **US History (SIP)**: **Massive** `Aggregates` API (15m delayed) for accurate historical data.
-- **A 股数据**: Akshare -> Fargate (Polling) -> Timestream
+- **A 股数据**: Akshare -> Fargate (Polling) -> InfluxDB
 - **数据库**:
-    - **Amazon Timestream**: 存储 K 线 (Candles), 基本面 (Fundamentals), 新闻元数据 (News Metadata)。
+    - **Amazon Timestream for InfluxDB**: 存储 K 线 (Candles), 基本面 (Fundamentals), 新闻元数据 (News Metadata)。
     - **Amazon S3**: 存储新闻正文 (News Content), 财报文档 (Financials)。
     - **DynamoDB**: 用户配置 (Watchlist), 交易记录 (Trades)。
 
@@ -73,7 +73,7 @@ Agent 架构设计借鉴 TradingAgents-CN 项目，采用相同的核心概念�
 
 ### 2. TypeScript Worker (Fargate)
 代码位于 `apps/worker/`。
-- 职责：WebSocket 监听, 定时任务 (Cron), 数据清洗与写入 Timestream。
+- 职责：WebSocket 监听, 定时任务 (Cron), 数据清洗与写入 InfluxDB。
 
 ### 3. AI Agent 开发
 代码位于 `apps/agents/`。
@@ -98,7 +98,7 @@ npx amplify push
 2.  **成本意识**:
     - Massive (Polygon) 成本 $29/mo。
     - Fargate 运行成本 (t4g.nano 或类似)。
-    - Timestream 写入与查询成本。
+    - InfluxDB 写入与查询成本。
     - Bedrock API 调用成本。
 3.  **代码规范**:
     - TypeScript: ESLint + Prettier (全项目统一)

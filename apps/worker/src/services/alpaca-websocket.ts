@@ -2,17 +2,17 @@
  * Alpaca WebSocket Service
  *
  * Manages real-time data stream from Alpaca IEX feed.
- * Writes incoming bars to Timestream.
+ * Writes incoming bars to InfluxDB.
  */
 
-import type { TimestreamWriter } from './timestream-writer.js';
+import type { InfluxDBWriter } from './timestream-writer.js';
 
 export class AlpacaWebSocketService {
-    private writer: TimestreamWriter;
+    private writer: InfluxDBWriter;
     private subscriptions: Set<string> = new Set();
     private connected: boolean = false;
 
-    constructor(writer: TimestreamWriter) {
+    constructor(writer: InfluxDBWriter) {
         this.writer = writer;
     }
 

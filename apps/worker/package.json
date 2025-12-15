@@ -9,12 +9,13 @@
         "dev": "tsx watch src/index.ts"
     },
     "dependencies": {
-        "@aws-sdk/client-timestream-write": "^3.600.0",
-        "@aws-sdk/client-secrets-manager": "^3.600.0",
         "@aws-sdk/client-dynamodb": "^3.600.0",
-        "ws": "^8.18.0",
+        "@aws-sdk/client-s3": "^3.948.0",
+        "@aws-sdk/client-secrets-manager": "^3.600.0",
+        "@influxdata/influxdb3-client": "^1.0.0",
+        "dotenv": "^16.3.0",
         "node-cron": "^3.0.3",
-        "dotenv": "^16.3.0"
+        "ws": "^8.18.0"
     },
     "devDependencies": {
         "@types/node": "^20.0.0",

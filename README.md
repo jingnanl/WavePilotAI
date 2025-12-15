@@ -21,7 +21,7 @@ WavePilotAI is an intelligent stock analysis and trading system built on AWS clo
         │                       │                             │
 ┌───────▼───────┐    ┌──────────▼──────────┐    ┌─────────────▼───────────┐
 │   Timestream  │    │   Bedrock AgentCore │    │         DynamoDB        │
-│  (K-Line Data)│    │   (Multi-Agent AI)  │    │    (Watchlist/Trades)   │
+│  for InfluxDB │    │   (Multi-Agent AI)  │    │    (Watchlist/Trades)   │
 └───────────────┘    └─────────────────────┘    └─────────────────────────┘
         ▲
         │
@@ -38,7 +38,7 @@ WavePilotAI is an intelligent stock analysis and trading system built on AWS clo
 | **Frontend** | Next.js 14+ (App Router), shadcn/ui, TradingView Lightweight Charts |
 | **API** | AWS AppSync (GraphQL + Subscriptions) |
 | **AI Agents** | Strands Agents SDK (TypeScript) + Bedrock AgentCore |
-| **Data** | Amazon Timestream, DynamoDB, S3 |
+| **Data** | Amazon Timestream for InfluxDB, DynamoDB, S3 |
 | **Compute** | AWS Lambda (API), Fargate (Data Worker) |
 | **Deploy** | AWS Amplify Gen 2 (unified CDK deployment) |
 
@@ -64,7 +64,7 @@ wavepilot/
 │   └── worker/                # Fargate data worker (TypeScript)
 │       └── src/
 │           ├── index.ts          # Entry point
-│           └── services/         # Alpaca, Massive, Timestream
+│           └── services/         # Alpaca, Massive, InfluxDB
 │
 └── docs/                      # Project documentation
 ```
@@ -174,16 +174,19 @@ curl -X POST http://localhost:8080/invocations \
 |---------|-------------|
 | AlpacaWebSocketService | Real-time 1m bar (watchlist stocks) |
 | MassiveScheduler | 5m snapshot, EOD correction, news |
-| TimestreamWriter | Write data to Timestream |
+| InfluxDBWriter | Write data to Timestream for InfluxDB |
 
 ### Environment Variables
 
 | Variable | Description |
 |----------|-------------|
 | `AWS_REGION` | AWS region |
-| `TIMESTREAM_DATABASE` | Timestream database name |
+| `INFLUXDB_ENDPOINT` | InfluxDB instance endpoint |
+| `INFLUXDB_SECRET_ARN` | Secrets Manager ARN for InfluxDB credentials |
 | `ALPACA_API_KEY` | Alpaca API key |
 | `MASSIVE_API_KEY` | Massive API key |
+
+> **Note**: InfluxDB 3 should be created manually via AWS Console.
 
 ---
 

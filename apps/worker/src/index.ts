@@ -9,7 +9,7 @@
 
 import { AlpacaWebSocketService } from './services/alpaca-websocket.js';
 import { MassiveScheduler } from './services/massive-scheduler.js';
-import { TimestreamWriter } from './services/timestream-writer.js';
+import { InfluxDBWriter } from './services/timestream-writer.js';
 
 const logger = {
     info: (msg: string) => console.log(`[INFO] ${new Date().toISOString()} - ${msg}`),
@@ -20,9 +20,11 @@ async function main(): Promise<void> {
     logger.info('Starting WavePilotAI Data Worker...');
 
     // Initialize services
-    const timestreamWriter = new TimestreamWriter();
-    const alpacaWs = new AlpacaWebSocketService(timestreamWriter);
-    const massiveScheduler = new MassiveScheduler(timestreamWriter);
+    const influxWriter = new InfluxDBWriter();
+    await influxWriter.initialize();
+
+    const alpacaWs = new AlpacaWebSocketService(influxWriter);
+    const massiveScheduler = new MassiveScheduler(influxWriter);
 
     // Start services
     await alpacaWs.connect();

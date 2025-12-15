@@ -42,7 +42,7 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude LLM 的智能股票分析与
 ### 后端服务
 - **计算**：AWS Lambda + Fargate（在 Amplify 中定义）
 - **API 层**：AWS AppSync（GraphQL + Subscriptions）用于实时推送
-- **数据存储**：Timestream、S3、DynamoDB（通过 CDK 在 Amplify 中定义）
+- **数据存储**：Timestream for InfluxDB、S3、DynamoDB（通过 CDK 在 Amplify 中定义）
 
 ### 前端技术
 - **框架**：Next.js 15 with App Router
@@ -52,7 +52,7 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude LLM 的智能股票分析与
 - **样式**：Tailwind CSS
 
 ### 数据架构
-- **时序数据**：Amazon Timestream 存储市场数据
+- **时序数据**：Amazon Timestream for InfluxDB 存储市场数据
 - **文档存储**：S3 存储报告和分析文档，使用单一 S3 存储桶，通过文件夹前缀组织数据（raw/, processed/, knowledge-base/）
 - **应用数据**：DynamoDB 存储用户数据和配置
 - **知识库**：Bedrock Knowledge Base 用于历史分析
@@ -221,20 +221,20 @@ git push  # Amplify Hosting 自动构建和部署
 ### 数据流架构
 
 ```
-外部 APIs ──WebSocket──→ Fargate Worker ──→ TimeStream ──→ AppSync → 前端
+外部 APIs ──WebSocket──→ Fargate Worker ──→ InfluxDB ──→ AppSync → 前端
           ──REST/定时──→ Fargate Worker        ↓              ↓
                               ↓           S3（归档）   Subscription
                               └─────────────────↓
                                       Bedrock Knowledge Base
 
-前端 ──Query/Mutation──→ AppSync ──→ Lambda (API) ──→ TimeStream/S3
+前端 ──Query/Mutation──→ AppSync ──→ Lambda (API) ──→ InfluxDB/S3
 ```
 
 > **说明**：Fargate Worker 负责所有数据摄取（WebSocket 长连接 + 内置 Cron 定时任务），Lambda 仅处理前端 API 请求。
 
 ### 数据存储策略
-- **热数据**（当天分时数据）：Timestream 内存存储，7 天保留
-- **温数据**（历史 K 线）：Timestream 磁盘存储，10 年保留
+- **热数据**（当天分时数据）：InfluxDB 内存存储，7 天保留
+- **温数据**（历史 K 线）：InfluxDB 磁盘存储，10 年保留
 - **冷数据**（财务新闻）：S3 → Bedrock Knowledge Base
 
 ### 实时数据推送
@@ -284,8 +284,8 @@ git push  # Amplify Hosting 自动构建和部署
 - react-window 虚拟化长列表
 - Tree shaking 优化包大小
 
-### Timestream 查询优化
-- 设计合适的维度（ticker, market, interval）
+### InfluxDB 查询优化
+- 设计合适的tags（ticker, market, interval）
 - 使用 `bin()` 函数进行时间窗口聚合
 - 使用 `LIMIT` 限制查询结果
 - 批量 API 请求

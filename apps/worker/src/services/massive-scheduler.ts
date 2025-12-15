@@ -7,14 +7,14 @@
  * - News fetching
  */
 
-import type { TimestreamWriter } from './timestream-writer.js';
+import type { InfluxDBWriter } from './timestream-writer.js';
 
 export class MassiveScheduler {
-    private writer: TimestreamWriter;
+    private writer: InfluxDBWriter;
     private timers: NodeJS.Timeout[] = [];
     private running: boolean = false;
 
-    constructor(writer: TimestreamWriter) {
+    constructor(writer: InfluxDBWriter) {
         this.writer = writer;
     }
 
@@ -49,7 +49,7 @@ export class MassiveScheduler {
     private async fetchSnapshot(): Promise<void> {
         console.log('[MassiveScheduler] Fetching market snapshot...');
         // TODO: Call Massive Snapshot API
-        // TODO: Write to Timestream
+        // TODO: Write to InfluxDB
     }
 
     /**
@@ -58,7 +58,7 @@ export class MassiveScheduler {
     private async fetchGroupedDaily(date: string): Promise<void> {
         console.log(`[MassiveScheduler] Fetching grouped daily for ${date}...`);
         // TODO: Call Massive Grouped Daily API
-        // TODO: Correct intraday data in Timestream
+        // TODO: Correct intraday data in InfluxDB
     }
 
     /**
@@ -67,6 +67,6 @@ export class MassiveScheduler {
     private async fetchNews(): Promise<void> {
         console.log('[MassiveScheduler] Fetching news...');
         // TODO: Call Massive News API
-        // TODO: Write to Timestream + S3
+        // TODO: Write to InfluxDB + S3
     }
 }

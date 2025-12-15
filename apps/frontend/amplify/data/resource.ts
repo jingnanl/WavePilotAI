@@ -31,6 +31,33 @@ const schema = a.schema({
     .authorization((allow) => [allow.owner()]),
 
   /**
+   * Simulated Trade Record
+   * Stores user's paper trading transactions
+   */
+  Trade: a
+    .model({
+      tradeId: a.id().required(),
+      ticker: a.string().required(),
+      name: a.string().required(),
+      market: a.enum(['US', 'CN', 'HK']),
+      type: a.enum(['BUY', 'SELL']),
+      quantity: a.integer().required(),
+      price: a.float().required(),
+      totalValue: a.float().required(),
+      commission: a.float(),
+      notes: a.string(),
+      executedAt: a.datetime().required(),
+      // P&L fields (calculated for SELL trades)
+      realizedPnL: a.float(),
+      realizedPnLPercent: a.float(),
+    })
+    .identifier(['tradeId'])
+    .secondaryIndexes((index) => [
+      index('ticker').sortKeys(['executedAt']).name('TickerIndex'),
+    ])
+    .authorization((allow) => [allow.owner()]),
+
+  /**
    * Stock Price (Real-time)
    * Used for Subscription-based real-time updates
    */

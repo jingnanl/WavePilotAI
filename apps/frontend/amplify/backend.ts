@@ -110,6 +110,7 @@ backend.dataFetcher.addEnvironment('API_KEYS_SECRET_ARN', apiKeysSecret.secretAr
 // These must be set in the deployment environment (Amplify Console or .env)
 backend.dataFetcher.addEnvironment('INFLUXDB_ENDPOINT', process.env.INFLUXDB_ENDPOINT || '');
 backend.dataFetcher.addEnvironment('INFLUXDB_SECRET_ARN', process.env.INFLUXDB_SECRET_ARN || '');
+backend.dataFetcher.addEnvironment('INFLUXDB_DATABASE', process.env.INFLUXDB_DATABASE || 'market_data');
 
 // ========================================================================
 // Custom Outputs

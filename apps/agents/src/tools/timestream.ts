@@ -12,7 +12,7 @@ import { SecretsManagerClient, GetSecretValueCommand } from '@aws-sdk/client-sec
 
 const INFLUXDB_ENDPOINT = process.env.INFLUXDB_ENDPOINT || '';
 const INFLUXDB_SECRET_ARN = process.env.INFLUXDB_SECRET_ARN || '';
-const DATABASE = 'market-data';
+const DATABASE = process.env.INFLUXDB_DATABASE || 'market_data';
 
 // Singleton client instance
 let influxClient: InfluxDBClient | null = null;

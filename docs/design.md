@@ -44,7 +44,7 @@ flowchart TB
 
     subgraph Storage["💾 数据存储层"]
         direction LR
-        TimeStream["TimeStream"] --- S3["S3"] --- DynamoDB["DynamoDB"] --- Secrets["Secrets Manager"]
+        InfluxDB["Timestream for InfluxDB"] --- S3["S3"] --- DynamoDB["DynamoDB"] --- Secrets["Secrets Manager"]
     end
 
     subgraph AI["🤖 AI/ML 服务层"]
@@ -76,10 +76,15 @@ flowchart TB
 
 ```
 wavepilot/
+├── packages/
+│   └── shared/                # 共享类型和工具 (@wavepilot/shared)
+│       ├── src/types/         # 共享类型定义
+│       └── package.json
+│
 ├── apps/
 │   ├── frontend/              # Next.js + Amplify Gen 2 (UI & API)
 │   │   ├── amplify/           # AWS 资源定义 (Backend + AgentCore CDK)
-│   │   │   ├── backend.ts     # 统一资源定义（含 AgentCore CDK）
+│   │   │   ├── backend.ts     # 统一资源定义（含 Worker/AgentCore CDK）
 │   │   │   ├── auth/
 │   │   │   ├── data/
 │   │   │   └── functions/
@@ -88,22 +93,27 @@ wavepilot/
 │   │
 │   ├── worker/                # TypeScript Fargate Worker (数据摄取)
 │   │   ├── Dockerfile
-│   │   ├── package.json
-│   │   └── src/
+│   │   ├── src/
+│   │   │   ├── services/      # InfluxDB Writer, News Service
+│   │   │   ├── utils/         # Data transformers
+│   │   │   └── index.ts       # Fargate Worker 入口
+│   │   └── package.json
 │   │
 │   └── agents/                # Strands Agents TypeScript
-│       ├── package.json       # Node.js 项目配置
-│       ├── tsconfig.json      # TypeScript 配置
 │       ├── Dockerfile         # AgentCore 容器
 │       ├── src/
 │       │   ├── index.ts       # Express 服务器入口
 │       │   ├── orchestrator.ts # 多 Agent 编排
 │       │   ├── agents/        # Agent 定义
 │       │   └── tools/         # Agent 工具
+│       └── package.json
 │
 ├── docs/                      # 项目文档
+├── package.json               # npm workspaces 根配置
 └── amplify.yml                # CI/CD 构建配置 (手动管理以支持 Monorepo)
 ```
+
+> **npm workspaces**：项目使用 npm workspaces 管理 monorepo，共享类型通过 `@wavepilot/shared` 包在各 app 间共享。所有 app 通过 Amplify Gen 2 统一部署。
 
 ### 资源定义方式
 
@@ -111,11 +121,10 @@ wavepilot/
 
 ```typescript
 import { defineBackend } from '@aws-amplify/backend';
-import * as timestream from 'aws-cdk-lib/aws-timestream';
 import * as s3 from 'aws-cdk-lib/aws-s3';
-import * as agentcore from '@aws-cdk/aws-bedrock-agentcore-alpha';
 import * as cdk from 'aws-cdk-lib';
 import * as path from 'path';
+import * as agentcore from '@aws-cdk/aws-bedrock-agentcore-alpha';
 
 const backend = defineBackend({
   auth,    // Cognito
@@ -127,10 +136,12 @@ const backend = defineBackend({
 const dataStack = backend.createStack('DataResources');
 const agentStack = backend.createStack('AgentResources');
 
-// 创建 Timestream（完全的 CDK 代码）
-const timestreamDb = new timestream.CfnDatabase(dataStack, 'Database', {
-  databaseName: 'wavepilot-db',
-});
+// 注意：InfluxDB 3 实例通过 AWS Console 手动创建
+// 环境变量 INFLUXDB_ENDPOINT 和 INFLUXDB_SECRET_ARN 需要配置
+
+// ========================================================================
+// AgentCore Runtime - 使用 @aws-cdk/aws-bedrock-agentcore-alpha
+// ========================================================================
 
 // 从本地代码构建 Agent 容器镜像
 // CDK 会自动构建 Docker 镜像并推送到 ECR
@@ -140,32 +151,52 @@ const agentArtifact = agentcore.AgentRuntimeArtifact.fromAsset(
 
 // 创建 AgentCore Runtime
 const agentRuntime = new agentcore.Runtime(agentStack, 'StockAnalyst', {
-  runtimeName: 'wavepilot-stock-analyst',
+  runtimeName: 'wavepilot_stock_analyst',
   agentRuntimeArtifact: agentArtifact,
+  description: 'WavePilot AI multi-agent stock analysis runtime',
+  // 可选：生命周期配置
+  lifecycleConfiguration: {
+    idleRuntimeSessionTimeout: cdk.Duration.minutes(15),
+    maxLifetime: cdk.Duration.hours(8),
+  },
 });
 
-// 创建 Agent Memory
-// Short-term Memory 自动启用（会话内上下文）
-// Long-term Memory 通过 memoryStrategies 配置
-const agentMemory = new agentcore.Memory(agentStack, 'AgentMemory', {
-  memoryName: 'wavepilot-agent-memory',
-  description: 'WavePilot AI agent memory for user preferences and analysis history',
+// ========================================================================
+// AgentCore Memory - 使用 @aws-cdk/aws-bedrock-agentcore-alpha
+// ========================================================================
 
+// 创建 Agent Memory（支持 Short-term 和 Long-term Memory）
+const agentMemory = new agentcore.Memory(agentStack, 'AgentMemory', {
+  memoryName: 'wavepilot_agent_memory',
+  description: 'WavePilot AI agent memory for user preferences and analysis history',
+  
   // Short-term Memory 过期时间（默认 90 天）
   expirationDuration: cdk.Duration.days(90),
-
+  
   // Long-term Memory 策略配置
   memoryStrategies: [
     // 1. 用户偏好策略：自动学习风险偏好、关注股票等
-    agentcore.MemoryStrategy.usingBuiltInUserPreferences(),
-
-    // 2. 摘要策略：每 5 轮对话自动生成分析摘要
-    agentcore.MemoryStrategy.usingBuiltInSummarization({
-      summaryFrequency: 5,
+    agentcore.MemoryStrategy.usingUserPreference({
+      name: 'UserPreferenceLearner',
+      namespaces: ['/wavepilot/preferences/{actorId}'],
+    }),
+    
+    // 2. 摘要策略：自动生成会话摘要
+    agentcore.MemoryStrategy.usingSummarization({
+      name: 'SessionSummarizer',
+      namespaces: ['/wavepilot/summaries/{actorId}/{sessionId}'],
+    }),
+    
+    // 3. 语义记忆策略：提取事实信息（如分析结论）
+    agentcore.MemoryStrategy.usingSemantic({
+      name: 'AnalysisFactExtractor',
+      namespaces: ['/wavepilot/facts/{actorId}'],
     }),
   ],
 });
 ```
+
+> **注意**：`@aws-cdk/aws-bedrock-agentcore-alpha` 目前处于 Experimental 阶段，API 可能变化。请关注 [GitHub 仓库](https://github.com/aws/aws-cdk/tree/main/packages/@aws-cdk/aws-bedrock-agentcore-alpha) 获取最新更新。
 
 ## 📊 数据流设计
 
@@ -182,7 +213,7 @@ graph LR
     D[Massive API] -->|HTTP Request| B
     E[Akshare] -->|Polling| B
     
-    A --> H[TimeStream]
+    A --> H[InfluxDB]
     B --> H
     B --> I[S3 Raw Data]
 ```
@@ -233,7 +264,7 @@ graph LR
 
 ```mermaid
 graph LR
-    A[Data Fetcher] -->|写入| B[TimeStream]
+    A[Data Fetcher] -->|写入| B[InfluxDB]
     A -->|调用| C[AppSync Mutation]
     C -->|触发| D[GraphQL Subscription]
     D -->|推送| E[前端客户端]
@@ -264,6 +295,20 @@ graph LR
    - 动态计算所需指标（如 `calculateRSI(closePrices, 14)`）。
 3. **执行分析**：基于计算结果判断趋势（如 "RSI > 80, 超买"）。
 4. **释放内存**：分析报告生成后，指标数据随内存回收，**不写入数据库**。
+
+#### 缠论特征计算（第三阶段）
+
+> **说明**：缠论（Chanlun）是一种基于 K 线形态的技术分析方法，计划在第三阶段实现。
+
+| 特征 | 描述 | 计算复杂度 |
+| :--- | :--- | :--- |
+| K 线包含关系 | 处理相邻 K 线的包含关系，生成标准化 K 线 | O(n) |
+| 分型识别 | 识别顶分型和底分型 | O(n) |
+| 笔识别 | 连接分型形成笔 | O(n) |
+| 中枢计算 | 识别价格中枢区间 | O(n²) |
+| 背驰因子 | 基于 MACD 面积计算背驰强度 | O(n) |
+
+实现方式：同样采用 On-Demand 计算策略，在 `MarketAnalyst` Agent 中按需计算。
 
 ### 4. Agent 分析流程
 
@@ -325,121 +370,172 @@ stateDiagram-v2
 
 ## 🗄️ 数据库设计
 
-### 1. Timestream 表设计
+### 1. Amazon Timestream for InfluxDB 数据模型
+
+> **说明**：项目使用 Amazon Timestream for InfluxDB（托管 InfluxDB 3 服务）。InfluxDB 采用 **Schema-on-Write** 模式，无需显式创建表，数据通过 Line Protocol 写入时自动创建 Measurement（类似表）。
+>
+> **数据组织**：
+> - **Measurement**：类似关系数据库的表
+> - **Tags**：索引字段，用于快速过滤（如 ticker, market）
+> - **Fields**：数据字段，存储实际值（如 price, volume）
+> - **Timestamp**：时间戳，InfluxDB 的核心维度
+>
+> **数据保留**：通过 InfluxDB Bucket 的 Retention Policy 配置，而非 SQL 语法。
 
 #### stock_quotes_raw（原始行情数据 - 1 分钟）
 
-```sql
-CREATE TABLE stock_quotes_raw (
-    time TIMESTAMP,              -- 时间戳
-    ticker VARCHAR,              -- 股票代码（AAPL, 000001.SZ, 600000.SH）
-    name VARCHAR,                -- 股票名称
-    market VARCHAR,              -- 市场（US, CN, HK）
-    price DOUBLE,                -- 当前价格
-    change DOUBLE,               -- 涨跌额
-    changePercent DOUBLE,        -- 涨跌幅百分比
-    volume BIGINT,               -- 成交量
-    high DOUBLE,                 -- 最高价
-    low DOUBLE,                  -- 最低价
-    open DOUBLE,                 -- 开盘价
-    previousClose DOUBLE         -- 前收盘价
-)
-WITH (
-    MEMORY_STORE_RETENTION_PERIOD = '7d',
-    MAGNETIC_STORE_RETENTION_PERIOD = '3650d'
-)
-```
+> **数据源**：Massive Aggregates API (minute)、Alpaca Bars API
+> **用途**：存储分钟级 K 线数据，支持分时图、5分钟/30分钟/1小时等周期聚合
+> **保留策略**：7 天热数据 + 10 年冷存储
+
+| 字段类型 | 字段名 | 数据类型 | 说明 | API 映射 |
+|---------|--------|---------|------|----------|
+| **Tag** | ticker | String | 股票代码（AAPL, 000001.SZ） | - |
+| **Tag** | market | String | 市场（US, CN, HK） | - |
+| **Field** | name | String | 股票名称 | - |
+| **Field** | open | Float | 开盘价 | Massive: `o`, Alpaca: `OpenPrice` |
+| **Field** | high | Float | 最高价 | Massive: `h`, Alpaca: `HighPrice` |
+| **Field** | low | Float | 最低价 | Massive: `l`, Alpaca: `LowPrice` |
+| **Field** | close | Float | 收盘价 | Massive: `c`, Alpaca: `ClosePrice` |
+| **Field** | volume | Integer | 成交量 | Massive: `v`, Alpaca: `Volume` |
+| **Field** | vwap | Float | 成交量加权均价 | Massive: `vw`, Alpaca: `VWAP` |
+| **Field** | trades | Integer | 成交笔数 | Massive: `n`, Alpaca: `TradeCount` |
+| **Field** | change | Float | 涨跌额（可选） | 衍生计算 |
+| **Field** | changePercent | Float | 涨跌幅%（可选） | 衍生计算 |
+| **Field** | previousClose | Float | 前收盘价（可选） | - |
 
 #### stock_quotes_aggregated（聚合行情数据 - 日线）
 
-> **用途**：仅存储每日 (1D) 的历史 K 线数据。
-> **原因**：
-> 1. **查询加速**：日线及以上周期（周/月）图表跨度通常为数年，直接查询 1D 数据远快于从 1m Raw 数据聚合。
-> 2. **分工明确**：分时/5分钟/30分钟/1小时等分钟级周期由 `stock_quotes_raw` (1m) 实时聚合；日/周/月/年线由本表支持。
-> 3. **数据一致性**：每日收盘后使用 Massive `Grouped Daily` 官方数据校准，确保历史日线准确无误。
+> **数据源**：Massive Aggregates API (day)、Massive Grouped Daily API
+> **用途**：仅存储每日 (1D) 的历史 K 线数据
+> **保留策略**：28 天热数据 + 10 年冷存储
+>
+> **设计原因**：
+> 1. **查询加速**：日线及以上周期（周/月）图表跨度通常为数年，直接查询 1D 数据远快于从 1m Raw 数据聚合
+> 2. **分工明确**：分时/5分钟/30分钟/1小时等分钟级周期由 `stock_quotes_raw` (1m) 实时聚合；日/周/月/年线由本表支持
+> 3. **数据一致性**：每日收盘后使用 Massive `Grouped Daily` 官方数据校准，确保历史日线准确无误
 
-```sql
-CREATE TABLE stock_quotes_aggregated (
-    time TIMESTAMP,              -- 时间戳（通常为当日 00:00:00 或收盘时间）
-    ticker VARCHAR,              -- 股票代码
-    name VARCHAR,                -- 股票名称
-    market VARCHAR,              -- 市场（US, CN, HK）
-    interval VARCHAR,            -- 时间间隔（固定为 '1d'）
-    open DOUBLE,                 -- 开盘价
-    high DOUBLE,                 -- 最高价
-    low DOUBLE,                  -- 最低价
-    close DOUBLE,                -- 收盘价
-    change DOUBLE,               -- 涨跌额
-    changePercent DOUBLE,        -- 涨跌幅百分比
-    volume BIGINT,               -- 成交量
-    trades INTEGER               -- 成交笔数
-)
-WITH (
-    MEMORY_STORE_RETENTION_PERIOD = '28d', -- 近期日线在内存，加速访问
-    MAGNETIC_STORE_RETENTION_PERIOD = '3650d' -- 保留 10 年历史
-)
-```
-
+| 字段类型 | 字段名 | 数据类型 | 说明 | API 映射 |
+|---------|--------|---------|------|----------|
+| **Tag** | ticker | String | 股票代码 | Grouped: `T` |
+| **Tag** | market | String | 市场（US, CN, HK） | - |
+| **Field** | name | String | 股票名称 | - |
+| **Field** | open | Float | 开盘价 | `o` |
+| **Field** | high | Float | 最高价 | `h` |
+| **Field** | low | Float | 最低价 | `l` |
+| **Field** | close | Float | 收盘价 | `c` |
+| **Field** | volume | Integer | 成交量 | `v` |
+| **Field** | vwap | Float | 成交量加权均价 | `vw` |
+| **Field** | trades | Integer | 成交笔数 | `n` |
+| **Field** | change | Float | 涨跌额 | 衍生: `close - open` |
+| **Field** | changePercent | Float | 涨跌幅% | 衍生: `(close-open)/open*100` |
 
 #### fundamentals（基本面数据）
 
-> **用途**：存储股票的财务指标，支持按财报周期（TTM/季度/年度）查询和历史对比分析。
+> **数据源**：Massive Financials API (`/vX/reference/financials`)
+> **用途**：存储完整财务报表数据，支持按财报周期（季度/年度）查询和历史对比分析
+> **保留策略**：90 天热数据 + 10 年冷存储
 
-```sql
-CREATE TABLE fundamentals (
-    time TIMESTAMP,              -- 数据更新时间
-    ticker VARCHAR,              -- 股票代码
-    name VARCHAR,                -- 股票名称
-    market VARCHAR,              -- 市场（US, CN, HK）
-    
-    -- 财报周期标识
-    period_type VARCHAR,         -- 'TTM', 'Q1', 'Q2', 'Q3', 'Q4', 'FY'
-    fiscal_year INTEGER,         -- 财年（2024, 2025...）
-    fiscal_quarter INTEGER,      -- 季度（1-4），仅季报时有值
-    report_date DATE,            -- 财报截止日期（如 2024-12-31）
-    
-    -- 估值指标
-    pe_ttm DOUBLE,               -- 市盈率（TTM）
-    pe_forward DOUBLE,           -- 远期市盈率（基于分析师预估）
-    pb_ratio DOUBLE,             -- 市净率
-    ps_ratio DOUBLE,             -- 市销率
-    
-    -- 盈利指标
-    eps_ttm DOUBLE,              -- 每股收益（TTM）
-    eps_diluted DOUBLE,          -- 稀释每股收益
-    revenue DOUBLE,              -- 营业收入
-    net_income DOUBLE,           -- 净利润
-    
-    -- 其他常用指标
-    market_cap DOUBLE,           -- 市值
-    roe DOUBLE,                  -- 净资产收益率
-    dividend_yield DOUBLE        -- 股息率
-)
-WITH (
-    MEMORY_STORE_RETENTION_PERIOD = '90d',
-    MAGNETIC_STORE_RETENTION_PERIOD = '3650d' -- 保留 10 年财报历史
-)
-```
+| 字段类型 | 字段名 | 数据类型 | 说明 | API 映射 |
+|---------|--------|---------|------|----------|
+| **Tag** | ticker | String | 股票代码 | `tickers[0]` |
+| **Tag** | market | String | 市场 | - |
+| **Tag** | periodType | String | 'quarterly' \| 'annual' | `timeframe` |
+| **Field** | fiscalYear | Integer | 财年 | `fiscal_year` |
+| **Field** | fiscalPeriod | String | Q1/Q2/Q3/Q4/FY | `fiscal_period` |
+| **Field** | filingDate | String | SEC 申报日期 | `filing_date` |
+| **Field** | companyName | String | 公司名称 | `company_name` |
+| **Field** | cik | String | SEC CIK 编号 | `cik` |
+| **Field** | sic | String | SIC 行业代码 | `sic` |
+
+**利润表 (Income Statement)**
+
+| 字段名 | 说明 | API 映射 |
+|--------|------|----------|
+| revenue | 营业收入 | `income_statement.revenues` |
+| costOfRevenue | 营业成本 | `income_statement.cost_of_revenue` |
+| grossProfit | 毛利润 | `income_statement.gross_profit` |
+| operatingExpenses | 营业费用 | `income_statement.operating_expenses` |
+| operatingIncome | 营业利润 | `income_statement.operating_income_loss` |
+| netIncome | 净利润 | `income_statement.net_income_loss` |
+| eps | 基本每股收益 | `income_statement.basic_earnings_per_share` |
+| epsDiluted | 稀释每股收益 | `income_statement.diluted_earnings_per_share` |
+| sharesBasic | 基本股数 | `income_statement.basic_average_shares` |
+| sharesDiluted | 稀释股数 | `income_statement.diluted_average_shares` |
+
+**资产负债表 (Balance Sheet)**
+
+| 字段名 | 说明 | API 映射 |
+|--------|------|----------|
+| totalAssets | 总资产 | `balance_sheet.assets` |
+| currentAssets | 流动资产 | `balance_sheet.current_assets` |
+| totalLiabilities | 总负债 | `balance_sheet.liabilities` |
+| currentLiabilities | 流动负债 | `balance_sheet.current_liabilities` |
+| totalEquity | 股东权益 | `balance_sheet.equity` |
+| fixedAssets | 固定资产 | `balance_sheet.fixed_assets` |
+| accountsPayable | 应付账款 | `balance_sheet.accounts_payable` |
+
+**现金流量表 (Cash Flow Statement)**
+
+| 字段名 | 说明 | API 映射 |
+|--------|------|----------|
+| operatingCashFlow | 经营活动现金流 | `cash_flow_statement.net_cash_flow_from_operating_activities` |
+| investingCashFlow | 投资活动现金流 | `cash_flow_statement.net_cash_flow_from_investing_activities` |
+| financingCashFlow | 筹资活动现金流 | `cash_flow_statement.net_cash_flow_from_financing_activities` |
+| netCashFlow | 净现金流 | `cash_flow_statement.net_cash_flow` |
+
+**估值指标（衍生或外部提供）**
+
+| 字段名 | 说明 |
+|--------|------|
+| pe | 市盈率 |
+| pb | 市净率 |
+| marketCap | 市值 |
+| roe | 净资产收益率 |
 
 #### news（新闻事件 - 元数据）
 
-```sql
-CREATE TABLE news (
-    time TIMESTAMP,
-    ticker VARCHAR,              -- 股票代码
-    name VARCHAR,                -- 股票名称
-    market VARCHAR,              -- 市场
-    source VARCHAR,
-    title VARCHAR,
-    url VARCHAR,
-    sentiment DOUBLE,     -- 情感评分
-    s3_key VARCHAR        -- 指向 S3 中完整内容的路径
-)
-WITH (
-    MEMORY_STORE_RETENTION_PERIOD = '7d',
-    MAGNETIC_STORE_RETENTION_PERIOD = '365d' -- 保留 1 年新闻历史
-)
+> **数据源**：Massive News API
+> **用途**：存储新闻元数据，支持情感分析和关联股票查询
+> **保留策略**：7 天热数据 + 1 年冷存储
+>
+> **存储策略**：
+> - **InfluxDB**：存储元数据，用于时序查询（按时间、股票、情感筛选）
+> - **S3**：存储完整文章内容（抓取的网页），供 Agent 深度分析
+> - **S3 Object Metadata**：存储关键属性，无需下载即可快速访问
+
+| 字段类型 | 字段名 | 数据类型 | 说明 | API 映射 |
+|---------|--------|---------|------|----------|
+| **Tag** | ticker | String | 主要关联股票 | `tickers[0]` |
+| **Tag** | market | String | 市场 | - |
+| **Tag** | source | String | 新闻来源 | `publisher.name` |
+| **Field** | id | String | 新闻唯一 ID | `id` |
+| **Field** | title | String | 标题 | `title` |
+| **Field** | url | String | 原文链接 | `article_url` |
+| **Field** | author | String | 作者 | `author` |
+| **Field** | description | String | 摘要描述 | `description` |
+| **Field** | imageUrl | String | 配图 URL | `image_url` |
+| **Field** | keywords | String | 关键词 (JSON) | `keywords[]` |
+| **Field** | tickers | String | 关联股票 (JSON) | `tickers[]` |
+| **Field** | sentiment | String | 情感分类 | `insights[].sentiment` |
+| **Field** | sentimentScore | Float | 情感评分 (-1~1) | 衍生计算 |
+| **Field** | sentimentReasoning | String | 情感分析理由 | `insights[].sentiment_reasoning` |
+| **Field** | s3Path | String | S3 完整内容路径 | - |
+
+**S3 存储结构**：
 ```
+s3://wavepilot-data-{account}/raw/news/{ticker}/{date}/{news_id}.json
+```
+
+**S3 Object Metadata**：
+| Key | 说明 |
+|-----|------|
+| news-id | 新闻唯一 ID |
+| ticker | 主要股票代码 |
+| source | 新闻来源 |
+| published-at | 发布时间 (ISO) |
+| sentiment | 情感分类 |
+| has-content | 是否包含抓取内容 |
 
 #### Watchlist（自选股 - Amplify Data Model）
 
@@ -583,7 +679,7 @@ app.listen(PORT, () => {
 
 ### 3. Agent 部署（使用 CDK 集成到 Amplify）
 
-在 `apps/frontend/amplify/backend.ts` 中添加 AgentCore 资源（CDK 自动构建 Docker）：
+在 `apps/frontend/amplify/backend.ts` 中添加 AgentCore 资源：
 
 ```typescript
 import * as agentcore from '@aws-cdk/aws-bedrock-agentcore-alpha';
@@ -591,18 +687,39 @@ import * as path from 'path';
 
 const agentStack = backend.createStack('AgentResources');
 
-// 使用 fromAsset 自动构建 Docker 并推送到 ECR（无需手动操作）
+// 方式 1：从本地 Dockerfile 构建（推荐）
+// CDK 会自动构建 Docker 镜像并推送到 ECR
 const agentArtifact = agentcore.AgentRuntimeArtifact.fromAsset(
   path.join(__dirname, '../../agents')  // 指向 Dockerfile 所在目录
 );
 
-// AgentCore Runtime
+// 方式 2：从已有 ECR 仓库引用
+// const repository = ecr.Repository.fromRepositoryName(agentStack, 'AgentRepo', 'wavepilot-agents');
+// const agentArtifact = agentcore.AgentRuntimeArtifact.fromEcrRepository(repository, 'v1.0.0');
+
+// 创建 AgentCore Runtime
 const stockAnalystRuntime = new agentcore.Runtime(agentStack, 'StockAnalyst', {
-  runtimeName: 'wavepilot-stock-analyst',
+  runtimeName: 'wavepilot_stock_analyst',
   agentRuntimeArtifact: agentArtifact,
-  // ... 其他配置
+  description: 'WavePilot AI multi-agent stock analysis runtime',
+});
+
+// 授予 Runtime 调用 Bedrock 模型的权限
+// 需要安装 @aws-cdk/aws-bedrock-alpha
+// const model = bedrock.BedrockFoundationModel.ANTHROPIC_CLAUDE_SONNET_4_5_V1_0;
+// model.grantInvoke(stockAnalystRuntime);
+
+// 创建自定义 Endpoint（可选，用于版本管理）
+const prodEndpoint = stockAnalystRuntime.addEndpoint('production', {
+  version: '1',
+  description: 'Production endpoint - pinned to stable version',
 });
 ```
+
+> **部署方式选择**：
+> 1. **CDK 集成**（推荐）：如上所示，通过 Amplify backend.ts 统一管理
+> 2. **AgentCore Starter Toolkit**：使用 `bedrock-agentcore` CLI 独立部署
+> 3. **手动部署**：通过 AWS Console 创建 AgentCore Runtime
 
 ## 🚀 部署架构
 
@@ -677,11 +794,12 @@ applications:
 - **简化部署**：无需管理 Python 虚拟环境
 - **类型安全**：TypeScript 静态类型检查
 
-### 为什么选择 Timestream？
+### 为什么选择 Amazon Timestream for InfluxDB？
 
-- 专为时序数据优化，查询性能优秀
-- 自动数据分层，成本优化
-- 内置时序函数，简化分析
+- **InfluxDB 3 托管服务**：AWS 托管，无需运维
+- **InfluxQL + SQL 双查询**：灵活的查询语法
+- **高性能写入**：支持高频时序数据写入
+- **成本优化**：按存储和查询量计费
 
 ### 为什么选择 Strands Agents + AgentCore？
 
@@ -728,7 +846,7 @@ git push origin main
 
 - Amplify Hosting: ~$5-10
 - Fargate (t4g.nano): ~$3-5
-- Timestream: ~$15-25
+- Timestream for InfluxDB: ~$15-25
 - DynamoDB: ~$10-20
 - S3: ~$5-10
 - Lambda: ~$5-10
@@ -740,5 +858,5 @@ git push origin main
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-08*
+*更新日期：2025-12-19*
 *作者：JN.L*

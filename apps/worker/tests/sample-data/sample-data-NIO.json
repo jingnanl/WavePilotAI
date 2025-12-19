@@ -1,0 +1,792 @@
+{
+  "massive_daily_history": [
+    {
+      "v": 59003448,
+      "vw": 5.9358,
+      "o": 5.98,
+      "c": 5.98,
+      "h": 6.03,
+      "l": 5.83,
+      "t": 1763442000000,
+      "n": 91337
+    },
+    {
+      "v": 44687637,
+      "vw": 5.8148,
+      "o": 5.94,
+      "c": 5.75,
+      "h": 5.985,
+      "l": 5.73,
+      "t": 1763528400000,
+      "n": 81206
+    },
+    {
+      "v": 70229234,
+      "vw": 5.5372,
+      "o": 5.82,
+      "c": 5.4,
+      "h": 5.87,
+      "l": 5.383,
+      "t": 1763614800000,
+      "n": 113382
+    },
+    {
+      "v": 56279409,
+      "vw": 5.5413,
+      "o": 5.49,
+      "c": 5.58,
+      "h": 5.695,
+      "l": 5.39,
+      "t": 1763701200000,
+      "n": 93589
+    },
+    {
+      "v": 52441505,
+      "vw": 5.7955,
+      "o": 5.78,
+      "c": 5.75,
+      "h": 5.86,
+      "l": 5.71,
+      "t": 1763960400000,
+      "n": 89722
+    },
+    {
+      "v": 88392000,
+      "vw": 5.5844,
+      "o": 5.59,
+      "c": 5.5,
+      "h": 5.7,
+      "l": 5.38,
+      "t": 1764046800000,
+      "n": 178293
+    },
+    {
+      "v": 85890816,
+      "vw": 5.4391,
+      "o": 5.54,
+      "c": 5.46,
+      "h": 5.729,
+      "l": 5.3,
+      "t": 1764133200000,
+      "n": 108172
+    },
+    {
+      "v": 30216291,
+      "vw": 5.5109,
+      "o": 5.5,
+      "c": 5.5,
+      "h": 5.625,
+      "l": 5.43,
+      "t": 1764306000000,
+      "n": 42644
+    },
+    {
+      "v": 58800682,
+      "vw": 5.2133,
+      "o": 5.33,
+      "c": 5.18,
+      "h": 5.425,
+      "l": 5.14,
+      "t": 1764565200000,
+      "n": 85666
+    },
+    {
+      "v": 43577960,
+      "vw": 5.0771,
+      "o": 5.155,
+      "c": 5.03,
+      "h": 5.18,
+      "l": 5.03,
+      "t": 1764651600000,
+      "n": 73383
+    }
+  ],
+  "massive_minute_bars": [
+    {
+      "v": 4485,
+      "vw": 4.905,
+      "o": 4.9,
+      "c": 4.9,
+      "h": 4.91,
+      "l": 4.9,
+      "t": 1766048400000,
+      "n": 36
+    },
+    {
+      "v": 1133,
+      "vw": 4.9,
+      "o": 4.9,
+      "c": 4.9,
+      "h": 4.9,
+      "l": 4.9,
+      "t": 1766048460000,
+      "n": 3
+    },
+    {
+      "v": 240,
+      "vw": 4.91,
+      "o": 4.91,
+      "c": 4.91,
+      "h": 4.91,
+      "l": 4.91,
+      "t": 1766048520000,
+      "n": 4
+    },
+    {
+      "v": 4517,
+      "vw": 4.9096,
+      "o": 4.91,
+      "c": 4.9,
+      "h": 4.91,
+      "l": 4.9,
+      "t": 1766048580000,
+      "n": 17
+    },
+    {
+      "v": 735,
+      "vw": 4.91,
+      "o": 4.91,
+      "c": 4.91,
+      "h": 4.91,
+      "l": 4.91,
+      "t": 1766048760000,
+      "n": 2
+    },
+    {
+      "v": 1831,
+      "vw": 4.91,
+      "o": 4.91,
+      "c": 4.91,
+      "h": 4.91,
+      "l": 4.91,
+      "t": 1766048820000,
+      "n": 4
+    },
+    {
+      "v": 610,
+      "vw": 4.9049,
+      "o": 4.9,
+      "c": 4.91,
+      "h": 4.91,
+      "l": 4.9,
+      "t": 1766049000000,
+      "n": 2
+    },
+    {
+      "v": 15812,
+      "vw": 4.9104,
+      "o": 4.91,
+      "c": 4.91,
+      "h": 4.92,
+      "l": 4.905,
+      "t": 1766049480000,
+      "n": 55
+    },
+    {
+      "v": 566,
+      "vw": 4.91,
+      "o": 4.91,
+      "c": 4.91,
+      "h": 4.91,
+      "l": 4.91,
+      "t": 1766049540000,
+      "n": 7
+    },
+    {
+      "v": 1500,
+      "vw": 4.914,
+      "o": 4.915,
+      "c": 4.91,
+      "h": 4.915,
+      "l": 4.91,
+      "t": 1766049660000,
+      "n": 2
+    }
+  ],
+  "massive_grouped_daily": [
+    {
+      "T": "OILK",
+      "v": 58118,
+      "vw": 36.8005,
+      "o": 36.68,
+      "c": 36.95,
+      "h": 37.019,
+      "l": 36.571,
+      "t": 1766005200000,
+      "n": 438
+    },
+    {
+      "T": "PROP",
+      "v": 1453578,
+      "vw": 1.7022,
+      "o": 1.71,
+      "c": 1.69,
+      "h": 1.7565,
+      "l": 1.67,
+      "t": 1766005200000,
+      "n": 4678
+    },
+    {
+      "T": "GPUS",
+      "v": 18631435,
+      "vw": 0.2541,
+      "o": 0.2534,
+      "c": 0.2522,
+      "h": 0.27,
+      "l": 0.2402,
+      "t": 1766005200000,
+      "n": 25242
+    },
+    {
+      "T": "U",
+      "v": 6359630,
+      "vw": 44.279,
+      "o": 45.065,
+      "c": 43.78,
+      "h": 45.3,
+      "l": 43.63,
+      "t": 1766005200000,
+      "n": 71607
+    },
+    {
+      "T": "XOMAO",
+      "v": 1613,
+      "vw": 25.4847,
+      "o": 25.36,
+      "c": 25.56,
+      "h": 25.56,
+      "l": 25.36,
+      "t": 1766005200000,
+      "n": 46
+    },
+    {
+      "T": "VPLS",
+      "v": 98305,
+      "vw": 78.4865,
+      "o": 78.5,
+      "c": 78.475,
+      "h": 78.54,
+      "l": 78.4419,
+      "t": 1766005200000,
+      "n": 657
+    },
+    {
+      "T": "TPET",
+      "v": 1470042,
+      "vw": 0.9361,
+      "o": 0.7826,
+      "c": 0.91,
+      "h": 0.94,
+      "l": 0.7751,
+      "t": 1766005200000,
+      "n": 4078
+    },
+    {
+      "T": "ETHE",
+      "v": 11919333,
+      "vw": 23.7596,
+      "o": 24.12,
+      "c": 23.13,
+      "h": 24.85,
+      "l": 22.885,
+      "t": 1766005200000,
+      "n": 82705
+    },
+    {
+      "T": "CHRD",
+      "v": 606923,
+      "vw": 92.9227,
+      "o": 92.69,
+      "c": 93.75,
+      "h": 94.09,
+      "l": 91.6,
+      "t": 1766005200000,
+      "n": 15426
+    },
+    {
+      "T": "WYNN",
+      "v": 978057,
+      "vw": 125.5816,
+      "o": 126.78,
+      "c": 125.44,
+      "h": 127.01,
+      "l": 125.05,
+      "t": 1766005200000,
+      "n": 22673
+    }
+  ],
+  "massive_news": [
+    {
+      "id": "5defddefb973a318c938b1b8e727912270eac0f62bb6910fc4eda8571643b464",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Tesla Rival Nio's Firefly Begins Deliveries In Greece, Denmark As Chinese Automakers Flock To Europe",
+      "author": "Badar Shaikh",
+      "published_utc": "2025-12-10T10:27:09Z",
+      "article_url": "https://www.benzinga.com/markets/tech/25/12/49298695/tesla-rival-nios-firefly-begins-deliveries-in-greece-denmark-as-chinese-automakers-flock-to-europe?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "NIO",
+        "XPEV",
+        "TSLA",
+        "BYDDY"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/10/Nio-Photo-by-Robert-Way-via-Shutterstock.jpeg?width=1200&height=800&fit=crop",
+      "description": "Chinese automaker Nio has started delivering its Firefly electric vehicles in Greece, Denmark, and other European countries, with prices around €29,900. The company is expanding its European presence alongside other Chinese EV manufacturers like BYD and Xpeng.",
+      "keywords": [
+        "electric vehicles",
+        "EV",
+        "European expansion",
+        "Chinese automakers",
+        "Nio",
+        "Firefly"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Expanding into European markets, increased deliveries (76% year-over-year), launching new EV model in multiple countries"
+        },
+        {
+          "ticker": "XPEV",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Expanding into new European and Asian markets, demonstrating growth strategy"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Article notes Tesla sales are falling in the European market"
+        },
+        {
+          "ticker": "BYDDY",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Significant growth in European market with 206.8% surge in vehicle registrations in October"
+        }
+      ]
+    },
+    {
+      "id": "201aa2b740d81c2c926c6127d65e33d8d64d85cfca524c1039d88b038686491c",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "What's Going On With Nio Stock?",
+      "author": "Henry Khederian",
+      "published_utc": "2025-12-08T16:41:39Z",
+      "article_url": "https://www.benzinga.com/trading-ideas/movers/25/12/49261663/whats-going-on-with-nio-stock-7?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "NIO"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/08/Nio-Adds-AEB-Feature.jpeg?width=1200&height=800&fit=crop",
+      "description": "Nio Inc reported strong November vehicle deliveries of 36,275 units, representing a 76.3% year-over-year increase, driven by multi-brand strategy. Despite recent stock volatility, the company remains optimistic about Q4 deliveries and continues global expansion efforts.",
+      "keywords": [
+        "electric vehicles",
+        "EV",
+        "deliveries",
+        "Nio",
+        "stock performance",
+        "global expansion"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong vehicle delivery growth (76.3% YoY), record November performance, multi-brand strategy success, optimistic Q4 projections, and ongoing global market expansion"
+        }
+      ]
+    },
+    {
+      "id": "fe8d58bff31f00b72e09a19cc1a8a2e900432b32469685773f821817452c31cd",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Evaluating Nio Stock's Actual Performance",
+      "author": "John Bromels",
+      "published_utc": "2025-12-07T12:07:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/07/evaluating-nio-stocks-actual-performance/?source=iedfolrf0000001",
+      "tickers": [
+        "NIO"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F844199%2Fgettyimages-1473384392-1201x901-1c7b5e7.jpg&w=1200&op=resize",
+      "description": "Nio's stock experienced significant volatility in 2025, surging over 120% between July and October before declining. Despite a 15.7% year-to-date gain, the stock has dramatically underperformed the S&P 500 over three and five-year periods, highlighting its risky investment profile.",
+      "keywords": [
+        "electric vehicle",
+        "EV",
+        "stock performance",
+        "investment",
+        "market volatility"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock has lost 59.4% from December 2022, significantly underperformed S&P 500 by 126.6 percentage points over three years, and shows a staggering -89.7% five-year return, indicating persistent challenges in achieving profitability and market growth"
+        }
+      ]
+    },
+    {
+      "id": "55cca814a183eb0382793153eb745d6d6c10a19e35f5f8312e6c939dd37fa21c",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "What's Going On With Nio Stock Today?",
+      "author": "Alex Perry",
+      "published_utc": "2025-12-01T16:05:02Z",
+      "article_url": "https://www.benzinga.com/trading-ideas/movers/25/12/49139772/whats-going-on-with-nio-stock-today-26?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "NIO",
+        "TSLA",
+        "FLY"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/01/Nio-Adds-AEB-Feature.jpeg?width=1200&height=800&fit=crop",
+      "description": "NIO reported 36,275 vehicle deliveries in November, a 76.3% year-over-year increase, but stock is trading lower after mixed Q3 earnings and analyst adjustments.",
+      "keywords": [
+        "electric vehicles",
+        "deliveries",
+        "earnings",
+        "stock performance"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mixed performance with strong delivery numbers (76.3% YoY increase) but stock price decline and earnings slightly missing consensus estimates"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a competitor to NIO, no direct performance details provided"
+        },
+        {
+          "ticker": "FLY",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as NIO's small smart high-end electric car brand with 6,088 vehicles delivered in November"
+        }
+      ]
+    },
+    {
+      "id": "ea56f6313a8ffee212f22c58e8a7a3ec39ff85e2717503087133b4c51857365b",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Why Optimistic Nio Investors Might Need to Pump the Brakes",
+      "author": "Daniel Miller",
+      "published_utc": "2025-11-24T11:07:00Z",
+      "article_url": "https://www.fool.com/investing/2025/11/24/why-optimistic-nio-investors-might-need-to-pump/?source=iedfolrf0000001",
+      "tickers": [
+        "NIO",
+        "XPEV",
+        "TSLA"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F843747%2Fnio_swap.png&w=1200&op=resize",
+      "description": "Nio has seen strong delivery growth and launched new sub-brands, but the Chinese EV market remains highly competitive. XPeng's weak Q4 revenue forecast signals potential challenges ahead for EV manufacturers.",
+      "keywords": [
+        "electric vehicles",
+        "China",
+        "EV market",
+        "deliveries",
+        "competition"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Strong delivery growth and new sub-brands offset by intense market competition and not yet being profitable"
+        },
+        {
+          "ticker": "XPEV",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Announced Q4 revenue estimates below expectations, facing challenging market conditions and high R&D investments"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Experienced three-year low in China deliveries, indicating market challenges"
+        }
+      ]
+    },
+    {
+      "id": "dffeaa401be7bea14739ebd870c5846f6cef6abf93dcd52463f5e961dee63df3",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "What every Nio Investor Should Know Before Buying",
+      "author": "John Bromels",
+      "published_utc": "2025-11-21T10:10:00Z",
+      "article_url": "https://www.fool.com/investing/2025/11/21/what-every-nio-investor-should-know-before-buying/?source=iedfolrf0000001",
+      "tickers": [
+        "NIO",
+        "TSLA"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F843189%2Fgettyimages-1157005880-1200x800-5b2df79.jpg&w=1200&op=resize",
+      "description": "Chinese electric vehicle maker Nio has seen significant sales growth in 2025, with vehicle deliveries increasing by over 90% year-over-year, but remains unprofitable and carries high investment risk.",
+      "keywords": [
+        "electric vehicles",
+        "China",
+        "SUV",
+        "battery swap",
+        "EV market"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Despite strong sales growth and innovative battery-as-a-service model, the company has not yet achieved profitability and has experienced significant stock price decline over five years"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as an example of EV companies struggling to achieve consistent profitability"
+        }
+      ]
+    },
+    {
+      "id": "3e95876cd693a6a69115fbce5729c393e5e8eed9dba9e8437484e8559d6f27db",
+      "publisher": {
+        "name": "GlobeNewswire Inc.",
+        "homepage_url": "https://www.globenewswire.com",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/globenewswire.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/globenewswire.ico"
+      },
+      "title": "NIO Inc. Provides October 2025 Delivery Update",
+      "author": "Nio Inc.",
+      "published_utc": "2025-11-01T07:30:00Z",
+      "article_url": "https://www.globenewswire.com/news-release/2025/11/01/3178706/0/en/NIO-Inc-Provides-October-2025-Delivery-Update.html",
+      "tickers": [
+        "FLY",
+        "NIO"
+      ],
+      "image_url": "https://www.globenewswire.com/news-release/2025/11/01/3178706/0/en/NIO-Inc-Provides-October-2025-Delivery-Update.html",
+      "description": "NIO Inc. reported record-high monthly vehicle deliveries of 40,397 in October 2025, representing a 92.6% year-over-year increase across its NIO, ONVO, and FIREFLY brands. Year-to-date deliveries reached 241,618 vehicles, up 41.9% from the previous year.",
+      "keywords": [
+        "electric vehicles",
+        "deliveries",
+        "vehicle sales",
+        "EV market",
+        "NIO",
+        "ONVO",
+        "FIREFLY"
+      ],
+      "insights": [
+        {
+          "ticker": "FLY",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Delivered 5,912 vehicles, representing a small but consistent portion of the company's total vehicle sales"
+        },
+        {
+          "ticker": "NIO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong delivery growth of 92.6% year-over-year, record monthly deliveries, and sustained momentum in SUV segment indicate robust business performance"
+        }
+      ]
+    },
+    {
+      "id": "7c4ce8bf272d086b228fcff99c8767ffaff4498cb29834ab68a528b6b7a41b52",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Tesla Rival Nio Falls 7% In Pre-Market Trading Amid Singapore Wealth Fund Lawsuit Over Alleged Revenue Inflation",
+      "author": "Badar Shaikh",
+      "published_utc": "2025-10-16T10:37:20Z",
+      "article_url": "https://www.benzinga.com/markets/tech/25/10/48245077/tesla-rival-nio-falls-7-in-pre-market-trading-amid-singapore-wealth-fund-lawsuit-over-alleged-revenu",
+      "tickers": [
+        "NIO"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/10/16/Nio-Inc.jpeg?width=1200&height=800&fit=crop",
+      "description": "Nio's stock dropped over 7% in pre-market trading following a lawsuit by Singapore's GIC alleging revenue inflation, with shares also falling 12% on the Hong Kong Stock Exchange.",
+      "keywords": [
+        "electric vehicles",
+        "lawsuit",
+        "revenue inflation",
+        "stock market",
+        "trading"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock price dropped significantly due to lawsuit alleging revenue inflation, potential credibility damage from accounting accusations"
+        }
+      ]
+    },
+    {
+      "id": "e4fa75798c0d286ef508939d0762f7dc73e79b971fe8b9eb1177fefb93754088",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Tesla Rival Nio's LiDAR Supplier Receives Hong Kong Stock Listing Approval Through SPAC",
+      "author": "Badar Shaikh",
+      "published_utc": "2025-10-15T10:25:12Z",
+      "article_url": "https://www.benzinga.com/markets/asia/25/10/48219509/tesla-rival-nios-lidar-supplier-receives-hong-kong-stock-listing-approval-through-spac",
+      "tickers": [
+        "NIO",
+        "TSLA",
+        "HSAI"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/10/15/NIO-Inc-.jpeg?width=1200&height=800&fit=crop",
+      "description": "Seyond Holdings Ltd., a LiDAR supplier for Nio, received approval for a Hong Kong stock listing through a SPAC merger, with authorization to list up to 190,240,000 shares on the Hong Kong Stock Exchange.",
+      "keywords": [
+        "LiDAR",
+        "SPAC",
+        "stock listing",
+        "electric vehicles",
+        "Hong Kong Stock Exchange"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Company's LiDAR supplier is advancing with stock listing, indicating potential growth and market expansion"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Recorded 126% sales jump in China and delivered 71,525 units in September"
+        },
+        {
+          "ticker": "HSAI",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Signed a $40 million deal with an unnamed U.S. Robotaxi company for LiDAR sensor supply"
+        }
+      ]
+    },
+    {
+      "id": "0c9538a73e9b953d705098d14ca1e84f229fb759ee5497857bb8bb0ba6d2d38b",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Nio Stock Is Sliding Tuesday: What's Going On?",
+      "author": "Dylan Berman",
+      "published_utc": "2025-10-14T14:48:52Z",
+      "article_url": "https://www.benzinga.com/trading-ideas/movers/25/10/48201245/nio-stock-is-sliding-tuesday-whats-going-on",
+      "tickers": [
+        "NIO"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/10/14/Nio-Inc-.jpeg?width=1200&height=800&fit=crop",
+      "description": "Chinese stocks, including Nio, are experiencing a decline due to escalating trade tensions between the US and China, with new port fees being imposed and potential retaliatory tariffs.",
+      "keywords": [
+        "trade tensions",
+        "port fees",
+        "tariffs",
+        "China",
+        "US"
+      ],
+      "insights": [
+        {
+          "ticker": "NIO",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock is trading 3.41% lower due to broader market concerns about US-China trade relations and potential economic impacts"
+        }
+      ]
+    }
+  ],
+  "massive_financials": [],
+  "alpaca_recent_bars": [
+    {
+      "ClosePrice": 4.965,
+      "HighPrice": 4.965,
+      "LowPrice": 4.965,
+      "TradeCount": 3,
+      "OpenPrice": 4.965,
+      "Timestamp": "2025-12-18T18:41:00Z",
+      "Volume": 132,
+      "VWAP": 4.965
+    },
+    {
+      "ClosePrice": 4.97,
+      "HighPrice": 4.97,
+      "LowPrice": 4.97,
+      "TradeCount": 5,
+      "OpenPrice": 4.97,
+      "Timestamp": "2025-12-18T18:42:00Z",
+      "Volume": 2894,
+      "VWAP": 4.97
+    },
+    {
+      "ClosePrice": 4.97,
+      "HighPrice": 4.97,
+      "LowPrice": 4.97,
+      "TradeCount": 5,
+      "OpenPrice": 4.97,
+      "Timestamp": "2025-12-18T18:43:00Z",
+      "Volume": 2200,
+      "VWAP": 4.97
+    },
+    {
+      "ClosePrice": 4.97,
+      "HighPrice": 4.97,
+      "LowPrice": 4.97,
+      "TradeCount": 2,
+      "OpenPrice": 4.97,
+      "Timestamp": "2025-12-18T18:44:00Z",
+      "Volume": 800,
+      "VWAP": 4.97
+    },
+    {
+      "ClosePrice": 4.965,
+      "HighPrice": 4.965,
+      "LowPrice": 4.965,
+      "TradeCount": 4,
+      "OpenPrice": 4.965,
+      "Timestamp": "2025-12-18T18:45:00Z",
+      "Volume": 446,
+      "VWAP": 4.965
+    },
+    {
+      "ClosePrice": 4.96,
+      "HighPrice": 4.96,
+      "LowPrice": 4.96,
+      "TradeCount": 26,
+      "OpenPrice": 4.96,
+      "Timestamp": "2025-12-18T18:47:00Z",
+      "Volume": 14207,
+      "VWAP": 4.96
+    },
+    {
+      "ClosePrice": 4.96,
+      "HighPrice": 4.965,
+      "LowPrice": 4.96,
+      "TradeCount": 15,
+      "OpenPrice": 4.965,
+      "Timestamp": "2025-12-18T18:49:00Z",
+      "Volume": 2281,
+      "VWAP": 4.962708
+    },
+    {
+      "ClosePrice": 4.955,
+      "HighPrice": 4.96,
+      "LowPrice": 4.955,
+      "TradeCount": 6,
+      "OpenPrice": 4.96,
+      "Timestamp": "2025-12-18T18:50:00Z",
+      "Volume": 4200,
+      "VWAP": 4.959762
+    }
+  ]
+}

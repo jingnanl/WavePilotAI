@@ -58,17 +58,20 @@
   - ✅ package.json, tsconfig.json, Dockerfile 配置
   - ✅ src/index.ts 入口
   - ✅ src/services/ 目录结构
-- ⬜ **[L]** 实现 Alpaca WebSocket 监听
+- 🟦 **[L]** 实现 Alpaca WebSocket 监听
+  - 🟦 alpaca-websocket.ts 已创建（空壳）
   - ⬜ 实时获取美股行情
   - ⬜ 写入 InfluxDB (1m bar)
-- ⬜ **[M]** 实现 Massive API 集成
+- 🟦 **[M]** 实现 Massive API 集成
+  - 🟦 massive-scheduler.ts 已创建（空壳）
   - ⬜ **[EOD]** 全市场日线回补 (`Grouped Daily` -> `stock_quotes_aggregated`)
   - ⬜ **[EOD]** 自选股分钟修正 (`Aggregates` -> `stock_quotes_raw`)
   - ⬜ **[EOD]** 非自选股分钟数据清理
   - ⬜ **[Event]** 自选股添加自动回补 (Massive SIP + Alpaca IEX)
   - ⬜ **[Intraday]** 全市场快照 (5m Polling, 15m Delayed)
-  - ⬜ **[Intraday]** 全市场快照 (5m Polling, 15m Delayed)
-  - 🟦 实时/历史新闻获取 (Service implemented, Integration pending)
+- ✅ **[M]** 实现新闻服务
+  - ✅ news-service.ts 已完整实现（S3 + InfluxDB 写入）
+  - ⬜ 集成到 MassiveScheduler 定时任务
 - ⬜ **[M]** 实现 Akshare 轮询（A 股实时行情）
 - ⬜ **[M]** 在 Amplify 中定义 Fargate 资源
 
@@ -132,13 +135,13 @@
 ### 4.1 Strands Agents TypeScript 基础 🔴
 - ✅ **[M]** 初始化 TypeScript 项目（package.json, tsconfig.json）
 - ✅ **[M]** 安装 Agent 相关依赖（@strands-agents/sdk, express, zod）
-- 🟦 **[L]** 实现 Graph Pattern 框架
+- ✅ **[L]** 实现 Graph Pattern 框架
   - ✅ 创建 orchestrator.ts（编排器入口）
-  - ✅ 实现并行分析阶段
-  - ✅ 实现辩论阶段
-  - ✅ 实现风险评估阶段
-  - ✅ 实现最终决策阶段
-- ⬜ **[M]** 配置 Bedrock 模型访问
+  - ✅ 实现并行分析阶段（runParallelAnalysis）
+  - ✅ 实现辩论阶段（runDebate）
+  - ✅ 实现风险评估阶段（runRiskAssessment）
+  - ✅ 实现最终决策阶段（runTradingDecision）
+- ⬜ **[M]** 配置 Bedrock 模型访问（IAM 权限）
 
 ### 4.2 分析师 Agents 🔴
 - 🟦 **[L]** 实现 FundamentalsAnalyst（✅ 结构已创建）
@@ -157,8 +160,8 @@
 
 ### 4.4 Agent 工具集成 🔴
 - 🟦 **[M]** 封装数据获取工具
-  - ✅ tools/timestream.ts（查询 InfluxDB）
-  - ✅ tools/indicators.ts（技术指标计算）
+  - 🟦 tools/timestream.ts（文件已创建，实现为 TODO）
+  - 🟦 tools/indicators.ts（文件已创建，实现为 TODO）
 - ⬜ **[S]** 配置工具权限（IAM）
 - ⬜ **[S]** 实现工具调用日志
 
@@ -245,7 +248,15 @@
 - ⬜ **[M]** 实现价格提醒功能
 - ⬜ **[M]** 添加导出功能
 
-### 8.3 多用户支持
+### 8.3 缠论特征分析 (Chanlun Features) 🟢
+- ⬜ **[L]** 实现 K 线包含关系处理 (Inclusion Handling)
+- ⬜ **[L]** 实现分型与笔识别 (Fractals & Strokes)
+- ⬜ **[L]** 实现中枢区间计算 (Center Range)
+- ⬜ **[M]** 实现 MACD 面积与背驰因子 (Divergence Factor)
+- ⬜ **[L]** 实现买卖点识别与趋势判断
+- ⬜ **[M]** 集成到 MarketAnalyst Agent
+
+### 8.4 多用户支持
 - ⬜ **[L]** 实现用户数据隔离
 - ⬜ **[M]** 实现权限管理
 
@@ -278,6 +289,8 @@ graph TD
 
 ---
 
-*本文档版本：1.1*
-*更新日期：2025-12-09*
+---
+
+*本文档版本：1.0*
+*更新日期：2025-12-19*
 *作者：JN.L*

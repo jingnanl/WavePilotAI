@@ -5,7 +5,7 @@
  * Writes incoming bars to InfluxDB.
  */
 
-import type { InfluxDBWriter } from './timestream-writer.js';
+import type { InfluxDBWriter } from './timestream-writer';
 
 export class AlpacaWebSocketService {
     private writer: InfluxDBWriter;

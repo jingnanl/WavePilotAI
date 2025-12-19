@@ -1,0 +1,18 @@
+{
+  "name": "wavepilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WavePilotAI - Intelligent Stock Analysis & Trading System",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @wavepilot/shared",
+    "build": "npm run build:shared && npm run build -w apps/worker && npm run build -w apps/agents",
+    "clean": "npm run clean -ws --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

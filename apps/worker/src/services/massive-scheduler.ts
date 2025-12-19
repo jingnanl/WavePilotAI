@@ -7,7 +7,7 @@
  * - News fetching
  */
 
-import type { InfluxDBWriter } from './timestream-writer.js';
+import type { InfluxDBWriter } from './timestream-writer';
 
 export class MassiveScheduler {
     private writer: InfluxDBWriter;

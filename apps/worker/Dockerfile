@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM --platform=linux/amd64 public.ecr.aws/docker/library/node:20-alpine
 
 WORKDIR /app
 

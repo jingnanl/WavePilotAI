@@ -1,24 +1,29 @@
 {
     "name": "wavepilot-worker",
     "version": "0.1.0",
+    "type": "module",
     "description": "WavePilotAI Data Ingestion Worker (Fargate)",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
         "start": "node dist/index.js",
-        "dev": "tsx watch src/index.ts"
+        "dev": "tsx watch src/index.ts",
+        "test:integration": "tsx tests/integration.test.ts"
     },
     "dependencies": {
-        "@aws-sdk/client-dynamodb": "^3.600.0",
+        "@wavepilot/shared": "*",
+        "@alpacahq/alpaca-trade-api": "^3.1.3",
         "@aws-sdk/client-s3": "^3.948.0",
         "@aws-sdk/client-secrets-manager": "^3.600.0",
         "@influxdata/influxdb3-client": "^1.0.0",
+        "@massive.com/client-js": "^10.1.0",
         "dotenv": "^16.3.0",
         "node-cron": "^3.0.3",
         "ws": "^8.18.0"
     },
     "devDependencies": {
         "@types/node": "^20.0.0",
+        "@types/node-cron": "^3.0.11",
         "@types/ws": "^8.5.0",
         "tsx": "^4.0.0",
         "typescript": "^5.0.0"

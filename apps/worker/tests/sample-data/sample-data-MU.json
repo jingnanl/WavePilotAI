@@ -1,0 +1,2382 @@
+{
+  "massive_daily_history": [
+    {
+      "v": 33843910,
+      "vw": 231.0656,
+      "o": 235.48,
+      "c": 228.5,
+      "h": 238.93,
+      "l": 225.52,
+      "t": 1763442000000,
+      "n": 505523
+    },
+    {
+      "v": 35256563,
+      "vw": 226.4259,
+      "o": 226.91,
+      "c": 225.92,
+      "h": 234.35,
+      "l": 216.36,
+      "t": 1763528400000,
+      "n": 471149
+    },
+    {
+      "v": 47420628,
+      "vw": 211.7855,
+      "o": 230.235,
+      "c": 201.37,
+      "h": 230.598,
+      "l": 199.6,
+      "t": 1763614800000,
+      "n": 668498
+    },
+    {
+      "v": 36679299,
+      "vw": 203.723,
+      "o": 204.53,
+      "c": 207.37,
+      "h": 212,
+      "l": 192.59,
+      "t": 1763701200000,
+      "n": 501061
+    },
+    {
+      "v": 33052739,
+      "vw": 222.5368,
+      "o": 213.41,
+      "c": 223.93,
+      "h": 226.11,
+      "l": 212.36,
+      "t": 1763960400000,
+      "n": 358159
+    },
+    {
+      "v": 17441636,
+      "vw": 221.875,
+      "o": 219.22,
+      "c": 224.53,
+      "h": 226.19,
+      "l": 216,
+      "t": 1764046800000,
+      "n": 269984
+    },
+    {
+      "v": 17817622,
+      "vw": 230.4371,
+      "o": 229.616,
+      "c": 230.26,
+      "h": 233.8299,
+      "l": 226,
+      "t": 1764133200000,
+      "n": 257113
+    },
+    {
+      "v": 12914741,
+      "vw": 236.0529,
+      "o": 235.615,
+      "c": 236.48,
+      "h": 238.1,
+      "l": 233.47,
+      "t": 1764306000000,
+      "n": 189959
+    },
+    {
+      "v": 18238109,
+      "vw": 238.0974,
+      "o": 232.285,
+      "c": 240.46,
+      "h": 242.36,
+      "l": 231.5,
+      "t": 1764565200000,
+      "n": 253856
+    },
+    {
+      "v": 18166225,
+      "vw": 239.2323,
+      "o": 238.745,
+      "c": 239.49,
+      "h": 244.3699,
+      "l": 234.33,
+      "t": 1764651600000,
+      "n": 267680
+    }
+  ],
+  "massive_minute_bars": [
+    {
+      "v": 13441,
+      "vw": 247.6774,
+      "o": 247.8,
+      "c": 247.73,
+      "h": 248.09,
+      "l": 246.28,
+      "t": 1766048400000,
+      "n": 454
+    },
+    {
+      "v": 6861,
+      "vw": 248.0076,
+      "o": 247.92,
+      "c": 248.04,
+      "h": 248.04,
+      "l": 247.92,
+      "t": 1766048460000,
+      "n": 238
+    },
+    {
+      "v": 5261,
+      "vw": 247.6824,
+      "o": 248.1,
+      "c": 247.27,
+      "h": 248.1,
+      "l": 247.21,
+      "t": 1766048520000,
+      "n": 132
+    },
+    {
+      "v": 2921,
+      "vw": 247.0598,
+      "o": 247.15,
+      "c": 247,
+      "h": 247.16,
+      "l": 247,
+      "t": 1766048580000,
+      "n": 218
+    },
+    {
+      "v": 3081,
+      "vw": 246.9442,
+      "o": 246.82,
+      "c": 246.96,
+      "h": 247,
+      "l": 246.82,
+      "t": 1766048640000,
+      "n": 89
+    },
+    {
+      "v": 2951,
+      "vw": 247.2721,
+      "o": 247.15,
+      "c": 247.4,
+      "h": 247.44,
+      "l": 247.15,
+      "t": 1766048700000,
+      "n": 86
+    },
+    {
+      "v": 4435,
+      "vw": 247.3755,
+      "o": 247.41,
+      "c": 247.43,
+      "h": 247.44,
+      "l": 247.3,
+      "t": 1766048760000,
+      "n": 121
+    },
+    {
+      "v": 7857,
+      "vw": 247.0229,
+      "o": 247.12,
+      "c": 246.75,
+      "h": 247.33,
+      "l": 246.75,
+      "t": 1766048820000,
+      "n": 213
+    },
+    {
+      "v": 4267,
+      "vw": 246.7211,
+      "o": 247,
+      "c": 246.5,
+      "h": 247,
+      "l": 246.5,
+      "t": 1766048880000,
+      "n": 113
+    },
+    {
+      "v": 1790,
+      "vw": 246.9869,
+      "o": 247,
+      "c": 247,
+      "h": 247,
+      "l": 247,
+      "t": 1766049000000,
+      "n": 51
+    }
+  ],
+  "massive_grouped_daily": [
+    {
+      "T": "OILK",
+      "v": 58118,
+      "vw": 36.8005,
+      "o": 36.68,
+      "c": 36.95,
+      "h": 37.019,
+      "l": 36.571,
+      "t": 1766005200000,
+      "n": 438
+    },
+    {
+      "T": "PROP",
+      "v": 1453578,
+      "vw": 1.7022,
+      "o": 1.71,
+      "c": 1.69,
+      "h": 1.7565,
+      "l": 1.67,
+      "t": 1766005200000,
+      "n": 4678
+    },
+    {
+      "T": "GPUS",
+      "v": 18631435,
+      "vw": 0.2541,
+      "o": 0.2534,
+      "c": 0.2522,
+      "h": 0.27,
+      "l": 0.2402,
+      "t": 1766005200000,
+      "n": 25242
+    },
+    {
+      "T": "U",
+      "v": 6359630,
+      "vw": 44.279,
+      "o": 45.065,
+      "c": 43.78,
+      "h": 45.3,
+      "l": 43.63,
+      "t": 1766005200000,
+      "n": 71607
+    },
+    {
+      "T": "XOMAO",
+      "v": 1613,
+      "vw": 25.4847,
+      "o": 25.36,
+      "c": 25.56,
+      "h": 25.56,
+      "l": 25.36,
+      "t": 1766005200000,
+      "n": 46
+    },
+    {
+      "T": "VPLS",
+      "v": 98305,
+      "vw": 78.4865,
+      "o": 78.5,
+      "c": 78.475,
+      "h": 78.54,
+      "l": 78.4419,
+      "t": 1766005200000,
+      "n": 657
+    },
+    {
+      "T": "TPET",
+      "v": 1470042,
+      "vw": 0.9361,
+      "o": 0.7826,
+      "c": 0.91,
+      "h": 0.94,
+      "l": 0.7751,
+      "t": 1766005200000,
+      "n": 4078
+    },
+    {
+      "T": "ETHE",
+      "v": 11919333,
+      "vw": 23.7596,
+      "o": 24.12,
+      "c": 23.13,
+      "h": 24.85,
+      "l": 22.885,
+      "t": 1766005200000,
+      "n": 82705
+    },
+    {
+      "T": "CHRD",
+      "v": 606923,
+      "vw": 92.9227,
+      "o": 92.69,
+      "c": 93.75,
+      "h": 94.09,
+      "l": 91.6,
+      "t": 1766005200000,
+      "n": 15426
+    },
+    {
+      "T": "WYNN",
+      "v": 978057,
+      "vw": 125.5816,
+      "o": 126.78,
+      "c": 125.44,
+      "h": 127.01,
+      "l": 125.05,
+      "t": 1766005200000,
+      "n": 22673
+    }
+  ],
+  "massive_news": [
+    {
+      "id": "122b782fb68fcdb65df7c1d1811fd4c23df1a2a1f6699ca647626df42363b023",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Inflation Eases To 2.7% And Wall Street Finds Some Breathing Room",
+      "author": "Piero Cingari",
+      "published_utc": "2025-12-18T14:02:41Z",
+      "article_url": "https://www.benzinga.com/markets/economic-data/25/12/49478334/inflation-eases-to-2-7-and-wall-street-finds-some-breathing-room?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "MU",
+        "SOXX"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/18/inflation-shutter3_0.jpeg?width=1200&height=800&fit=crop",
+      "description": "U.S. inflation cooled to 2.7% in November 2025, below economists' expectations, signaling potential Federal Reserve rate cuts and boosting market confidence. Core inflation also declined, with positive market reactions including stock rallies and falling Treasury yields.",
+      "keywords": [
+        "inflation",
+        "Federal Reserve",
+        "CPI",
+        "rate cuts",
+        "market sentiment"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Reported blowout earnings and contributed to market's risk-on sentiment"
+        },
+        {
+          "ticker": "SOXX",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Jumped 3.7% in premarket trading, on track to erase previous losses"
+        }
+      ]
+    },
+    {
+      "id": "410407e0ef14e00646237dd934b73a46cdad2fb8ef2d6f205b43d462b6febc8a",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Micron Sparks a Repricing as Q2 Guidance Signals a New Phase of Margin Expansion",
+      "author": "Timothy Fries",
+      "published_utc": "2025-12-18T13:49:00Z",
+      "article_url": "https://www.investing.com/analysis/micron-sparks-a-repricing-as-q2-guidance-signals-a-new-phase-of-margin-expansion-200672049",
+      "tickers": [
+        "MU",
+        "AMD"
+      ],
+      "amp_url": "https://m.investing.com/analysis/micron-sparks-a-repricing-as-q2-guidance-signals-a-new-phase-of-margin-expansion-200672049?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Micron Technology reported strong Q1 2026 earnings, with revenue of $13.64 billion and adjusted EPS of $4.78, significantly exceeding Wall Street expectations. The company's performance is driven by surging AI-related memory chip demand, with exceptional Q2 guidance projecting revenue of $18.70 billion.",
+      "keywords": [
+        "AI",
+        "semiconductor",
+        "memory chips",
+        "earnings",
+        "guidance"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Exceeded earnings expectations, strong Q2 guidance, 168% year-to-date stock performance, significant revenue growth in AI-driven memory chip market"
+        },
+        {
+          "ticker": "AMD",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as using Micron's memory in latest AI chips, no direct performance details provided"
+        }
+      ]
+    },
+    {
+      "id": "e619997846a3e500db45c7a8df69ae18cfc3b4c3c8b961aef3a4ceca883b4efb",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Stock Market Today: S&P 500, Nasdaq Futures Gain, Dow Gain— Accenture, Micron Technologies, Nike And FedEx In Focus (UPDATED)",
+      "author": "Vishaal Sanjay",
+      "published_utc": "2025-12-18T13:45:53Z",
+      "article_url": "https://www.benzinga.com/markets/market-summary/25/12/49471274/stock-market-today-sp-500-nasdaq-futures-gain-dow-flat-accenture-micron-technologies-and-f?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "MU",
+        "ACN",
+        "FDX",
+        "NKE"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/18/Wall-Street.jpeg?width=1200&height=800&fit=crop",
+      "description": "U.S. stock futures rose on Thursday ahead of the November Consumer Price Index report, with markets anticipating potential signals about inflation and interest rates. Key companies like Micron, Accenture, Nike, and FedEx were in focus with upcoming earnings reports.",
+      "keywords": [
+        "stock futures",
+        "inflation",
+        "CPI",
+        "earnings",
+        "interest rates"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock up 13.3% pre-market after better-than-expected Q1 performance and strong Q2 outlook"
+        },
+        {
+          "ticker": "ACN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Beat analyst estimates but provided tepid forecast, stock down 3.11% pre-market"
+        },
+        {
+          "ticker": "FDX",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Slight pre-market decline of 0.46%, awaiting Q2 earnings report"
+        },
+        {
+          "ticker": "NKE",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Slight pre-market gain of 0.94%, awaiting Q2 earnings report"
+        }
+      ]
+    },
+    {
+      "id": "84c69d561e8df3b35cd259144a9c68bc83f1d21ea204c50a6b709eded1baa7d9",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Micron Just Gave Amazing News to AI Stock Investors",
+      "author": "Jose Najarro",
+      "published_utc": "2025-12-18T13:31:48Z",
+      "article_url": "https://www.fool.com/investing/2025/12/18/micron-just-gave-amazing-news-to-ai-stock-investor/?source=iedfolrf0000001",
+      "tickers": [
+        "MU",
+        "AMZN",
+        "ORCL"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847822%2Fnew-cc-8.png&w=1200&op=resize",
+      "description": "Micron Technology provided revenue guidance that exceeded analysts' projections, signaling potential strength in the AI semiconductor market.",
+      "keywords": [
+        "AI",
+        "semiconductor",
+        "technology",
+        "stock market",
+        "revenue guidance"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Company guided for revenue exceeding analysts' projections, indicating strong performance and potential growth in the AI semiconductor sector"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in author's disclosure but not substantively discussed in the article"
+        },
+        {
+          "ticker": "ORCL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in author's disclosure but not substantively discussed in the article"
+        }
+      ]
+    },
+    {
+      "id": "2ccf3e68605572a61a0a4749ba9afced7ef1dc592338ce7b149c93429b06f828",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "2 AI Announcements That Nvidia Investors Can't Miss",
+      "author": "Jose Najarro",
+      "published_utc": "2025-12-18T10:15:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/18/2-ai-announcements-that-nvidia-investors-cant-miss/?source=iedfolrf0000001",
+      "tickers": [
+        "NVDA",
+        "CRWV",
+        "MU"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847789%2Fnew-cc-2.png&w=1200&op=resize",
+      "description": "Nvidia made two significant AI-related announcements: releasing new open-source AI models and acquiring a software company, potentially impacting the AI technology landscape.",
+      "keywords": [
+        "AI",
+        "Nvidia",
+        "open-source models",
+        "software acquisition",
+        "semiconductor"
+      ],
+      "insights": [
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Company is actively expanding its AI capabilities through model releases and strategic acquisitions, demonstrating continued innovation and market leadership in AI technology"
+        },
+        {
+          "ticker": "CRWV",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a company the author has a position in, but no specific details about its performance were provided"
+        },
+        {
+          "ticker": "MU",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Briefly mentioned with no specific context or performance details"
+        }
+      ]
+    },
+    {
+      "id": "5ad314441ef74ad57d1033c9b37fdd74df9f65eb8a1439669bac8fddcfff0451",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Micron Steps Into the Spotlight as the AI Memory Cycle Accelerates",
+      "author": "Andreas Thalassinos",
+      "published_utc": "2025-12-18T07:05:00Z",
+      "article_url": "https://www.investing.com/analysis/micron-steps-into-the-spotlight-as-the-ai-memory-cycle-accelerates-200672022",
+      "tickers": [
+        "MU"
+      ],
+      "amp_url": "https://m.investing.com/analysis/micron-steps-into-the-spotlight-as-the-ai-memory-cycle-accelerates-200672022?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Micron Technology reported strong Q1 2026 earnings, beating Wall Street forecasts, driven by high demand for AI and data center memory chips. The company is shifting focus from consumer to enterprise markets and benefiting from tight memory chip supply.",
+      "keywords": [
+        "AI",
+        "memory chips",
+        "data centers",
+        "semiconductor",
+        "technology"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong Q1 earnings, revenue of $13.64 billion exceeding expectations, optimistic Q2 guidance of $18.7 billion, growing AI and data center market focus, and improving pricing power"
+        }
+      ]
+    },
+    {
+      "id": "fc79f2d774a368b21506f934e365710ccfd4c6bc0be44fd62e9355bf946e1a04",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Why Micron Stock Is Soaring in After-Hours Trading",
+      "author": "Scott Levine",
+      "published_utc": "2025-12-17T22:23:38Z",
+      "article_url": "https://www.fool.com/investing/2025/12/17/why-micron-stock-is-soaring-in-after-hours-trading/?source=iedfolrf0000001",
+      "tickers": [
+        "MU"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847800%2Finvestor-looking-at-laptop-celebrates.jpg&w=1200&op=resize",
+      "description": "Micron Technology reported strong Q1 fiscal 2026 financial results, exceeding analysts' expectations with a 56.7% year-over-year revenue increase and record free cash flow of $3.9 billion, leading to an 8.1% stock price surge in after-hours trading.",
+      "keywords": [
+        "Micron",
+        "technology",
+        "earnings",
+        "semiconductor",
+        "cloud memory"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Reported record quarterly revenue of $13.64 billion, 56.7% year-over-year growth, exceeded analyst expectations, strong performance in cloud memory business unit with 99.5% increase, and projected strong Q2 2026 revenue"
+        }
+      ]
+    },
+    {
+      "id": "3592f724ec52f15643709e2c2a65e59d0fef9b909666855fb208f924548c15bb",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Stock Market Today, Dec. 17: AI Concentration Fears Weigh on Markets",
+      "author": "Emma Newbery",
+      "published_utc": "2025-12-17T22:13:24Z",
+      "article_url": "https://www.fool.com/coverage/stock-market-today/2025/12/17/stock-market-today-dec-17-broadcom-drops-as-ai-chip-valuations-weigh-on-tech/?source=iedfolrf0000001",
+      "tickers": [
+        "AVGO",
+        "MU",
+        "BCS"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fcdn.content.foolcdn.com%2Fimages%2F1umn9qeh%2Fproduction%2Fe3bcbb36c955ac33b4d67641805fcca8e9fca941-1401x1251.png%3Fw%3D1401%26h%3D1251&w=1200&op=resize",
+      "description": "Markets experienced a downturn on December 17, 2025, with the S&P 500 and Nasdaq falling due to concerns about AI stock valuations and market concentration. Investors are worried about the high market cap and earnings dominated by just 10 companies.",
+      "keywords": [
+        "AI",
+        "market concentration",
+        "stock market",
+        "tech stocks",
+        "Federal Reserve"
+      ],
+      "insights": [
+        {
+          "ticker": "AVGO",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock dropped nearly 5% as investors reassessed AI-chip valuations"
+        },
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Advanced after reporting upbeat earnings"
+        },
+        {
+          "ticker": "BCS",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Slight positive movement, provided market concentration data"
+        }
+      ]
+    },
+    {
+      "id": "1ca6797681ab37759f8f63e507aef6663a3b1eb8d8b8a1be48391c3ec82ba36d",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Micron Earnings Preview: Rising Memory-Chip Prices Fuel Margin Expansion",
+      "author": "Ali Merchant",
+      "published_utc": "2025-12-17T16:31:00Z",
+      "article_url": "https://www.investing.com/analysis/micron-earnings-preview-rising-memorychip-prices-fuel-margin-expansion-200671980",
+      "tickers": [
+        "MU",
+        "NVDA",
+        "AMD"
+      ],
+      "amp_url": "https://m.investing.com/analysis/micron-earnings-preview-rising-memorychip-prices-fuel-margin-expansion-200671980?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Micron is expected to report strong Q1 earnings driven by rising memory-chip prices and robust AI-related demand, with analysts bullish on the company's potential margin expansion and strategic shift towards enterprise memory.",
+      "keywords": [
+        "memory chips",
+        "AI",
+        "data centers",
+        "earnings",
+        "DRAM",
+        "NAND"
+      ],
+      "insights": [
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong AI-driven demand, rising memory prices, potential margin expansion, increased focus on high-margin enterprise memory, and multiple analyst price target upgrades"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned as a key player ramping up investment in AI systems, which drives memory demand"
+        },
+        {
+          "ticker": "AMD",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Also highlighted as contributing to AI system investments and memory demand"
+        }
+      ]
+    },
+    {
+      "id": "fbf1b443fbbb7ad4742c1d6fd02d1bbf0cc3c1b2383a59b691a5c23774c3f0c4",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Stock Market Today: S&P 500, Dow Futures Gain As Jobs Data Weighs On Outlook—Lennar, Micron Technology, Children's Place In Focus (UPDATED)",
+      "author": "Rishabh Mishra",
+      "published_utc": "2025-12-17T13:26:46Z",
+      "article_url": "https://www.benzinga.com/markets/equities/25/12/49442169/stock-market-today-sp-500-dow-futures-gain-as-jobs-data-weighs-on-outlook-lennar-micron-technolo?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "LEN",
+        "LEN.B",
+        "MU",
+        "PLCE",
+        "ADTX"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/17/Wall-Street.jpeg?width=1200&height=800&fit=crop",
+      "description": "U.S. stock futures rose on Wednesday after a mixed market close, with uncertainty surrounding November's jobs report and potential Federal Reserve interest rate decisions. Key companies reported earnings with varied results.",
+      "keywords": [
+        "stock market",
+        "futures",
+        "jobs report",
+        "Federal Reserve",
+        "earnings"
+      ],
+      "insights": [
+        {
+          "ticker": "LEN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mixed financial results with revenue beating estimates but stock price declining 3.78%"
+        },
+        {
+          "ticker": "LEN.B",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mixed financial results with revenue beating estimates but stock price declining 3.78%"
+        },
+        {
+          "ticker": "MU",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock jumped 3.36% in premarket ahead of earnings, with strong analyst expectations"
+        },
+        {
+          "ticker": "PLCE",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Posted worse-than-expected third-quarter results with significant stock price drop of 32.11%"
+        },
+        {
+          "ticker": "ADTX",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock surged 38.03% following announcement of a special stockholder meeting"
+        }
+      ]
+    }
+  ],
+  "massive_financials": [
+    {
+      "start_date": "2024-08-30",
+      "end_date": "2025-08-28",
+      "filing_date": "2025-10-03",
+      "acceptance_datetime": "2025-10-03T18:42:25Z",
+      "timeframe": "ttm",
+      "fiscal_period": "TTM",
+      "fiscal_year": "2025",
+      "cik": "0000723125",
+      "sic": "3674",
+      "tickers": [
+        "MU"
+      ],
+      "company_name": "MICRON TECHNOLOGY INC",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0000723125-25-000028",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0000723125-25-000028/files/mu-20250828_htm.xml",
+      "financials": {
+        "comprehensive_income": {
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "other_comprehensive_income_loss": {
+            "value": 102000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss": {
+            "value": 8641000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 8641000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          }
+        },
+        "balance_sheet": {
+          "wages": {
+            "value": 1116000000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "long_term_debt": {
+            "value": 11533000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "accounts_receivable": {
+            "value": 9265000000,
+            "unit": "USD",
+            "label": "Accounts Receivable",
+            "order": 220
+          },
+          "assets": {
+            "value": 82798000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "other_noncurrent_assets": {
+            "value": 53504000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "intangible_assets": {
+            "value": 453000000,
+            "unit": "USD",
+            "label": "Intangible Assets",
+            "order": 330
+          },
+          "current_liabilities": {
+            "value": 11454000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "liabilities_and_equity": {
+            "value": 82798000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "other_current_liabilities": {
+            "value": 10338000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "liabilities": {
+            "value": 28633000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "inventory": {
+            "value": 8355000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "noncurrent_liabilities": {
+            "value": 17179000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "current_assets": {
+            "value": 28841000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "other_current_assets": {
+            "value": 11221000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "equity": {
+            "value": 54165000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "equity_attributable_to_parent": {
+            "value": 54165000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "other_noncurrent_liabilities": {
+            "value": 5646000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "noncurrent_assets": {
+            "value": 53957000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_from_operating_activities": {
+            "value": 17525000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -850000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -14087000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 17525000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "exchange_gains_losses": {
+            "value": 6000000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -14087000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow": {
+            "value": 2594000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -850000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_continuing": {
+            "value": 2588000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          }
+        },
+        "income_statement": {
+          "income_tax_expense_benefit_deferred": {
+            "value": 164000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit, Deferred",
+            "order": 2400
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "cost_of_revenue": {
+            "value": 22505000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "income_loss_before_equity_method_investments": {
+            "value": 9654000000,
+            "unit": "USD",
+            "label": "Income/Loss Before Equity Method Investments",
+            "order": 1300
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 1205000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "net_income_loss": {
+            "value": 8539000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 8530000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "revenues": {
+            "value": 37378000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "income_tax_expense_benefit": {
+            "value": 1124000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "operating_income_loss": {
+            "value": 9770000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "diluted_average_shares": {
+            "value": 1125000000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "diluted_earnings_per_share": {
+            "value": 7.59,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "basic_average_shares": {
+            "value": 1116000000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 9654000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "common_stock_dividends": {
+            "value": 0.46,
+            "unit": "USD / shares",
+            "label": "Common Stock Dividends",
+            "order": 4600
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 8539000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "basic_earnings_per_share": {
+            "value": 7.65,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "benefits_costs_expenses": {
+            "value": 27724000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "gross_profit": {
+            "value": 14873000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 8539000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "income_loss_from_equity_method_investments": {
+            "value": 9000000,
+            "unit": "USD",
+            "label": "Income/Loss From Equity Method Investments",
+            "order": 2100
+          },
+          "operating_expenses": {
+            "value": 5103000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "income_tax_expense_benefit_current": {
+            "value": 960000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit, Current",
+            "order": 2300
+          },
+          "other_operating_expenses": {
+            "value": 100000000,
+            "unit": "USD",
+            "label": "Other Operating Expenses",
+            "order": 1040
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "costs_and_expenses": {
+            "value": 27724000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "research_and_development": {
+            "value": 3798000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-05-30",
+      "end_date": "2025-08-28",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q4",
+      "fiscal_year": "2025",
+      "cik": "0000723125",
+      "sic": "3674",
+      "tickers": [
+        "MU"
+      ],
+      "company_name": "MICRON TECHNOLOGY INC",
+      "financials": {
+        "income_statement": {
+          "research_and_development": {
+            "value": 1047000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "common_stock_dividends": {
+            "value": 0.115,
+            "unit": "USD / shares",
+            "label": "Common Stock Dividends",
+            "order": 4600
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "diluted_earnings_per_share": {
+            "value": 2.84,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "cost_of_revenue": {
+            "value": 6261000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 3631000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "diluted_average_shares": {
+            "value": 2000000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "costs_and_expenses": {
+            "value": 7684000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "income_tax_expense_benefit": {
+            "value": 429000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 3201000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "income_loss_from_equity_method_investments": {
+            "value": -1000000,
+            "unit": "USD",
+            "label": "Income/Loss From Equity Method Investments",
+            "order": 2100
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 3201000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "revenues": {
+            "value": 11315000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "income_loss_before_equity_method_investments": {
+            "value": 3631000000,
+            "unit": "USD",
+            "label": "Income/Loss Before Equity Method Investments",
+            "order": 1300
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 314000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "gross_profit": {
+            "value": 5054000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "benefits_costs_expenses": {
+            "value": 7684000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "other_operating_expenses": {
+            "value": 39000000,
+            "unit": "USD",
+            "label": "Other Operating Expenses",
+            "order": 1040
+          },
+          "net_income_loss": {
+            "value": 3201000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "operating_expenses": {
+            "value": 1400000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "basic_earnings_per_share": {
+            "value": 2.8600000000000003,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "operating_income_loss": {
+            "value": 3654000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "basic_average_shares": {
+            "value": 2000000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 3202000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          }
+        },
+        "comprehensive_income": {
+          "other_comprehensive_income_loss": {
+            "value": 13000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "comprehensive_income_loss": {
+            "value": 3214000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 3214000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          }
+        },
+        "balance_sheet": {
+          "other_noncurrent_assets": {
+            "value": 53504000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "equity_attributable_to_parent": {
+            "value": 54165000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "current_liabilities": {
+            "value": 11454000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "noncurrent_assets": {
+            "value": 53957000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "long_term_debt": {
+            "value": 11533000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "current_assets": {
+            "value": 28841000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "other_noncurrent_liabilities": {
+            "value": 5646000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "intangible_assets": {
+            "value": 453000000,
+            "unit": "USD",
+            "label": "Intangible Assets",
+            "order": 330
+          },
+          "equity": {
+            "value": 54165000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "other_current_assets": {
+            "value": 11221000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "other_current_liabilities": {
+            "value": 10338000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "accounts_receivable": {
+            "value": 9265000000,
+            "unit": "USD",
+            "label": "Accounts Receivable",
+            "order": 220
+          },
+          "assets": {
+            "value": 82798000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "inventory": {
+            "value": 8355000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "wages": {
+            "value": 1116000000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "noncurrent_liabilities": {
+            "value": 17179000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "liabilities": {
+            "value": 28633000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "liabilities_and_equity": {
+            "value": 82798000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -5198000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 5730000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -1064000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 5730000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow_continuing": {
+            "value": -532000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow": {
+            "value": -523000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -1064000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "exchange_gains_losses": {
+            "value": 9000000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -5198000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2024-08-30",
+      "end_date": "2025-08-28",
+      "filing_date": "2025-10-03",
+      "acceptance_datetime": "2025-10-03T18:42:25Z",
+      "timeframe": "annual",
+      "fiscal_period": "FY",
+      "fiscal_year": "2025",
+      "cik": "0000723125",
+      "sic": "3674",
+      "tickers": [
+        "MU"
+      ],
+      "company_name": "MICRON TECHNOLOGY INC",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0000723125-25-000028",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0000723125-25-000028/files/mu-20250828_htm.xml",
+      "financials": {
+        "cash_flow_statement": {
+          "net_cash_flow_from_financing_activities": {
+            "value": -850000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow": {
+            "value": 2594000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 17525000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -14087000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "exchange_gains_losses": {
+            "value": 6000000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          },
+          "net_cash_flow_continuing": {
+            "value": 2588000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -14087000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -850000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 17525000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          }
+        },
+        "income_statement": {
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 8539000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "cost_of_revenue": {
+            "value": 22505000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "operating_expenses": {
+            "value": 5103000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "basic_average_shares": {
+            "value": 1116000000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 1205000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "common_stock_dividends": {
+            "value": 0.46,
+            "unit": "USD / shares",
+            "label": "Common Stock Dividends",
+            "order": 4600
+          },
+          "diluted_earnings_per_share": {
+            "value": 7.59,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "costs_and_expenses": {
+            "value": 27724000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 8530000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "research_and_development": {
+            "value": 3798000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "income_tax_expense_benefit": {
+            "value": 1124000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "other_operating_expenses": {
+            "value": 100000000,
+            "unit": "USD",
+            "label": "Other Operating Expenses",
+            "order": 1040
+          },
+          "revenues": {
+            "value": 37378000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "income_tax_expense_benefit_current": {
+            "value": 960000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit, Current",
+            "order": 2300
+          },
+          "diluted_average_shares": {
+            "value": 1125000000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "operating_income_loss": {
+            "value": 9770000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "income_tax_expense_benefit_deferred": {
+            "value": 164000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit, Deferred",
+            "order": 2400
+          },
+          "net_income_loss": {
+            "value": 8539000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "income_loss_before_equity_method_investments": {
+            "value": 9654000000,
+            "unit": "USD",
+            "label": "Income/Loss Before Equity Method Investments",
+            "order": 1300
+          },
+          "basic_earnings_per_share": {
+            "value": 7.65,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "gross_profit": {
+            "value": 14873000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 9654000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "benefits_costs_expenses": {
+            "value": 27724000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 8539000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "income_loss_from_equity_method_investments": {
+            "value": 9000000,
+            "unit": "USD",
+            "label": "Income/Loss From Equity Method Investments",
+            "order": 2100
+          }
+        },
+        "balance_sheet": {
+          "current_assets": {
+            "value": 28841000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "intangible_assets": {
+            "value": 453000000,
+            "unit": "USD",
+            "label": "Intangible Assets",
+            "order": 330
+          },
+          "other_noncurrent_assets": {
+            "value": 53504000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "accounts_receivable": {
+            "value": 9265000000,
+            "unit": "USD",
+            "label": "Accounts Receivable",
+            "order": 220
+          },
+          "liabilities_and_equity": {
+            "value": 82798000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "equity_attributable_to_parent": {
+            "value": 54165000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "noncurrent_liabilities": {
+            "value": 17179000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "long_term_debt": {
+            "value": 11533000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "wages": {
+            "value": 1116000000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "inventory": {
+            "value": 8355000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "current_liabilities": {
+            "value": 11454000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "other_current_assets": {
+            "value": 11221000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "noncurrent_assets": {
+            "value": 53957000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "other_noncurrent_liabilities": {
+            "value": 5646000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "liabilities": {
+            "value": 28633000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "equity": {
+            "value": 54165000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "assets": {
+            "value": 82798000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "other_current_liabilities": {
+            "value": 10338000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "other_comprehensive_income_loss": {
+            "value": 102000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 8641000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "comprehensive_income_loss": {
+            "value": 8641000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-02-28",
+      "end_date": "2025-05-29",
+      "filing_date": "2025-06-26",
+      "acceptance_datetime": "2025-06-25T22:50:42Z",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q3",
+      "fiscal_year": "2025",
+      "cik": "0000723125",
+      "sic": "3674",
+      "tickers": [
+        "MU"
+      ],
+      "company_name": "MICRON TECHNOLOGY INC",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0000723125-25-000021",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0000723125-25-000021/files/mu-20250529_htm.xml",
+      "financials": {
+        "balance_sheet": {
+          "liabilities_and_equity": {
+            "value": 78397000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "assets": {
+            "value": 78397000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "other_noncurrent_assets": {
+            "value": 50052000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "noncurrent_liabilities": {
+            "value": 17514000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "noncurrent_assets": {
+            "value": 50478000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "other_current_assets": {
+            "value": 11756000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "intangible_assets": {
+            "value": 426000000,
+            "unit": "USD",
+            "label": "Intangible Assets",
+            "order": 330
+          },
+          "inventory": {
+            "value": 8727000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "wages": {
+            "value": 950000000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "other_current_liabilities": {
+            "value": 9185000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "long_term_debt": {
+            "value": 12434000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "accounts_receivable": {
+            "value": 7436000000,
+            "unit": "USD",
+            "label": "Accounts Receivable",
+            "order": 220
+          },
+          "current_liabilities": {
+            "value": 10135000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "liabilities": {
+            "value": 27649000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "equity": {
+            "value": 50748000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "other_noncurrent_liabilities": {
+            "value": 5080000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "current_assets": {
+            "value": 27919000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "equity_attributable_to_parent": {
+            "value": 50748000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -2589000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -2589000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": 540000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 4609000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow": {
+            "value": 2606000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 4609000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": 540000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_continuing": {
+            "value": 2560000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "exchange_gains_losses": {
+            "value": 46000000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "comprehensive_income_loss": {
+            "value": 2031000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 2031000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "other_comprehensive_income_loss": {
+            "value": 146000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          }
+        },
+        "income_statement": {
+          "operating_income_loss": {
+            "value": 2169000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "benefits_costs_expenses": {
+            "value": 7188000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 2113000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "research_and_development": {
+            "value": 965000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "income_tax_expense_benefit": {
+            "value": 235000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 1885000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "diluted_average_shares": {
+            "value": 1125000000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "revenues": {
+            "value": 9301000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "net_income_loss": {
+            "value": 1885000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "basic_average_shares": {
+            "value": 1118000000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 1885000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "gross_profit": {
+            "value": 3508000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "income_loss_before_equity_method_investments": {
+            "value": 2113000000,
+            "unit": "USD",
+            "label": "Income/Loss Before Equity Method Investments",
+            "order": 1300
+          },
+          "income_loss_from_equity_method_investments": {
+            "value": 7000000,
+            "unit": "USD",
+            "label": "Income/Loss From Equity Method Investments",
+            "order": 2100
+          },
+          "costs_and_expenses": {
+            "value": 7188000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 1878000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "common_stock_dividends": {
+            "value": 0.115,
+            "unit": "USD / shares",
+            "label": "Common Stock Dividends",
+            "order": 4600
+          },
+          "other_operating_expenses": {
+            "value": 56000000,
+            "unit": "USD",
+            "label": "Other Operating Expenses",
+            "order": 1040
+          },
+          "diluted_earnings_per_share": {
+            "value": 1.68,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "operating_expenses": {
+            "value": 1339000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 318000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "cost_of_revenue": {
+            "value": 5793000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "basic_earnings_per_share": {
+            "value": 1.69,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          }
+        }
+      }
+    }
+  ],
+  "alpaca_recent_bars": [
+    {
+      "ClosePrice": 256.26,
+      "HighPrice": 256.26,
+      "LowPrice": 256.16,
+      "TradeCount": 5,
+      "OpenPrice": 256.16,
+      "Timestamp": "2025-12-18T18:34:00Z",
+      "Volume": 426,
+      "VWAP": 256.226667
+    },
+    {
+      "ClosePrice": 256.31,
+      "HighPrice": 256.7,
+      "LowPrice": 256.31,
+      "TradeCount": 16,
+      "OpenPrice": 256.7,
+      "Timestamp": "2025-12-18T18:35:00Z",
+      "Volume": 993,
+      "VWAP": 256.505947
+    },
+    {
+      "ClosePrice": 256.305,
+      "HighPrice": 256.305,
+      "LowPrice": 256.26,
+      "TradeCount": 7,
+      "OpenPrice": 256.26,
+      "Timestamp": "2025-12-18T18:36:00Z",
+      "Volume": 298,
+      "VWAP": 256.285851
+    },
+    {
+      "ClosePrice": 256.03,
+      "HighPrice": 256.16,
+      "LowPrice": 256.03,
+      "TradeCount": 7,
+      "OpenPrice": 256.16,
+      "Timestamp": "2025-12-18T18:37:00Z",
+      "Volume": 444,
+      "VWAP": 256.075
+    },
+    {
+      "ClosePrice": 256.66,
+      "HighPrice": 256.66,
+      "LowPrice": 256.66,
+      "TradeCount": 10,
+      "OpenPrice": 256.66,
+      "Timestamp": "2025-12-18T18:38:00Z",
+      "Volume": 208,
+      "VWAP": 256.66
+    },
+    {
+      "ClosePrice": 256.03,
+      "HighPrice": 256.35,
+      "LowPrice": 256.03,
+      "TradeCount": 29,
+      "OpenPrice": 256.35,
+      "Timestamp": "2025-12-18T18:39:00Z",
+      "Volume": 1469,
+      "VWAP": 256.091
+    },
+    {
+      "ClosePrice": 256.32,
+      "HighPrice": 256.32,
+      "LowPrice": 256.23,
+      "TradeCount": 3,
+      "OpenPrice": 256.23,
+      "Timestamp": "2025-12-18T18:40:00Z",
+      "Volume": 203,
+      "VWAP": 256.275
+    },
+    {
+      "ClosePrice": 256.68,
+      "HighPrice": 256.68,
+      "LowPrice": 256.465,
+      "TradeCount": 41,
+      "OpenPrice": 256.52,
+      "Timestamp": "2025-12-18T18:42:00Z",
+      "Volume": 1777,
+      "VWAP": 256.52334
+    },
+    {
+      "ClosePrice": 256.77,
+      "HighPrice": 256.77,
+      "LowPrice": 256.52,
+      "TradeCount": 34,
+      "OpenPrice": 256.68,
+      "Timestamp": "2025-12-18T18:43:00Z",
+      "Volume": 1250,
+      "VWAP": 256.663571
+    },
+    {
+      "ClosePrice": 255.87,
+      "HighPrice": 255.87,
+      "LowPrice": 255.87,
+      "TradeCount": 19,
+      "OpenPrice": 255.87,
+      "Timestamp": "2025-12-18T18:44:00Z",
+      "Volume": 514,
+      "VWAP": 255.87
+    }
+  ],
+  "alpaca_realtime_bar": {
+    "T": "b",
+    "Symbol": "MU",
+    "OpenPrice": 255.13,
+    "HighPrice": 255.33,
+    "LowPrice": 255.13,
+    "ClosePrice": 255.17,
+    "Volume": 512,
+    "Timestamp": "2025-12-18T18:48:00.000Z",
+    "TradeCount": 11,
+    "VWAP": 255.2025
+  }
+}

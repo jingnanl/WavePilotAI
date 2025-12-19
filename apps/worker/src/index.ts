@@ -7,9 +7,9 @@
  * 3. Data correction and aggregation tasks
  */
 
-import { AlpacaWebSocketService } from './services/alpaca-websocket.js';
-import { MassiveScheduler } from './services/massive-scheduler.js';
-import { InfluxDBWriter } from './services/timestream-writer.js';
+import { AlpacaWebSocketService } from './services/alpaca-websocket';
+import { MassiveScheduler } from './services/massive-scheduler';
+import { InfluxDBWriter } from './services/timestream-writer';
 
 const logger = {
     info: (msg: string) => console.log(`[INFO] ${new Date().toISOString()} - ${msg}`),

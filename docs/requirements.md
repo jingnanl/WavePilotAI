@@ -60,7 +60,9 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 
 ### 2. 数据存储架构
 
-#### 2.1 时序数据存储 (Timestream)
+#### 2.1 时序数据存储 (Amazon Timestream for InfluxDB)
+> **说明**：使用 AWS 托管的 InfluxDB 3 服务，通过 AWS Console 手动创建实例。
+
 - **Candles**: 价格数据 (1m, 1h)
 - **Fundamentals**: 每日基本面指标 (PE, EPS, MarketCap)
   - 用于 Agent 进行历史估值对比分析
@@ -82,7 +84,10 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 
 #### 3.1 技术框架
 - **Agent 开发**：`@strands-agents/sdk` (TypeScript SDK)
-- **Agent 部署**：`@aws-cdk/aws-bedrock-agentcore-alpha` (CDK 集成到 Amplify)
+- **Agent 部署**：`@aws-cdk/aws-bedrock-agentcore-alpha` (CDK L2 构造，Experimental)
+  - `AgentRuntimeArtifact.fromAsset()` - 从本地 Dockerfile 构建
+  - `Runtime` - AgentCore Runtime 资源
+  - `Memory` - AgentCore Memory 资源（支持 STM + LTM）
 - **Agent 调用**：`@aws-sdk/client-bedrock-agentcore` (Runtime SDK)
 - **协作模式**：Graph Pattern（支持条件分支和复杂流程）
 - **部署平台**：Amazon Bedrock AgentCore Runtime
@@ -99,13 +104,9 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 - **市场分析师（Market Analyst）**
   - **技术指标计算**：
     - 基础指标：MA, EMA, RSI, MACD, BOLL, VWAP
-    - **缠论特征 (Chanlun Features)**：
-      - K 线包含关系处理 (Inclusion Handling)
-      - 分型与笔识别 (Fractals & Strokes)
-      - 中枢区间计算 (Center Range)
-      - MACD 面积与背驰因子 (Divergence Factor)
   - 价格趋势识别
   - 支撑阻力位分析
+  - **缠论特征 (Chanlun Features)**（第三阶段）：详见后续迭代计划
 
 - **新闻分析师（News Analyst）**
   - 实时新闻监控
@@ -313,7 +314,7 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 - **缓存策略**：相同查询结果缓存
 
 ### 2. 数据存储优化
-- Timestream 自动数据分层（热/冷）
+- InfluxDB 自动数据保留策略
 
 ### 3. 计算资源优化
 - Lambda 按需计费
@@ -348,6 +349,12 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 - 高级风险管理
 - 自定义 Agent
 - 期权期货支持
+- **缠论特征分析 (Chanlun Features)**：
+  - K 线包含关系处理 (Inclusion Handling)
+  - 分型与笔识别 (Fractals & Strokes)
+  - 中枢区间计算 (Center Range)
+  - MACD 面积与背驰因子 (Divergence Factor)
+  - 买卖点识别与趋势判断
 
 ## 📝 技术约束
 
@@ -395,5 +402,5 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-07*
+*更新日期：2025-12-19*
 *作者：JN.L*

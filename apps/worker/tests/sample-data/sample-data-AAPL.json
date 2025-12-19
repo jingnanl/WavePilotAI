@@ -1,0 +1,2457 @@
+{
+  "massive_daily_history": [
+    {
+      "v": 40334193,
+      "vw": 269.3236,
+      "o": 265.525,
+      "c": 268.56,
+      "h": 272.21,
+      "l": 265.5,
+      "t": 1763528400000,
+      "n": 625238
+    },
+    {
+      "v": 45728132,
+      "vw": 269.4688,
+      "o": 270.83,
+      "c": 266.25,
+      "h": 275.43,
+      "l": 265.92,
+      "t": 1763614800000,
+      "n": 755338
+    },
+    {
+      "v": 58923249,
+      "vw": 270.5143,
+      "o": 265.95,
+      "c": 271.49,
+      "h": 273.33,
+      "l": 265.67,
+      "t": 1763701200000,
+      "n": 792659
+    },
+    {
+      "v": 65497571,
+      "vw": 275.3137,
+      "o": 270.9,
+      "c": 275.92,
+      "h": 277,
+      "l": 270.9,
+      "t": 1763960400000,
+      "n": 754753
+    },
+    {
+      "v": 46824959,
+      "vw": 277.9957,
+      "o": 275.27,
+      "c": 276.97,
+      "h": 280.38,
+      "l": 275.25,
+      "t": 1764046800000,
+      "n": 666222
+    },
+    {
+      "v": 33373748,
+      "vw": 278.0461,
+      "o": 276.96,
+      "c": 277.55,
+      "h": 279.53,
+      "l": 276.63,
+      "t": 1764133200000,
+      "n": 538200
+    },
+    {
+      "v": 20100859,
+      "vw": 277.63,
+      "o": 277.26,
+      "c": 278.85,
+      "h": 279,
+      "l": 275.9865,
+      "t": 1764306000000,
+      "n": 369195
+    },
+    {
+      "v": 46517247,
+      "vw": 281.0716,
+      "o": 278.01,
+      "c": 283.1,
+      "h": 283.42,
+      "l": 276.14,
+      "t": 1764565200000,
+      "n": 643444
+    },
+    {
+      "v": 53605388,
+      "vw": 285.5942,
+      "o": 283,
+      "c": 286.19,
+      "h": 287.4,
+      "l": 282.6301,
+      "t": 1764651600000,
+      "n": 681608
+    },
+    {
+      "v": 43511522,
+      "vw": 285.5332,
+      "o": 286.2,
+      "c": 284.15,
+      "h": 288.62,
+      "l": 283.3,
+      "t": 1764738000000,
+      "n": 625843
+    }
+  ],
+  "massive_minute_bars": [
+    {
+      "v": 1307,
+      "vw": 271.6753,
+      "o": 271.35,
+      "c": 271.66,
+      "h": 271.87,
+      "l": 271.35,
+      "t": 1766048400000,
+      "n": 61
+    },
+    {
+      "v": 2507,
+      "vw": 271.6986,
+      "o": 271.74,
+      "c": 271.61,
+      "h": 271.74,
+      "l": 271.61,
+      "t": 1766048580000,
+      "n": 41
+    },
+    {
+      "v": 2253,
+      "vw": 271.8323,
+      "o": 271.69,
+      "c": 271.99,
+      "h": 271.99,
+      "l": 271.51,
+      "t": 1766048700000,
+      "n": 43
+    },
+    {
+      "v": 376,
+      "vw": 271.9011,
+      "o": 271.89,
+      "c": 271.89,
+      "h": 271.89,
+      "l": 271.89,
+      "t": 1766048820000,
+      "n": 11
+    },
+    {
+      "v": 1348,
+      "vw": 271.902,
+      "o": 271.75,
+      "c": 271.99,
+      "h": 271.99,
+      "l": 271.75,
+      "t": 1766048880000,
+      "n": 38
+    },
+    {
+      "v": 304,
+      "vw": 271.8187,
+      "o": 271.8,
+      "c": 271.8,
+      "h": 271.8,
+      "l": 271.8,
+      "t": 1766049120000,
+      "n": 7
+    },
+    {
+      "v": 218,
+      "vw": 271.9092,
+      "o": 271.91,
+      "c": 271.91,
+      "h": 271.91,
+      "l": 271.91,
+      "t": 1766049300000,
+      "n": 7
+    },
+    {
+      "v": 159,
+      "vw": 271.7906,
+      "o": 271.79,
+      "c": 271.79,
+      "h": 271.79,
+      "l": 271.79,
+      "t": 1766049420000,
+      "n": 3
+    },
+    {
+      "v": 205,
+      "vw": 271.7989,
+      "o": 271.8,
+      "c": 271.8,
+      "h": 271.8,
+      "l": 271.8,
+      "t": 1766049480000,
+      "n": 9
+    },
+    {
+      "v": 623,
+      "vw": 271.8008,
+      "o": 271.78,
+      "c": 271.78,
+      "h": 271.78,
+      "l": 271.78,
+      "t": 1766049540000,
+      "n": 23
+    }
+  ],
+  "massive_grouped_daily": [
+    {
+      "T": "NEEpN",
+      "v": 88669,
+      "vw": 24.1285,
+      "o": 24.12,
+      "c": 24.1,
+      "h": 24.2711,
+      "l": 24.0901,
+      "t": 1766091600000,
+      "n": 495
+    },
+    {
+      "T": "UVIX",
+      "v": 35412166,
+      "vw": 6.9401,
+      "o": 6.99,
+      "c": 6.83,
+      "h": 7.19,
+      "l": 6.75,
+      "t": 1766091600000,
+      "n": 65551
+    },
+    {
+      "T": "TWOpB",
+      "v": 46293,
+      "vw": 24.069,
+      "o": 24.06,
+      "c": 24.0201,
+      "h": 24.11,
+      "l": 24.0101,
+      "t": 1766091600000,
+      "n": 234
+    },
+    {
+      "T": "ITDE",
+      "v": 7863,
+      "vw": 36.544,
+      "o": 36.63,
+      "c": 36.48,
+      "h": 36.64,
+      "l": 36.48,
+      "t": 1766091600000,
+      "n": 84
+    },
+    {
+      "T": "BAND",
+      "v": 114406,
+      "vw": 14.7368,
+      "o": 14.89,
+      "c": 14.67,
+      "h": 14.91,
+      "l": 14.65,
+      "t": 1766091600000,
+      "n": 3164
+    },
+    {
+      "T": "BANX",
+      "v": 21404,
+      "vw": 22.2316,
+      "o": 22.25,
+      "c": 22.28,
+      "h": 22.35,
+      "l": 22.1601,
+      "t": 1766091600000,
+      "n": 306
+    },
+    {
+      "T": "NIHI",
+      "v": 37952,
+      "vw": 50.7342,
+      "o": 50.79,
+      "c": 50.6696,
+      "h": 50.86,
+      "l": 50.5,
+      "t": 1766091600000,
+      "n": 411
+    },
+    {
+      "T": "STPZ",
+      "v": 16574,
+      "vw": 53.7478,
+      "o": 53.76,
+      "c": 53.7999,
+      "h": 53.8,
+      "l": 53.71,
+      "t": 1766091600000,
+      "n": 194
+    },
+    {
+      "T": "FNB",
+      "v": 5141253,
+      "vw": 17.6237,
+      "o": 17.7,
+      "c": 17.6,
+      "h": 17.795,
+      "l": 17.51,
+      "t": 1766091600000,
+      "n": 27355
+    },
+    {
+      "T": "OBK",
+      "v": 222132,
+      "vw": 39.6674,
+      "o": 39.61,
+      "c": 39.76,
+      "h": 39.905,
+      "l": 39.2,
+      "t": 1766091600000,
+      "n": 4308
+    }
+  ],
+  "massive_news": [
+    {
+      "id": "158b5cae68101c864de2430d6742c320bff9f4237ccd33d3474823a3b4c3c1dc",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/investing.ico"
+      },
+      "title": "The $6.7 Trillion AI Buildout: How Data Centers and Power Became a Growth Engine",
+      "author": "Jeff Buchbinder",
+      "published_utc": "2025-12-18T15:02:00Z",
+      "article_url": "https://www.investing.com/analysis/the-67-trillion-ai-buildout-how-data-centers-and-power-became-a-growth-engine-200672047",
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "AAPL",
+        "META"
+      ],
+      "amp_url": "https://m.investing.com/analysis/the-67-trillion-ai-buildout-how-data-centers-and-power-became-a-growth-engine-200672047?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "The AI infrastructure buildout is projected to require $6.7 trillion in global data center investments by 2030, with $1.3 trillion allocated to power generation and transmission, transforming utility infrastructure into a high-demand growth sector.",
+      "keywords": [
+        "AI",
+        "data centers",
+        "infrastructure",
+        "power grid",
+        "investment"
+      ],
+      "insights": [
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned in trending stocks section and central to AI infrastructure growth narrative"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in trending stocks but not directly related to the article's core infrastructure discussion"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in trending stocks but not directly connected to the infrastructure investment theme"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in trending stocks but not specifically discussed in infrastructure context"
+        }
+      ]
+    },
+    {
+      "id": "f63278c4cecb65850bb1db26abcb153cc55422a69c8592c8821060f717f69504",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Prediction: This Will Be TSMC's Stock Price in 2026",
+      "author": "Harsh Chauhan",
+      "published_utc": "2025-12-18T14:07:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/18/prediction-this-will-be-tsmcs-stock-price-in-2026/?source=iedfolrf0000001",
+      "tickers": [
+        "TSM",
+        "NVDA",
+        "AMZN",
+        "AAPL"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847404%2Ftaiwan-semiconductor-tsmc-building-with-tsmc-logo-in-front_tsmc.jpg&w=1200&op=resize",
+      "description": "TSMC is expected to experience significant growth in 2026 due to strong AI chip demand, increased advanced chip packaging capacity, and potential price increases for advanced chip nodes. Analysts predict the stock could potentially rise 67% to $481 per share.",
+      "keywords": [
+        "TSMC",
+        "semiconductor",
+        "AI chips",
+        "stock prediction",
+        "chip manufacturing"
+      ],
+      "insights": [
+        {
+          "ticker": "TSM",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong projected growth in AI chip market, expanding advanced chip packaging capacity, potential 40% earnings increase, and expected stock price appreciation of 67%"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Large order backlog of $307 billion, cleared to sell advanced GPUs to Chinese customers, expected to drive chip demand"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a customer of TSMC's advanced chip manufacturing, but no specific performance details provided"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Listed as a TSMC customer, but no specific performance details discussed"
+        }
+      ]
+    },
+    {
+      "id": "c0a68779a5d7d35a36d2e99fd9c90380769da5c40d8fb3863c886ddde2f7a22c",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Ranking The Best \"Magnificent Seven\" Stocks to Buy for 2026",
+      "author": "Parkev Tatevosian, Cfa",
+      "published_utc": "2025-12-18T10:30:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/18/ranking-the-best-magnificent-seven-stocks-to-buy-f/?source=iedfolrf0000001",
+      "tickers": [
+        "NVDA",
+        "AAPL",
+        "MSFT",
+        "GOOG",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "TSLA"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847755%2Fperson-looking-at-trading-charts-reflecting-in-glasses.jpg&w=1200&op=resize",
+      "description": "An analysis of the most influential tech stocks for potential investment in 2026, focusing on the performance and future prospects of the Magnificent Seven technology companies.",
+      "keywords": [
+        "Magnificent Seven",
+        "tech stocks",
+        "investment",
+        "2026 outlook",
+        "AI"
+      ],
+      "insights": [
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Large market cap of $4.2T and significant focus in AI infrastructure, suggesting strong growth potential"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in the Magnificent Seven group, but no specific detailed analysis provided"
+        }
+      ]
+    },
+    {
+      "id": "5077aa00cdcfd432fdd0bac8f4bb860316e28e6cfb4955ad875428a033611f2b",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "23% of Warren Buffett's $317 Billion Portfolio Is Invested in 3 Artificial Intelligence (AI) Stocks",
+      "author": "Anthony Di Pizio",
+      "published_utc": "2025-12-18T09:39:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/18/23-warren-buffett-317-billion-portfolio-3-ai-stock/?source=iedfolrf0000001",
+      "tickers": [
+        "AMZN",
+        "GOOG",
+        "GOOGL",
+        "AAPL"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847433%2Fwarren-buffett-smiling-surrounded-by-cameras.jpg&w=1200&op=resize",
+      "description": "As Warren Buffett prepares to step down, his Berkshire Hathaway portfolio includes three significant AI-focused stocks: Amazon, Alphabet, and Apple, which are leveraging artificial intelligence to enhance their core business operations.",
+      "keywords": [
+        "Warren Buffett",
+        "AI stocks",
+        "Berkshire Hathaway",
+        "technology investment"
+      ],
+      "insights": [
+        {
+          "ticker": "AMZN",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Investing heavily in AI through AWS cloud platform, developing custom AI chips, and showing significant infrastructure expansion with a $200 billion order backlog"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Successfully integrating AI into Google Search, developing competitive cloud AI infrastructure, and experiencing accelerated revenue growth due to AI innovations"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Successfully integrating AI into Google Search, developing competitive cloud AI infrastructure, and experiencing accelerated revenue growth due to AI innovations"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Launched Apple Intelligence software, optimized AI-capable chips across devices, and driving strong iPhone upgrade cycles with AI-enhanced technology"
+        }
+      ]
+    },
+    {
+      "id": "86977fe2ca98deb703d4ee0678900fdf1c4cc10a972369dcf77bf7237b97f8ea",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "58% of Warren Buffett's $318 Billion Portfolio for 2026 Is Invested in These 4 Unstoppable Stocks",
+      "author": "Sean Williams",
+      "published_utc": "2025-12-18T08:06:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/18/58-warren-buffett-portfolio-2026-invest-4-stocks/?source=iedfolrf0000001",
+      "tickers": [
+        "AAPL",
+        "AXP",
+        "BAC",
+        "BACpB",
+        "BACpE",
+        "BACpK",
+        "BACpL",
+        "BACpM",
+        "BACpN",
+        "BACpO",
+        "BACpP",
+        "BACpQ",
+        "BACpS",
+        "BMLpG",
+        "BMLpH",
+        "BMLpJ",
+        "BMLpL",
+        "MERpK",
+        "KO"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847225%2Fbuffett13-tmf.jpg&w=1200&op=resize",
+      "description": "Warren Buffett is retiring soon but has strategically positioned Berkshire Hathaway's $318 billion portfolio, with 58% invested in four key stocks: Apple, American Express, Bank of America, and Coca-Cola, focusing on companies with strong competitive advantages and capital return programs.",
+      "keywords": [
+        "Warren Buffett",
+        "Berkshire Hathaway",
+        "investment portfolio",
+        "retirement",
+        "stocks"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Loyal customer base, strong subscription services, market-leading capital return program with $816 billion in stock buybacks"
+        },
+        {
+          "ticker": "AXP",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Successful payment processor with affluent clientele, consistent long-term investment with high yield relative to cost basis"
+        },
+        {
+          "ticker": "BAC",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpB",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpE",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpK",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpM",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpP",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpQ",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BACpS",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BMLpG",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BMLpH",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BMLpJ",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "BMLpL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "MERpK",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Cyclical bank stock with potential for growth during economic expansions, though experiencing recent stock sales by Buffett"
+        },
+        {
+          "ticker": "KO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Predictable operating model, global diversity, consistent 63-year dividend growth, considered a stable long-term investment"
+        }
+      ]
+    },
+    {
+      "id": "6fa8b393576bf6c32ec28b70c164cf47369e8748c46b896ef80be8d3cce056fe",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Without Warren Buffett as Its CEO, Is Berkshire Hathaway Stock Still a Good Buy in 2026?",
+      "author": "David Jagielski",
+      "published_utc": "2025-12-18T02:19:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/17/without-warren-buffett-ceo-berkshire-hathaway/?source=iedfolrf0000001",
+      "tickers": [
+        "BRK.A",
+        "BRK.B",
+        "GOOG",
+        "GOOGL",
+        "AAPL",
+        "KHC"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847171%2Fwarren-buffett-in-a-group-of-people.jpg&w=1200&op=resize",
+      "description": "Warren Buffett is retiring from Berkshire Hathaway, with Greg Abel set to take over as CEO. Despite leadership change, the company has a well-prepared succession plan and the stock is expected to remain a strong long-term investment.",
+      "keywords": [
+        "succession",
+        "leadership",
+        "investment",
+        "tech stocks",
+        "portfolio"
+      ],
+      "insights": [
+        {
+          "ticker": "BRK.A",
+          "sentiment": "positive",
+          "sentiment_reasoning": "The article suggests the stock will remain a good investment due to a well-planned succession, Greg Abel's preparedness, and potential strategic shifts like increased tech investments"
+        },
+        {
+          "ticker": "BRK.B",
+          "sentiment": "positive",
+          "sentiment_reasoning": "The article suggests the stock will remain a good investment due to a well-planned succession, Greg Abel's preparedness, and potential strategic shifts like increased tech investments"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Newly added to Berkshire's portfolio, representing a potential strategic pivot towards tech investments"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Newly added to Berkshire's portfolio, representing a potential strategic pivot towards tech investments"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Remains Berkshire's top holding, viewed more as a stable consumer goods company than a volatile tech stock"
+        },
+        {
+          "ticker": "KHC",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Described as a slow-growing investment offering little beyond dividends, potentially a candidate for portfolio divestment"
+        }
+      ]
+    },
+    {
+      "id": "baa26ecb60dfbc41fc0ab4855cd96e0a759514db030bf5f2be4533d9b2f1384e",
+      "publisher": {
+        "name": "GlobeNewswire Inc.",
+        "homepage_url": "https://www.globenewswire.com",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/globenewswire.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/globenewswire.ico"
+      },
+      "title": "Purpose Investments Inc. annonce les distributions de décembre 2025",
+      "author": "Purpose Investments Inc.",
+      "published_utc": "2025-12-18T00:30:00Z",
+      "article_url": "https://www.globenewswire.com/news-release/2025/12/18/3207392/0/fr/Purpose-Investments-Inc-annonce-les-distributions-de-d%C3%A9cembre-2025.html",
+      "tickers": [
+        "AAPL",
+        "SHOP",
+        "RY",
+        "NVDA"
+      ],
+      "image_url": "https://ml.globenewswire.com/Resource/Download/a28192cb-6294-4424-8c24-646fee2c81cd",
+      "description": "Purpose Investments has announced monthly and quarterly distribution rates for its variable and fixed capital ETFs in December 2025, covering a wide range of funds including technology, financial, cryptocurrency, and income-focused ETFs.",
+      "keywords": [
+        "ETF",
+        "distributions",
+        "investment",
+        "income",
+        "financial products"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in ETF distribution list with a standard monthly distribution of $0.1667 per share"
+        },
+        {
+          "ticker": "SHOP",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Included in income-focused ETF with a monthly distribution of $0.2200 per share"
+        },
+        {
+          "ticker": "RY",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Part of Purpose's income-focused ETF with a consistent monthly distribution of $0.0900 per share"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Featured in an income-focused ETF with a relatively high monthly distribution of $0.7500 per share"
+        }
+      ]
+    },
+    {
+      "id": "0d0d1afff2c75551e4bab370fec0b13caf8ca005c8b8338e2053a12d02ec7f8c",
+      "publisher": {
+        "name": "GlobeNewswire Inc.",
+        "homepage_url": "https://www.globenewswire.com",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/globenewswire.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/globenewswire.ico"
+      },
+      "title": "Purpose Investments Inc. Announces December 2025 Distributions",
+      "author": "Purpose Investments Inc.",
+      "published_utc": "2025-12-18T00:30:00Z",
+      "article_url": "https://www.globenewswire.com/news-release/2025/12/18/3207392/0/en/Purpose-Investments-Inc-Announces-December-2025-Distributions.html",
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "NVDA",
+        "TSLA"
+      ],
+      "image_url": "https://ml.globenewswire.com/Resource/Download/a28192cb-6294-4424-8c24-646fee2c81cd",
+      "description": "Purpose Investments announced monthly and quarterly distributions for its various ETF and fund series, covering a wide range of investment products including technology, cryptocurrency, and financial sector funds, with distributions ranging from $0.038 to $0.750 per unit.",
+      "keywords": [
+        "ETF",
+        "distributions",
+        "investment",
+        "funds",
+        "yield"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Included in a dedicated yield shares ETF, indicating investor confidence"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Featured in yield shares ETF with a monthly distribution of $0.175"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "High monthly distribution of $0.750 suggests strong performance and investor interest"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Substantial monthly distribution of $0.600 indicates robust investor confidence"
+        }
+      ]
+    },
+    {
+      "id": "edbe93ab88ae9e3de27d21ffedeb7a7f03b58015ff3648bf5bdd8fe9437f1b62",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Prediction: This AI Stock Could Be the Next $4 Trillion Company in 2026",
+      "author": "Will Healy",
+      "published_utc": "2025-12-17T22:30:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/17/prediction-this-ai-stock-next-4-trillion-2026/?source=iedfolrf0000001",
+      "tickers": [
+        "GOOG",
+        "GOOGL",
+        "MSFT",
+        "AAPL",
+        "NVDA"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F846769%2Fshot-of-google-doodle-book-with-google-logo-in-frame_alphabet_google.jpg&w=1200&op=resize",
+      "description": "Alphabet is predicted to become the next $4 trillion company by 2026, driven by massive AI investments, the release of Gemini 3, and a relatively low P/E ratio compared to other tech giants.",
+      "keywords": [
+        "AI",
+        "market cap",
+        "technology",
+        "investment",
+        "Gemini 3"
+      ],
+      "insights": [
+        {
+          "ticker": "GOOG",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock has grown over 60% in the last year, surpassed Microsoft's market cap, released competitive AI technology (Gemini 3), and has a low P/E ratio suggesting potential for growth"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock has grown over 60% in the last year, surpassed Microsoft's market cap, released competitive AI technology (Gemini 3), and has a low P/E ratio suggesting potential for growth"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as previously competing for largest market cap but currently trailing Alphabet"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Already achieved $4 trillion market cap, but not the focus of future growth predictions"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "First company to reach $4 trillion market cap, serving as a benchmark for potential tech company growth"
+        }
+      ]
+    },
+    {
+      "id": "0d53c0e0d28d7d47f468a58a08dd1ea32748deae808bec9572bba4dcdac6c7c2",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/investing.ico"
+      },
+      "title": "S&P 500: Can Stocks Kick on as Year-End Approaches?",
+      "author": "Fawad Razaqzada",
+      "published_utc": "2025-12-17T16:14:00Z",
+      "article_url": "https://www.investing.com/analysis/sp-500-can-stocks-kick-on-as-yearend-approaches-200671975",
+      "tickers": [
+        "ORCL",
+        "AVGO",
+        "AAPL",
+        "NVDA"
+      ],
+      "amp_url": "https://m.investing.com/analysis/sp-500-can-stocks-kick-on-as-yearend-approaches-200671975?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Markets are showing mixed signals as the year-end approaches, with uncertainty around tech stock leadership, bond yields, and potential catalysts for market movement. The S&P 500 remains range-bound, waiting for direction amid geopolitical tensions and economic indicators.",
+      "keywords": [
+        "S&P 500",
+        "tech stocks",
+        "bond yields",
+        "market consolidation",
+        "year-end rally"
+      ],
+      "insights": [
+        {
+          "ticker": "ORCL",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Disappointing earnings that failed to meet AI-related demand expectations"
+        },
+        {
+          "ticker": "AVGO",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Experienced a 16% drop and missed earnings expectations, raising concerns about AI investment justification"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in market movers list without specific positive or negative commentary"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Part of tech sector discussion with underlying uncertainty about AI investment valuations"
+        }
+      ]
+    }
+  ],
+  "massive_financials": [
+    {
+      "start_date": "2024-09-29",
+      "end_date": "2025-09-27",
+      "filing_date": "2025-10-31",
+      "acceptance_datetime": "2025-10-31T10:01:26Z",
+      "timeframe": "ttm",
+      "fiscal_period": "TTM",
+      "fiscal_year": "2025",
+      "cik": "0000320193",
+      "sic": "3571",
+      "tickers": [
+        "AAPL"
+      ],
+      "company_name": "Apple Inc.",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0000320193-25-000079",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0000320193-25-000079/files/aapl-20250927_htm.xml",
+      "financials": {
+        "balance_sheet": {
+          "assets": {
+            "value": 359241000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "noncurrent_liabilities": {
+            "value": 119877000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "long_term_debt": {
+            "value": 90678000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "accounts_payable": {
+            "value": 69860000000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "equity_attributable_to_parent": {
+            "value": 73733000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "fixed_assets": {
+            "value": 49834000000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "other_current_liabilities": {
+            "value": 95771000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "inventory": {
+            "value": 5718000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "liabilities": {
+            "value": 285508000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "liabilities_and_equity": {
+            "value": 359241000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "current_assets": {
+            "value": 147957000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "other_noncurrent_liabilities": {
+            "value": 29199000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "other_noncurrent_assets": {
+            "value": 161450000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "equity": {
+            "value": 73733000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "other_current_assets": {
+            "value": 142239000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "current_liabilities": {
+            "value": 165631000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "noncurrent_assets": {
+            "value": 211284000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          }
+        },
+        "income_statement": {
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "basic_earnings_per_share": {
+            "value": 7.49,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "income_tax_expense_benefit": {
+            "value": 20719000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 27601000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "operating_expenses": {
+            "value": 62151000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "basic_average_shares": {
+            "value": 14948500000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "operating_income_loss": {
+            "value": 133050000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "diluted_earnings_per_share": {
+            "value": 7.46,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "gross_profit": {
+            "value": 195201000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 132729000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "revenues": {
+            "value": 416161000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "diluted_average_shares": {
+            "value": 15004697000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "net_income_loss": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "research_and_development": {
+            "value": 34550000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "costs_and_expenses": {
+            "value": 283432000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "nonoperating_income_loss": {
+            "value": -321000000,
+            "unit": "USD",
+            "label": "Nonoperating Income/Loss",
+            "order": 900
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "cost_of_revenue": {
+            "value": 220960000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "benefits_costs_expenses": {
+            "value": 283432000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 111482000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -120686000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -120686000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 111482000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": 15195000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": 15195000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_continuing": {
+            "value": 5991000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow": {
+            "value": 5991000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss": {
+            "value": 113611000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "other_comprehensive_income_loss_attributable_to_parent": {
+            "value": 1601000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss Attributable To Parent",
+            "order": 600
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 113611000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "other_comprehensive_income_loss": {
+            "value": 113611000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-06-29",
+      "end_date": "2025-09-27",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q4",
+      "fiscal_year": "2025",
+      "cik": "0000320193",
+      "sic": "3571",
+      "tickers": [
+        "AAPL"
+      ],
+      "company_name": "Apple Inc.",
+      "financials": {
+        "cash_flow_statement": {
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 29728000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -2587000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -27476000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_continuing": {
+            "value": -335000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow": {
+            "value": -335000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -2587000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -27476000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 29728000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss": {
+            "value": 28264000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 28264000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "other_comprehensive_income_loss": {
+            "value": 28264000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "other_comprehensive_income_loss_attributable_to_parent": {
+            "value": 798000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss Attributable To Parent",
+            "order": 600
+          }
+        },
+        "income_statement": {
+          "benefits_costs_expenses": {
+            "value": 69662000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "gross_profit": {
+            "value": 48341000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "nonoperating_income_loss": {
+            "value": 377000000,
+            "unit": "USD",
+            "label": "Nonoperating Income/Loss",
+            "order": 900
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 27466000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 7048000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "revenues": {
+            "value": 102466000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "income_tax_expense_benefit": {
+            "value": 5338000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "operating_income_loss": {
+            "value": 32427000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "costs_and_expenses": {
+            "value": 69662000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "operating_expenses": {
+            "value": 15914000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "net_income_loss": {
+            "value": 27466000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 27466000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "cost_of_revenue": {
+            "value": 54125000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "basic_average_shares": {
+            "value": -44398000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "diluted_average_shares": {
+            "value": -47029000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "diluted_earnings_per_share": {
+            "value": 1.8399999999999999,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 32804000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 27466000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "research_and_development": {
+            "value": 8866000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "basic_earnings_per_share": {
+            "value": 1.8500000000000005,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          }
+        },
+        "balance_sheet": {
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "other_current_liabilities": {
+            "value": 95771000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "equity": {
+            "value": 73733000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "liabilities": {
+            "value": 285508000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "assets": {
+            "value": 359241000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "other_current_assets": {
+            "value": 142239000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "fixed_assets": {
+            "value": 49834000000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "current_liabilities": {
+            "value": 165631000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "noncurrent_liabilities": {
+            "value": 119877000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "other_noncurrent_assets": {
+            "value": 161450000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "other_noncurrent_liabilities": {
+            "value": 29199000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "liabilities_and_equity": {
+            "value": 359241000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "equity_attributable_to_parent": {
+            "value": 73733000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "accounts_payable": {
+            "value": 69860000000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "long_term_debt": {
+            "value": 90678000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "current_assets": {
+            "value": 147957000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "noncurrent_assets": {
+            "value": 211284000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "inventory": {
+            "value": 5718000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2024-09-29",
+      "end_date": "2025-09-27",
+      "filing_date": "2025-10-31",
+      "acceptance_datetime": "2025-10-31T10:01:26Z",
+      "timeframe": "annual",
+      "fiscal_period": "FY",
+      "fiscal_year": "2025",
+      "cik": "0000320193",
+      "sic": "3571",
+      "tickers": [
+        "AAPL"
+      ],
+      "company_name": "Apple Inc.",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0000320193-25-000079",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0000320193-25-000079/files/aapl-20250927_htm.xml",
+      "financials": {
+        "comprehensive_income": {
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 113611000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "other_comprehensive_income_loss_attributable_to_parent": {
+            "value": 1601000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss Attributable To Parent",
+            "order": 600
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "comprehensive_income_loss": {
+            "value": 113611000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "other_comprehensive_income_loss": {
+            "value": 113611000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          }
+        },
+        "balance_sheet": {
+          "other_current_assets": {
+            "value": 142239000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "long_term_debt": {
+            "value": 90678000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "other_noncurrent_liabilities": {
+            "value": 29199000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "current_liabilities": {
+            "value": 165631000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "noncurrent_assets": {
+            "value": 211284000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "liabilities_and_equity": {
+            "value": 359241000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "equity": {
+            "value": 73733000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "other_noncurrent_assets": {
+            "value": 161450000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "accounts_payable": {
+            "value": 69860000000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "assets": {
+            "value": 359241000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "equity_attributable_to_parent": {
+            "value": 73733000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "fixed_assets": {
+            "value": 49834000000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "liabilities": {
+            "value": 285508000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "current_assets": {
+            "value": 147957000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "noncurrent_liabilities": {
+            "value": 119877000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "other_current_liabilities": {
+            "value": 95771000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "inventory": {
+            "value": 5718000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow": {
+            "value": 5991000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": 15195000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -120686000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -120686000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 111482000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_continuing": {
+            "value": 5991000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": 15195000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 111482000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          }
+        },
+        "income_statement": {
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 132729000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "basic_average_shares": {
+            "value": 14948500000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "research_and_development": {
+            "value": 34550000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "income_tax_expense_benefit": {
+            "value": 20719000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 27601000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "diluted_earnings_per_share": {
+            "value": 7.46,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "revenues": {
+            "value": 416161000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "operating_income_loss": {
+            "value": 133050000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "nonoperating_income_loss": {
+            "value": -321000000,
+            "unit": "USD",
+            "label": "Nonoperating Income/Loss",
+            "order": 900
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "net_income_loss": {
+            "value": 112010000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "benefits_costs_expenses": {
+            "value": 283432000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "operating_expenses": {
+            "value": 62151000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "diluted_average_shares": {
+            "value": 15004697000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "costs_and_expenses": {
+            "value": 283432000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "basic_earnings_per_share": {
+            "value": 7.49,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "cost_of_revenue": {
+            "value": 220960000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "gross_profit": {
+            "value": 195201000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-03-30",
+      "end_date": "2025-06-28",
+      "filing_date": "2025-08-01",
+      "acceptance_datetime": "2025-08-01T10:00:42Z",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q3",
+      "fiscal_year": "2025",
+      "cik": "0000320193",
+      "sic": "3571",
+      "tickers": [
+        "AAPL"
+      ],
+      "company_name": "Apple Inc.",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0000320193-25-000073",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0000320193-25-000073/files/aapl-20250628_htm.xml",
+      "financials": {
+        "comprehensive_income": {
+          "other_comprehensive_income_loss": {
+            "value": 23428000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 23428000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "other_comprehensive_income_loss_attributable_to_parent": {
+            "value": -6000000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss Attributable To Parent",
+            "order": 600
+          },
+          "comprehensive_income_loss": {
+            "value": 23428000000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_from_operating_activities": {
+            "value": 27867000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow": {
+            "value": 8107000000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -24833000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": 5073000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_continuing": {
+            "value": 8107000000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": 5073000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -24833000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 27867000000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          }
+        },
+        "balance_sheet": {
+          "equity": {
+            "value": 65830000000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "current_liabilities": {
+            "value": 141120000000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "other_noncurrent_liabilities": {
+            "value": 32745000000,
+            "unit": "USD",
+            "label": "Other Non-current Liabilities",
+            "order": 820
+          },
+          "other_current_assets": {
+            "value": 116566000000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "other_current_liabilities": {
+            "value": 90746000000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "assets": {
+            "value": 331495000000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "current_assets": {
+            "value": 122491000000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "liabilities_and_equity": {
+            "value": 331495000000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "liabilities": {
+            "value": 265665000000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "noncurrent_assets": {
+            "value": 209004000000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "fixed_assets": {
+            "value": 48508000000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "noncurrent_liabilities": {
+            "value": 124545000000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "other_noncurrent_assets": {
+            "value": 160496000000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "equity_attributable_to_parent": {
+            "value": 65830000000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "inventory": {
+            "value": 5925000000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "long_term_debt": {
+            "value": 91800000000,
+            "unit": "USD",
+            "label": "Long-term Debt",
+            "order": 810
+          },
+          "accounts_payable": {
+            "value": 50374000000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          }
+        },
+        "income_statement": {
+          "net_income_loss_attributable_to_parent": {
+            "value": 23434000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "basic_average_shares": {
+            "value": 14902886000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "nonoperating_income_loss": {
+            "value": -171000000,
+            "unit": "USD",
+            "label": "Nonoperating Income/Loss",
+            "order": 900
+          },
+          "income_tax_expense_benefit": {
+            "value": 4597000000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "basic_earnings_per_share": {
+            "value": 1.57,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "diluted_earnings_per_share": {
+            "value": 1.57,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 23434000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 28031000000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "cost_of_revenue": {
+            "value": 50318000000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "net_income_loss": {
+            "value": 23434000000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 23434000000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "operating_expenses": {
+            "value": 15516000000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "gross_profit": {
+            "value": 43718000000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "benefits_costs_expenses": {
+            "value": 66005000000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "research_and_development": {
+            "value": 8866000000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "diluted_average_shares": {
+            "value": 14948179000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "operating_income_loss": {
+            "value": 28202000000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 6650000000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "costs_and_expenses": {
+            "value": 66005000000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "revenues": {
+            "value": 94036000000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          }
+        }
+      }
+    }
+  ],
+  "alpaca_recent_bars": [
+    {
+      "ClosePrice": 272.61,
+      "HighPrice": 272.61,
+      "LowPrice": 272.55,
+      "TradeCount": 10,
+      "OpenPrice": 272.55,
+      "Timestamp": "2025-12-18T18:26:00Z",
+      "Volume": 656,
+      "VWAP": 272.573333
+    },
+    {
+      "ClosePrice": 272.68,
+      "HighPrice": 272.68,
+      "LowPrice": 272.6,
+      "TradeCount": 37,
+      "OpenPrice": 272.6,
+      "Timestamp": "2025-12-18T18:27:00Z",
+      "Volume": 1522,
+      "VWAP": 272.641667
+    },
+    {
+      "ClosePrice": 272.705,
+      "HighPrice": 272.705,
+      "LowPrice": 272.62,
+      "TradeCount": 18,
+      "OpenPrice": 272.67,
+      "Timestamp": "2025-12-18T18:28:00Z",
+      "Volume": 978,
+      "VWAP": 272.65625
+    },
+    {
+      "ClosePrice": 272.64,
+      "HighPrice": 272.69,
+      "LowPrice": 272.625,
+      "TradeCount": 29,
+      "OpenPrice": 272.68,
+      "Timestamp": "2025-12-18T18:29:00Z",
+      "Volume": 1612,
+      "VWAP": 272.655
+    },
+    {
+      "ClosePrice": 272.8,
+      "HighPrice": 272.8,
+      "LowPrice": 272.665,
+      "TradeCount": 17,
+      "OpenPrice": 272.665,
+      "Timestamp": "2025-12-18T18:30:00Z",
+      "Volume": 993,
+      "VWAP": 272.744375
+    },
+    {
+      "ClosePrice": 272.79,
+      "HighPrice": 272.79,
+      "LowPrice": 272.74,
+      "TradeCount": 20,
+      "OpenPrice": 272.74,
+      "Timestamp": "2025-12-18T18:31:00Z",
+      "Volume": 631,
+      "VWAP": 272.773333
+    },
+    {
+      "ClosePrice": 272.86,
+      "HighPrice": 272.9,
+      "LowPrice": 272.795,
+      "TradeCount": 30,
+      "OpenPrice": 272.8,
+      "Timestamp": "2025-12-18T18:32:00Z",
+      "Volume": 1667,
+      "VWAP": 272.824615
+    },
+    {
+      "ClosePrice": 272.91,
+      "HighPrice": 272.935,
+      "LowPrice": 272.85,
+      "TradeCount": 24,
+      "OpenPrice": 272.86,
+      "Timestamp": "2025-12-18T18:33:00Z",
+      "Volume": 1657,
+      "VWAP": 272.887667
+    },
+    {
+      "ClosePrice": 272.88,
+      "HighPrice": 272.95,
+      "LowPrice": 272.88,
+      "TradeCount": 22,
+      "OpenPrice": 272.94,
+      "Timestamp": "2025-12-18T18:34:00Z",
+      "Volume": 1402,
+      "VWAP": 272.923
+    },
+    {
+      "ClosePrice": 272.855,
+      "HighPrice": 272.92,
+      "LowPrice": 272.81,
+      "TradeCount": 17,
+      "OpenPrice": 272.88,
+      "Timestamp": "2025-12-18T18:35:00Z",
+      "Volume": 1136,
+      "VWAP": 272.87875
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import {
 // Environment variables
 const INFLUXDB_ENDPOINT = process.env.INFLUXDB_ENDPOINT || '';
 const INFLUXDB_SECRET_ARN = process.env.INFLUXDB_SECRET_ARN || '';
-const DATABASE = 'market-data';
+const DATABASE = process.env.INFLUXDB_DATABASE || 'market_data';
 
 // Clients
 let influxClient: InfluxDBClient | null = null;

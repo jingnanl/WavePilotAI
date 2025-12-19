@@ -1,0 +1,2289 @@
+{
+  "massive_daily_history": [
+    {
+      "v": 4502978,
+      "vw": 140.6646,
+      "o": 139.85,
+      "c": 139.56,
+      "h": 144.53,
+      "l": 137.05,
+      "t": 1763442000000,
+      "n": 76720
+    },
+    {
+      "v": 4493985,
+      "vw": 142.3045,
+      "o": 140.57,
+      "c": 141.88,
+      "h": 146.96,
+      "l": 137.04,
+      "t": 1763528400000,
+      "n": 66427
+    },
+    {
+      "v": 9424465,
+      "vw": 144.7477,
+      "o": 153.88,
+      "c": 134.73,
+      "h": 157.86,
+      "l": 133.48,
+      "t": 1763614800000,
+      "n": 140699
+    },
+    {
+      "v": 8404367,
+      "vw": 131.1746,
+      "o": 130.74,
+      "c": 133.49,
+      "h": 137.4295,
+      "l": 123.87,
+      "t": 1763701200000,
+      "n": 120250
+    },
+    {
+      "v": 16606997,
+      "vw": 149.858,
+      "o": 137.04,
+      "c": 150.85,
+      "h": 152.38,
+      "l": 137,
+      "t": 1763960400000,
+      "n": 111305
+    },
+    {
+      "v": 5199972,
+      "vw": 148.3148,
+      "o": 146.385,
+      "c": 154.18,
+      "h": 154.3,
+      "l": 139,
+      "t": 1764046800000,
+      "n": 75637
+    },
+    {
+      "v": 5384135,
+      "vw": 163.0048,
+      "o": 156.4,
+      "c": 164.01,
+      "h": 166.98,
+      "l": 155.52,
+      "t": 1764133200000,
+      "n": 82859
+    },
+    {
+      "v": 5665151,
+      "vw": 174.7254,
+      "o": 167.5,
+      "c": 177.6,
+      "h": 177.98,
+      "l": 167.48,
+      "t": 1764306000000,
+      "n": 85821
+    },
+    {
+      "v": 10755526,
+      "vw": 179.1643,
+      "o": 172.022,
+      "c": 171.13,
+      "h": 183.69,
+      "l": 171.13,
+      "t": 1764565200000,
+      "n": 159430
+    },
+    {
+      "v": 16853444,
+      "vw": 198.5119,
+      "o": 195.635,
+      "c": 188.44,
+      "h": 213.8,
+      "l": 186.83,
+      "t": 1764651600000,
+      "n": 264229
+    }
+  ],
+  "massive_minute_bars": [
+    {
+      "v": 306,
+      "vw": 136.8965,
+      "o": 136.91,
+      "c": 136.89,
+      "h": 136.91,
+      "l": 136.89,
+      "t": 1766049540000,
+      "n": 5
+    },
+    {
+      "v": 544,
+      "vw": 136.8851,
+      "o": 136.88,
+      "c": 136.89,
+      "h": 136.89,
+      "l": 136.88,
+      "t": 1766050200000,
+      "n": 8
+    },
+    {
+      "v": 137,
+      "vw": 136.9938,
+      "o": 136.99,
+      "c": 136.99,
+      "h": 136.99,
+      "l": 136.99,
+      "t": 1766050560000,
+      "n": 7
+    },
+    {
+      "v": 100,
+      "vw": 137.2,
+      "o": 137.2,
+      "c": 137.2,
+      "h": 137.2,
+      "l": 137.2,
+      "t": 1766051220000,
+      "n": 1
+    },
+    {
+      "v": 1102,
+      "vw": 136.9729,
+      "o": 136.98,
+      "c": 136.95,
+      "h": 136.99,
+      "l": 136.95,
+      "t": 1766051580000,
+      "n": 10
+    },
+    {
+      "v": 301,
+      "vw": 136.959,
+      "o": 136.97,
+      "c": 136.95,
+      "h": 136.97,
+      "l": 136.95,
+      "t": 1766051640000,
+      "n": 5
+    },
+    {
+      "v": 101,
+      "vw": 136.9511,
+      "o": 136.95,
+      "c": 136.95,
+      "h": 136.95,
+      "l": 136.95,
+      "t": 1766051700000,
+      "n": 2
+    },
+    {
+      "v": 201,
+      "vw": 137.0005,
+      "o": 137,
+      "c": 137,
+      "h": 137,
+      "l": 137,
+      "t": 1766051820000,
+      "n": 2
+    },
+    {
+      "v": 200,
+      "vw": 137.0003,
+      "o": 137,
+      "c": 137,
+      "h": 137,
+      "l": 137,
+      "t": 1766051880000,
+      "n": 2
+    },
+    {
+      "v": 1200,
+      "vw": 137.2599,
+      "o": 137.4,
+      "c": 137.3,
+      "h": 137.4,
+      "l": 137.3,
+      "t": 1766051940000,
+      "n": 47
+    }
+  ],
+  "massive_grouped_daily": [
+    {
+      "T": "OILK",
+      "v": 58118,
+      "vw": 36.8005,
+      "o": 36.68,
+      "c": 36.95,
+      "h": 37.019,
+      "l": 36.571,
+      "t": 1766005200000,
+      "n": 438
+    },
+    {
+      "T": "PROP",
+      "v": 1453578,
+      "vw": 1.7022,
+      "o": 1.71,
+      "c": 1.69,
+      "h": 1.7565,
+      "l": 1.67,
+      "t": 1766005200000,
+      "n": 4678
+    },
+    {
+      "T": "GPUS",
+      "v": 18631435,
+      "vw": 0.2541,
+      "o": 0.2534,
+      "c": 0.2522,
+      "h": 0.27,
+      "l": 0.2402,
+      "t": 1766005200000,
+      "n": 25242
+    },
+    {
+      "T": "U",
+      "v": 6359630,
+      "vw": 44.279,
+      "o": 45.065,
+      "c": 43.78,
+      "h": 45.3,
+      "l": 43.63,
+      "t": 1766005200000,
+      "n": 71607
+    },
+    {
+      "T": "XOMAO",
+      "v": 1613,
+      "vw": 25.4847,
+      "o": 25.36,
+      "c": 25.56,
+      "h": 25.56,
+      "l": 25.36,
+      "t": 1766005200000,
+      "n": 46
+    },
+    {
+      "T": "VPLS",
+      "v": 98305,
+      "vw": 78.4865,
+      "o": 78.5,
+      "c": 78.475,
+      "h": 78.54,
+      "l": 78.4419,
+      "t": 1766005200000,
+      "n": 657
+    },
+    {
+      "T": "TPET",
+      "v": 1470042,
+      "vw": 0.9361,
+      "o": 0.7826,
+      "c": 0.91,
+      "h": 0.94,
+      "l": 0.7751,
+      "t": 1766005200000,
+      "n": 4078
+    },
+    {
+      "T": "ETHE",
+      "v": 11919333,
+      "vw": 23.7596,
+      "o": 24.12,
+      "c": 23.13,
+      "h": 24.85,
+      "l": 22.885,
+      "t": 1766005200000,
+      "n": 82705
+    },
+    {
+      "T": "CHRD",
+      "v": 606923,
+      "vw": 92.9227,
+      "o": 92.69,
+      "c": 93.75,
+      "h": 94.09,
+      "l": 91.6,
+      "t": 1766005200000,
+      "n": 15426
+    },
+    {
+      "T": "WYNN",
+      "v": 978057,
+      "vw": 125.5816,
+      "o": 126.78,
+      "c": 125.44,
+      "h": 127.01,
+      "l": 125.05,
+      "t": 1766005200000,
+      "n": 22673
+    }
+  ],
+  "massive_news": [
+    {
+      "id": "5904ad461297fdd315d1601c06e64a20c07085b10a146c77745ac1909df0ac3f",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Credo Technology Stock Is Down 28% in Two Weeks. Is the Dip Worth Buying?",
+      "author": "Anders Bylund",
+      "published_utc": "2025-12-17T19:24:44Z",
+      "article_url": "https://www.fool.com/investing/2025/12/17/credo-technology-stock-is-down-28-in-two-weeks/?source=iedfolrf0000001",
+      "tickers": [
+        "CRDO",
+        "NVDA",
+        "PLTR",
+        "MRVL",
+        "AVGO"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F847728%2Ftechnician-in-data-center-with-network-switches.jpg&w=1200&op=resize",
+      "description": "Credo Technology, an AI networking gear company, experienced a 28% stock drop in two weeks without any specific negative news. Despite the recent decline, the stock remains up 839% over three years and continues to show strong potential in AI infrastructure connectivity.",
+      "keywords": [
+        "AI",
+        "networking",
+        "stock volatility",
+        "technology",
+        "infrastructure"
+      ],
+      "insights": [
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong financial performance, massive AI connectivity opportunity, doubled revenue, expanding margins, and recent profitability"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned as a benchmark for stock performance in AI technology"
+        },
+        {
+          "ticker": "PLTR",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Used as a comparative reference for stock valuation metrics"
+        },
+        {
+          "ticker": "MRVL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a potential competitor in the connectivity market"
+        },
+        {
+          "ticker": "AVGO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a potential competitor in the connectivity market"
+        }
+      ]
+    },
+    {
+      "id": "147f89106ac79d7eb7113b833b9c606852f5a5b3c9cd7e84e92709ed97b8ee4b",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "The Best Stocks to Invest $50,000 in Right Now",
+      "author": "Patrick Sanders",
+      "published_utc": "2025-12-15T20:27:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/15/the-best-stocks-to-invest-50000-in-right-now/?source=iedfolrf0000001",
+      "tickers": [
+        "NVDA",
+        "GOOG",
+        "GOOGL",
+        "TSM",
+        "TSLA",
+        "CRDO"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F846667%2Fmoney-wads-of-assorted-bills.jpg&w=1200&op=resize",
+      "description": "As we approach 2026, investors are recommended to consider five stocks in AI, semiconductor, and technology sectors, focusing on companies with strong market positions and growth potential in artificial intelligence infrastructure and related technologies.",
+      "keywords": [
+        "AI",
+        "semiconductor",
+        "technology",
+        "investment",
+        "stocks"
+      ],
+      "insights": [
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Dominates GPU market with 90% market share, critical for AI infrastructure, largest publicly traded company with strong partnerships"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong advertising revenue, leading browser and search engine, developing in-house AI chips with potential major data center deals"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong advertising revenue, leading browser and search engine, developing in-house AI chips with potential major data center deals"
+        },
+        {
+          "ticker": "TSM",
+          "sentiment": "positive",
+          "sentiment_reasoning": "World's largest chip fabricator, consistent growth, versatile manufacturing capabilities, projecting strong revenue and margin growth"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Facing challenges in 2025, but potential breakthrough in autonomous driving technology with promising robotaxi monetization prospects"
+        },
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Rapid revenue growth, critical infrastructure for AI data centers, providing specialized wiring solutions with high projected margins"
+        }
+      ]
+    },
+    {
+      "id": "8c6c3ec5eb25a34b5a1df7fce14939cacb6d550dc63b9177ba782225f266bd1b",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Oracle, Marvell, And Oklo Are Among Top 10 Large Cap Losers Last Week (Dec. 8-Dec. 12): Are the Others in Your Portfolio?",
+      "author": "Nabaparna Bhattacharya",
+      "published_utc": "2025-12-14T13:44:15Z",
+      "article_url": "https://www.benzinga.com/markets/equities/25/12/49382098/oracle-marvell-and-oklo-are-among-top-10-large-cap-losers-last-week-dec-8-dec-12-are-the-others-?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "ORCL",
+        "BE",
+        "CRDO",
+        "MRVL",
+        "AVAV"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/14/Cramer-Weighs-On-Oracle-Trade.jpeg?width=1200&height=800&fit=crop",
+      "description": "Several technology and energy stocks experienced significant declines last week, with Oracle, Bloom Energy, and Credo Technology Group among the top losers due to market weakness, earnings reports, and sector-specific challenges.",
+      "keywords": [
+        "large cap stocks",
+        "market decline",
+        "technology sector",
+        "earnings",
+        "AI"
+      ],
+      "insights": [
+        {
+          "ticker": "ORCL",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Reported Q2 sales below estimates, delayed data center projects for OpenAI, shares fell 14.31%"
+        },
+        {
+          "ticker": "BE",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Shares slumped 20.68% amid overall market weakness in electrical equipment companies"
+        },
+        {
+          "ticker": "CRDO",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Fell 20.09% due to broader technology sector weakness and Broadcom's cautious outlook"
+        },
+        {
+          "ticker": "MRVL",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Decreased 6.37% after reports Microsoft might switch to Broadcom for AI chip designs"
+        },
+        {
+          "ticker": "AVAV",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Decreased 15% after mixed earnings report and guidance"
+        }
+      ]
+    },
+    {
+      "id": "deb20c54bd1c55f76202b0b281d2789b4d282cd9e85ad37edc829e948a37631e",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Credo Technologies Posted a Blowout Quarter—Here’s What’s Next",
+      "author": "Thomas Hughes",
+      "published_utc": "2025-12-05T15:41:00Z",
+      "article_url": "https://www.investing.com/analysis/credo-technologies-posted-a-blowout-quarterheres-whats-next-200671366",
+      "tickers": [
+        "CRDO",
+        "NVDA",
+        "AMD",
+        "MSFT",
+        "AMZN",
+        "META"
+      ],
+      "amp_url": "https://m.investing.com/analysis/credo-technologies-posted-a-blowout-quarterheres-whats-next-200671366?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Credo Technologies reported exceptional Q2 results, driven by AI infrastructure demand, with revenue up 272% year-over-year and strong forward guidance indicating continued growth in high-speed connectivity components.",
+      "keywords": [
+        "AI",
+        "technology",
+        "connectivity",
+        "infrastructure",
+        "earnings"
+      ],
+      "insights": [
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Reported 272% YoY revenue growth, exceeded analyst estimates by quadruple-digit basis points, strong AI-driven demand, positive guidance, and significant cash flow generation"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned as a dominant player in GPU sales for AI data centers, contributing to overall AI infrastructure growth"
+        },
+        {
+          "ticker": "AMD",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Highlighted as a key GPU supplier for AI data centers, supporting the broader AI technology ecosystem"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a consumer of AI infrastructure technologies without specific performance details"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a consumer of AI infrastructure technologies without specific performance details"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a consumer of AI infrastructure technologies without specific performance details"
+        }
+      ]
+    },
+    {
+      "id": "24588d5fba0e8cf682f51ff3f3edcd8ed8c7c1f4b32149cdaccd072b54d685f1",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Why Credo Stock Jumped Today",
+      "author": "Joe Tenebruso",
+      "published_utc": "2025-12-02T23:16:28Z",
+      "article_url": "https://www.fool.com/investing/2025/12/02/why-credo-stock-jumped-today/?source=iedfolrf0000001",
+      "tickers": [
+        "CRDO"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F845264%2Fcloud-computing-gettyimages-802301404.jpg&w=1200&op=resize",
+      "description": "Credo Technology Group reported exceptional quarterly results, with revenue surging 272% year-over-year to $268 million, driven by high demand for AI data center connectivity solutions from hyperscalers.",
+      "keywords": [
+        "AI",
+        "connectivity",
+        "data centers",
+        "hyperscalers",
+        "networking"
+      ],
+      "insights": [
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong financial performance with 272% revenue growth, adjusted net income increasing over tenfold, and positive guidance for next quarter, indicating robust market demand for their AI-related networking solutions"
+        }
+      ]
+    },
+    {
+      "id": "363033e1631673daa4147b2acbc6aad5d2b2c0a0b3aef3a3a267f895ea7d07d7",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Stock Market Today: Dow Jones, S&P 500 Futures Bounce Back— MongoDB, CrowdStrike Holdings, American Eagle In Focus (UPDATED)",
+      "author": "Rishabh Mishra",
+      "published_utc": "2025-12-02T13:32:48Z",
+      "article_url": "https://www.benzinga.com/markets/equities/25/12/49154688/stock-market-today-sp-500-nasdaq-futures-rise-after-breaking-5-day-winning-streak-mongodb-crowds?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "MDB",
+        "CRWD",
+        "AEO",
+        "CRDO",
+        "SNOW"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/12/02/Wall-Street.jpeg?width=1200&height=800&fit=crop",
+      "description": "U.S. stock futures rose on Tuesday after a Monday decline, with key companies like MongoDB and CrowdStrike reporting earnings. Markets anticipate potential Federal Reserve interest rate cuts and remain optimistic about the 2026 economic landscape.",
+      "keywords": [
+        "stock market",
+        "futures",
+        "earnings",
+        "Federal Reserve",
+        "interest rates"
+      ],
+      "insights": [
+        {
+          "ticker": "MDB",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Surged 22.84% after reporting better-than-expected Q3 results and raising FY26 guidance above estimates"
+        },
+        {
+          "ticker": "CRWD",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Slight rise of 1.08% with expected quarterly earnings of 94 cents per share"
+        },
+        {
+          "ticker": "AEO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Up 1.36% ahead of earnings report with expected earnings of $0.43 per share"
+        },
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Jumped 17.84% after reporting upbeat Q2 results and strong Q3 sales guidance"
+        },
+        {
+          "ticker": "SNOW",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Climbed 4.01% following director's share sale"
+        }
+      ]
+    },
+    {
+      "id": "9f65952e7006bddb21a0f87010054432f5076f6cd0915cb70dc4e36898486af2",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Why Credo Technology Stock Is Soaring in After-Hours Trading",
+      "author": "Scott Levine",
+      "published_utc": "2025-12-02T00:31:07Z",
+      "article_url": "https://www.fool.com/investing/2025/12/01/why-credo-technology-stock-is-soaring-in-after-hou/?source=iedfolrf0000001",
+      "tickers": [
+        "CRDO"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F844996%2Fmen-celebrate-while-looking-at-smartphone.jpg&w=1200&op=resize",
+      "description": "Credo Technology reported strong Q2 2026 financial results, with 272% year-over-year revenue growth and earnings exceeding analyst expectations, driven by AI connectivity solutions.",
+      "keywords": [
+        "AI",
+        "technology",
+        "quarterly earnings",
+        "connectivity solutions"
+      ],
+      "insights": [
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Reported record quarterly results with significant revenue growth (272% YoY), exceeded analyst expectations for revenue and earnings, and provided optimistic Q3 revenue guidance of $335-$345 million representing potential 152% YoY growth"
+        }
+      ]
+    },
+    {
+      "id": "478ee22a94d3b7d688c5fc3ec46f2a0faa3bd523c64261a6adc0fa9f0ef90168",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Credo vs. Astera: Which Could Be the Next Big AI Winners",
+      "author": "Rick Orford",
+      "published_utc": "2025-12-01T13:30:00Z",
+      "article_url": "https://www.fool.com/investing/2025/12/01/credo-vs-astera-which-could-be-the-next-big-ai-win/?source=iedfolrf0000001",
+      "tickers": [
+        "CRDO",
+        "ALAB"
+      ],
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F844763%2Fcredo-vs-astera.png&w=1200&op=resize",
+      "description": "Two emerging AI technology companies, Credo Technology and Astera Labs, are positioned to benefit from accelerating AI infrastructure demand, showing promising revenue growth and potential in the data-center revolution.",
+      "keywords": [
+        "AI",
+        "technology",
+        "data-center",
+        "infrastructure",
+        "stocks"
+      ],
+      "insights": [
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Showing strong stock performance, explosive revenue growth, and potential in AI infrastructure market"
+        },
+        {
+          "ticker": "ALAB",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Demonstrating rising profitability and promising positioning in AI data-center technology sector"
+        }
+      ]
+    },
+    {
+      "id": "99b6fe42298a75d55ba597a3b146c0675c581497a607835a305a863bd3d76f08",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Small Cap Stock Rockets: Top 10 IWM Holdings' Eye-Popping Rally",
+      "author": "Erica Kollmann",
+      "published_utc": "2025-10-30T18:12:13Z",
+      "article_url": "https://www.benzinga.com/trading-ideas/movers/25/10/48539161/small-cap-stock-rockets-top-10-iwm-holdings-eye-popping-rally?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel",
+      "tickers": [
+        "BE",
+        "CRDO",
+        "IONQ",
+        "IONQ.WS",
+        "OKLO",
+        "IWM"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/10/30/rocket-space-ship-space.jpeg?width=1200&height=800&fit=crop",
+      "description": "Top holdings of the iShares Russell 2000 ETF have experienced significant gains over the past six months, with companies in tech, energy, and infrastructure sectors showing remarkable stock price appreciation driven by AI, sustainable technology, and infrastructure investments.",
+      "keywords": [
+        "small cap",
+        "Russell 2000",
+        "technology",
+        "AI",
+        "infrastructure",
+        "quantum computing"
+      ],
+      "insights": [
+        {
+          "ticker": "BE",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Soared 615% since April, with breakthrough commercial wins and record quarterly revenues in sustainable infrastructure"
+        },
+        {
+          "ticker": "CRDO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Surged nearly 300% due to massive demand from hyperscalers investing in AI infrastructure"
+        },
+        {
+          "ticker": "IONQ",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Shares rocketed over 120% as quantum computing commercialization and enthusiasm grow"
+        },
+        {
+          "ticker": "IONQ.WS",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Shares rocketed over 120% as quantum computing commercialization and enthusiasm grow"
+        },
+        {
+          "ticker": "OKLO",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Gained nearly 500% developing advanced nuclear power plants for AI data centers"
+        },
+        {
+          "ticker": "IWM",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Tracking index of small-cap stocks showing overall market momentum"
+        }
+      ]
+    },
+    {
+      "id": "cc46595c3ab83ee5715b4b7ef8899eba4e5a32ca8ebffc5eb18c92b377964c0c",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.massive.com/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.massive.com/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Is the Vanguard Russell 2000 Index Fund ETF a Buy Now?",
+      "author": "Neil Patel",
+      "published_utc": "2025-10-25T12:15:00Z",
+      "article_url": "https://www.fool.com/investing/2025/10/25/vanguard-russell-2000-index-fund-etf-a-buy-now/?source=iedfolrf0000001",
+      "tickers": [
+        "VTWO",
+        "CRDO",
+        "NVDA",
+        "AAPL",
+        "MSFT"
+      ],
+      "image_url": "https://g.foolcdn.com/editorial/images/839040/newspaper-etf-where-to-invest-your-money.jpg",
+      "description": "The Vanguard Russell 2000 ETF provides broad small-cap stock exposure but has underperformed the S&P 500 over the past decade. While it offers diversification and low expenses, it lacks exposure to major tech companies benefiting from the AI boom.",
+      "keywords": [
+        "small-cap stocks",
+        "ETF",
+        "Russell 2000",
+        "diversification",
+        "investment strategy"
+      ],
+      "insights": [
+        {
+          "ticker": "VTWO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "The ETF offers diversification and low expenses, but has lagged behind the S&P 500 and lacks exposure to major tech companies driving market growth"
+        },
+        {
+          "ticker": "CRDO",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as the largest holding in the ETF, but no specific performance details provided"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Highlighted as a monster success benefiting from the AI boom, though not part of the Russell 2000 ETF"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned as a successful company driving stock market performance"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Noted as a successful company contributing to market growth"
+        }
+      ]
+    }
+  ],
+  "massive_financials": [
+    {
+      "start_date": "2024-11-02",
+      "end_date": "2025-11-01",
+      "timeframe": "ttm",
+      "fiscal_period": "TTM",
+      "fiscal_year": "",
+      "cik": "0001807794",
+      "sic": "3674",
+      "tickers": [
+        "CRDO"
+      ],
+      "company_name": "Credo Technology Group Holding Ltd",
+      "financials": {
+        "balance_sheet": {
+          "current_liabilities": {
+            "value": 140371000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "noncurrent_assets": {
+            "value": 205849000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "current_assets": {
+            "value": 1243423000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "wages": {
+            "value": 19347000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "fixed_assets": {
+            "value": 85994000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "intangible_assets": {
+            "value": 17131000,
+            "unit": "USD",
+            "label": "Intangible Assets",
+            "order": 330
+          },
+          "noncurrent_liabilities": {
+            "value": 22828000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "equity": {
+            "value": 1286073000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "assets": {
+            "value": 1449272000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "other_current_assets": {
+            "value": 1093229000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "equity_attributable_to_parent": {
+            "value": 1286073000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "liabilities_and_equity": {
+            "value": 1449272000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "accounts_payable": {
+            "value": 64097000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "other_noncurrent_assets": {
+            "value": 102724000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "inventory": {
+            "value": 150194000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "liabilities": {
+            "value": 163199000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "other_current_liabilities": {
+            "value": 56927000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          }
+        },
+        "income_statement": {
+          "net_income_loss": {
+            "value": 211983000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 211983000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "costs_and_expenses": {
+            "value": 580034000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 211983000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "basic_average_shares": {
+            "value": 516344000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "gross_profit": {
+            "value": 531528000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "benefits_costs_expenses": {
+            "value": 580034000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "research_and_development": {
+            "value": 194207000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 211983000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "operating_expenses": {
+            "value": 332008000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "operating_income_loss": {
+            "value": 199520000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "basic_earnings_per_share": {
+            "value": 1.23,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "diluted_earnings_per_share": {
+            "value": 1.14,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "revenues": {
+            "value": 796128000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "cost_of_revenue": {
+            "value": 264600000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 136928000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "diluted_average_shares": {
+            "value": 555363000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 216094000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "income_tax_expense_benefit": {
+            "value": 4111000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss": {
+            "value": 211661000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 211661000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "other_comprehensive_income_loss": {
+            "value": 211661000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_continuing": {
+            "value": 328378000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow": {
+            "value": 328338000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -219107000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": 369618000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 177867000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -219107000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": 369618000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 177867000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "exchange_gains_losses": {
+            "value": -40000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-08-03",
+      "end_date": "2025-11-01",
+      "filing_date": "2025-12-02",
+      "acceptance_datetime": "2025-12-01T23:17:08Z",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q2",
+      "fiscal_year": "2026",
+      "cik": "0001807794",
+      "sic": "3674",
+      "tickers": [
+        "CRDO"
+      ],
+      "company_name": "Credo Technology Group Holding Ltd",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0001628280-25-054549",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0001628280-25-054549/files/crdo-20251101_htm.xml",
+      "financials": {
+        "balance_sheet": {
+          "noncurrent_assets": {
+            "value": 205849000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "fixed_assets": {
+            "value": 85994000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "accounts_payable": {
+            "value": 64097000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "other_noncurrent_assets": {
+            "value": 102724000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "equity_attributable_to_parent": {
+            "value": 1286073000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "liabilities": {
+            "value": 163199000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "inventory": {
+            "value": 150194000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "intangible_assets": {
+            "value": 17131000,
+            "unit": "USD",
+            "label": "Intangible Assets",
+            "order": 330
+          },
+          "current_liabilities": {
+            "value": 140371000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "equity": {
+            "value": 1286073000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "other_current_assets": {
+            "value": 1093229000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "current_assets": {
+            "value": 1243423000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "assets": {
+            "value": 1449272000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "liabilities_and_equity": {
+            "value": 1449272000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "other_current_liabilities": {
+            "value": 56927000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "noncurrent_liabilities": {
+            "value": 22828000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "wages": {
+            "value": 19347000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          }
+        },
+        "income_statement": {
+          "selling_general_and_administrative_expenses": {
+            "value": 44334000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "cost_of_revenue": {
+            "value": 86981000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 82636000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 82636000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "income_tax_expense_benefit": {
+            "value": 1049000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 83685000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "net_income_loss": {
+            "value": 82636000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 82636000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "benefits_costs_expenses": {
+            "value": 184342000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "research_and_development": {
+            "value": 57916000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "diluted_earnings_per_share": {
+            "value": 0.44,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "basic_earnings_per_share": {
+            "value": 0.47,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "basic_average_shares": {
+            "value": 175307000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "diluted_average_shares": {
+            "value": 187659000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "operating_income_loss": {
+            "value": 78796000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "operating_expenses": {
+            "value": 102250000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "costs_and_expenses": {
+            "value": 184342000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "revenues": {
+            "value": 268027000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "gross_profit": {
+            "value": 181046000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow_from_financing_activities": {
+            "value": 377894000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_continuing": {
+            "value": 347817000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "exchange_gains_losses": {
+            "value": 122000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          },
+          "net_cash_flow": {
+            "value": 347939000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -91742000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 61665000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -91742000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 61665000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": 377894000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 82432000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "comprehensive_income_loss": {
+            "value": 82432000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "other_comprehensive_income_loss": {
+            "value": 82432000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-05-04",
+      "end_date": "2025-08-02",
+      "filing_date": "2025-09-04",
+      "acceptance_datetime": "2025-09-04T20:07:08Z",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q1",
+      "fiscal_year": "2026",
+      "cik": "0001807794",
+      "sic": "3674",
+      "tickers": [
+        "CRDO"
+      ],
+      "company_name": "Credo Technology Group Holding Ltd",
+      "source_filing_url": "https://api.polygon.io/v1/reference/sec/filings/0001807794-25-000021",
+      "source_filing_file_url": "http://api.polygon.io/v1/reference/sec/filings/0001807794-25-000021/files/crdo-20250802_htm.xml",
+      "financials": {
+        "income_statement": {
+          "operating_income_loss": {
+            "value": 60742000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "operating_expenses": {
+            "value": 89626000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "diluted_earnings_per_share": {
+            "value": 0.34,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "income_tax_expense_benefit": {
+            "value": 1289000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 37178000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 63399000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 64688000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "research_and_development": {
+            "value": 52448000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 63399000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "basic_earnings_per_share": {
+            "value": 0.37,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "net_income_loss": {
+            "value": 63399000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "diluted_average_shares": {
+            "value": 184577000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "costs_and_expenses": {
+            "value": 158386000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "cost_of_revenue": {
+            "value": 72706000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "benefits_costs_expenses": {
+            "value": 158386000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "basic_average_shares": {
+            "value": 171927000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "gross_profit": {
+            "value": 150368000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 63399000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "revenues": {
+            "value": 223074000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 63408000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "comprehensive_income_loss": {
+            "value": 63408000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "other_comprehensive_income_loss": {
+            "value": 63408000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          }
+        },
+        "balance_sheet": {
+          "liabilities": {
+            "value": 123794000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "assets": {
+            "value": 905175000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "inventory": {
+            "value": 116677000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "noncurrent_assets": {
+            "value": 101566000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "other_noncurrent_assets": {
+            "value": 32122000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "equity_attributable_to_parent": {
+            "value": 781381000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "current_assets": {
+            "value": 803609000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "wages": {
+            "value": 13175000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "other_current_liabilities": {
+            "value": 40316000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          },
+          "noncurrent_liabilities": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "equity": {
+            "value": 781381000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "current_liabilities": {
+            "value": 108387000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "accounts_payable": {
+            "value": 54896000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "fixed_assets": {
+            "value": 69444000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "liabilities_and_equity": {
+            "value": 905175000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "other_current_assets": {
+            "value": 686932000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          }
+        },
+        "cash_flow_statement": {
+          "net_cash_flow": {
+            "value": -16692000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "net_cash_flow_continuing": {
+            "value": -16623000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -2970000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 54168000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "exchange_gains_losses": {
+            "value": -69000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          },
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 54168000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -2970000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -67821000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -67821000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          }
+        }
+      }
+    },
+    {
+      "start_date": "2025-02-02",
+      "end_date": "2025-05-03",
+      "timeframe": "quarterly",
+      "fiscal_period": "Q4",
+      "fiscal_year": "2025",
+      "cik": "0001807794",
+      "sic": "3674",
+      "tickers": [
+        "CRDO"
+      ],
+      "company_name": "Credo Technology Group Holding Ltd",
+      "financials": {
+        "cash_flow_statement": {
+          "net_cash_flow_from_operating_activities_continuing": {
+            "value": 57822000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities, Continuing",
+            "order": 200
+          },
+          "net_cash_flow_from_operating_activities": {
+            "value": 57822000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Operating Activities",
+            "order": 100
+          },
+          "net_cash_flow_from_investing_activities": {
+            "value": -118665000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities",
+            "order": 400
+          },
+          "net_cash_flow": {
+            "value": -62880000,
+            "unit": "USD",
+            "label": "Net Cash Flow",
+            "order": 1100
+          },
+          "exchange_gains_losses": {
+            "value": -65000,
+            "unit": "USD",
+            "label": "Exchange Gains/Losses",
+            "order": 1000
+          },
+          "net_cash_flow_continuing": {
+            "value": -62815000,
+            "unit": "USD",
+            "label": "Net Cash Flow, Continuing",
+            "order": 1200
+          },
+          "net_cash_flow_from_investing_activities_continuing": {
+            "value": -118665000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Investing Activities, Continuing",
+            "order": 500
+          },
+          "net_cash_flow_from_financing_activities_continuing": {
+            "value": -1972000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities, Continuing",
+            "order": 800
+          },
+          "net_cash_flow_from_financing_activities": {
+            "value": -1972000,
+            "unit": "USD",
+            "label": "Net Cash Flow From Financing Activities",
+            "order": 700
+          }
+        },
+        "comprehensive_income": {
+          "comprehensive_income_loss": {
+            "value": 36554000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss",
+            "order": 100
+          },
+          "comprehensive_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Noncontrolling Interest",
+            "order": 200
+          },
+          "comprehensive_income_loss_attributable_to_parent": {
+            "value": 36554000,
+            "unit": "USD",
+            "label": "Comprehensive Income/Loss Attributable To Parent",
+            "order": 300
+          },
+          "other_comprehensive_income_loss": {
+            "value": 36554000,
+            "unit": "USD",
+            "label": "Other Comprehensive Income/Loss",
+            "order": 400
+          }
+        },
+        "income_statement": {
+          "research_and_development": {
+            "value": 47582000,
+            "unit": "USD",
+            "label": "Research and Development",
+            "order": 1030
+          },
+          "revenues": {
+            "value": 170025000,
+            "unit": "USD",
+            "label": "Revenues",
+            "order": 100
+          },
+          "operating_income_loss": {
+            "value": 33788000,
+            "unit": "USD",
+            "label": "Operating Income/Loss",
+            "order": 1100
+          },
+          "costs_and_expenses": {
+            "value": 132416000,
+            "unit": "USD",
+            "label": "Costs And Expenses",
+            "order": 600
+          },
+          "diluted_earnings_per_share": {
+            "value": 0.19999999999999998,
+            "unit": "USD / shares",
+            "label": "Diluted Earnings Per Share",
+            "order": 4300
+          },
+          "cost_of_revenue": {
+            "value": 55837000,
+            "unit": "USD",
+            "label": "Cost Of Revenue",
+            "order": 300
+          },
+          "net_income_loss": {
+            "value": 36588000,
+            "unit": "USD",
+            "label": "Net Income/Loss",
+            "order": 3200
+          },
+          "income_loss_from_continuing_operations_after_tax": {
+            "value": 36588000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations After Tax",
+            "order": 1400
+          },
+          "participating_securities_distributed_and_undistributed_earnings_loss_basic": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Participating Securities, Distributed And Undistributed Earnings/Loss, Basic",
+            "order": 3800
+          },
+          "benefits_costs_expenses": {
+            "value": 132416000,
+            "unit": "USD",
+            "label": "Benefits Costs and Expenses",
+            "order": 200
+          },
+          "income_loss_from_continuing_operations_before_tax": {
+            "value": 37609000,
+            "unit": "USD",
+            "label": "Income/Loss From Continuing Operations Before Tax",
+            "order": 1500
+          },
+          "operating_expenses": {
+            "value": 80400000,
+            "unit": "USD",
+            "label": "Operating Expenses",
+            "order": 1000
+          },
+          "net_income_loss_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Noncontrolling Interest",
+            "order": 3300
+          },
+          "net_income_loss_attributable_to_parent": {
+            "value": 36588000,
+            "unit": "USD",
+            "label": "Net Income/Loss Attributable To Parent",
+            "order": 3500
+          },
+          "net_income_loss_available_to_common_stockholders_basic": {
+            "value": 36588000,
+            "unit": "USD",
+            "label": "Net Income/Loss Available To Common Stockholders, Basic",
+            "order": 3700
+          },
+          "basic_average_shares": {
+            "value": 943000,
+            "unit": "shares",
+            "label": "Basic Average Shares",
+            "order": 4400
+          },
+          "basic_earnings_per_share": {
+            "value": 0.22,
+            "unit": "USD / shares",
+            "label": "Basic Earnings Per Share",
+            "order": 4200
+          },
+          "diluted_average_shares": {
+            "value": 663000,
+            "unit": "shares",
+            "label": "Diluted Average Shares",
+            "order": 4500
+          },
+          "preferred_stock_dividends_and_other_adjustments": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Preferred Stock Dividends And Other Adjustments",
+            "order": 3900
+          },
+          "income_tax_expense_benefit": {
+            "value": 1021000,
+            "unit": "USD",
+            "label": "Income Tax Expense/Benefit",
+            "order": 2200
+          },
+          "gross_profit": {
+            "value": 114188000,
+            "unit": "USD",
+            "label": "Gross Profit",
+            "order": 800
+          },
+          "selling_general_and_administrative_expenses": {
+            "value": 31945000,
+            "unit": "USD",
+            "label": "Selling, General, and Administrative Expenses",
+            "order": 1010
+          }
+        },
+        "balance_sheet": {
+          "accounts_payable": {
+            "value": 56158000,
+            "unit": "USD",
+            "label": "Accounts Payable",
+            "order": 710
+          },
+          "inventory": {
+            "value": 90029000,
+            "unit": "USD",
+            "label": "Inventory",
+            "order": 230
+          },
+          "liabilities_and_equity": {
+            "value": 809257000,
+            "unit": "USD",
+            "label": "Liabilities And Equity",
+            "order": 1900
+          },
+          "current_assets": {
+            "value": 713534000,
+            "unit": "USD",
+            "label": "Current Assets",
+            "order": 200
+          },
+          "wages": {
+            "value": 16097000,
+            "unit": "USD",
+            "label": "Wages",
+            "order": 730
+          },
+          "fixed_assets": {
+            "value": 63631000,
+            "unit": "USD",
+            "label": "Fixed Assets",
+            "order": 320
+          },
+          "equity": {
+            "value": 681582000,
+            "unit": "USD",
+            "label": "Equity",
+            "order": 1400
+          },
+          "liabilities": {
+            "value": 127675000,
+            "unit": "USD",
+            "label": "Liabilities",
+            "order": 600
+          },
+          "equity_attributable_to_parent": {
+            "value": 681582000,
+            "unit": "USD",
+            "label": "Equity Attributable To Parent",
+            "order": 1600
+          },
+          "assets": {
+            "value": 809257000,
+            "unit": "USD",
+            "label": "Assets",
+            "order": 100
+          },
+          "equity_attributable_to_noncontrolling_interest": {
+            "value": 0,
+            "unit": "USD",
+            "label": "Equity Attributable To Noncontrolling Interest",
+            "order": 1500
+          },
+          "current_liabilities": {
+            "value": 107711000,
+            "unit": "USD",
+            "label": "Current Liabilities",
+            "order": 700
+          },
+          "other_current_assets": {
+            "value": 623505000,
+            "unit": "USD",
+            "label": "Other Current Assets",
+            "order": 250
+          },
+          "noncurrent_liabilities": {
+            "value": 19964000,
+            "unit": "USD",
+            "label": "Noncurrent Liabilities",
+            "order": 800
+          },
+          "other_noncurrent_assets": {
+            "value": 32092000,
+            "unit": "USD",
+            "label": "Other Non-current Assets",
+            "order": 350
+          },
+          "noncurrent_assets": {
+            "value": 95723000,
+            "unit": "USD",
+            "label": "Noncurrent Assets",
+            "order": 300
+          },
+          "other_current_liabilities": {
+            "value": 35456000,
+            "unit": "USD",
+            "label": "Other Current Liabilities",
+            "order": 740
+          }
+        }
+      }
+    }
+  ],
+  "alpaca_recent_bars": [
+    {
+      "ClosePrice": 139.91,
+      "HighPrice": 139.91,
+      "LowPrice": 139.91,
+      "TradeCount": 6,
+      "OpenPrice": 139.91,
+      "Timestamp": "2025-12-18T18:36:00Z",
+      "Volume": 162,
+      "VWAP": 139.91
+    },
+    {
+      "ClosePrice": 139.73,
+      "HighPrice": 139.73,
+      "LowPrice": 139.73,
+      "TradeCount": 7,
+      "OpenPrice": 139.73,
+      "Timestamp": "2025-12-18T18:39:00Z",
+      "Volume": 197,
+      "VWAP": 139.73
+    },
+    {
+      "ClosePrice": 139.81,
+      "HighPrice": 139.81,
+      "LowPrice": 139.81,
+      "TradeCount": 12,
+      "OpenPrice": 139.81,
+      "Timestamp": "2025-12-18T18:40:00Z",
+      "Volume": 447,
+      "VWAP": 139.81
+    },
+    {
+      "ClosePrice": 139.715,
+      "HighPrice": 139.715,
+      "LowPrice": 139.715,
+      "TradeCount": 4,
+      "OpenPrice": 139.715,
+      "Timestamp": "2025-12-18T18:41:00Z",
+      "Volume": 236,
+      "VWAP": 139.715
+    },
+    {
+      "ClosePrice": 139.71,
+      "HighPrice": 139.71,
+      "LowPrice": 139.65,
+      "TradeCount": 17,
+      "OpenPrice": 139.65,
+      "Timestamp": "2025-12-18T18:44:00Z",
+      "Volume": 626,
+      "VWAP": 139.68
+    },
+    {
+      "ClosePrice": 139.64,
+      "HighPrice": 139.64,
+      "LowPrice": 139.5,
+      "TradeCount": 3,
+      "OpenPrice": 139.5,
+      "Timestamp": "2025-12-18T18:46:00Z",
+      "Volume": 300,
+      "VWAP": 139.546667
+    },
+    {
+      "ClosePrice": 139.37,
+      "HighPrice": 139.37,
+      "LowPrice": 139.37,
+      "TradeCount": 7,
+      "OpenPrice": 139.37,
+      "Timestamp": "2025-12-18T18:47:00Z",
+      "Volume": 296,
+      "VWAP": 139.37
+    },
+    {
+      "ClosePrice": 139.375,
+      "HighPrice": 139.375,
+      "LowPrice": 139.375,
+      "TradeCount": 2,
+      "OpenPrice": 139.375,
+      "Timestamp": "2025-12-18T18:49:00Z",
+      "Volume": 106,
+      "VWAP": 139.375
+    }
+  ],
+  "alpaca_realtime_bar": {
+    "T": "b",
+    "Symbol": "CRDO",
+    "OpenPrice": 139.33,
+    "HighPrice": 139.52,
+    "LowPrice": 139.31,
+    "ClosePrice": 139.31,
+    "Volume": 439,
+    "Timestamp": "2025-12-18T18:50:00.000Z",
+    "TradeCount": 8,
+    "VWAP": 139.383718
+  }
+}

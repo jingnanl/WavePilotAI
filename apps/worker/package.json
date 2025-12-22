@@ -11,17 +11,20 @@
         "test:integration": "tsx tests/integration.test.ts"
     },
     "dependencies": {
-        "@wavepilot/shared": "*",
         "@alpacahq/alpaca-trade-api": "^3.1.3",
         "@aws-sdk/client-s3": "^3.948.0",
         "@aws-sdk/client-secrets-manager": "^3.600.0",
         "@influxdata/influxdb3-client": "^1.0.0",
         "@massive.com/client-js": "^10.1.0",
+        "@mozilla/readability": "^0.6.0",
+        "@wavepilot/shared": "*",
         "dotenv": "^16.3.0",
+        "jsdom": "^27.3.0",
         "node-cron": "^3.0.3",
         "ws": "^8.18.0"
     },
     "devDependencies": {
+        "@types/jsdom": "^27.0.0",
         "@types/node": "^20.0.0",
         "@types/node-cron": "^3.0.11",
         "@types/ws": "^8.5.0",

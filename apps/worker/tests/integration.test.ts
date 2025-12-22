@@ -378,7 +378,7 @@ async function testMassiveNews(): Promise<boolean> {
         // @ts-ignore - SDK type mismatch
         const response = await massive.listNews({
             ticker: CONFIG.test.ticker,
-            limit: 10,
+            limit: 5,
             sort: ListNewsSortEnum.PublishedUtc,
         });
 
@@ -394,7 +394,7 @@ async function testMassiveNews(): Promise<boolean> {
                 newsItems as any,
                 CONFIG.test.ticker,
                 CONFIG.test.market,
-                false // Don't fetch content in tests
+                true // fetch content
             );
         }
 
@@ -497,7 +497,7 @@ async function testAlpacaRecent(): Promise<boolean> {
             }
         } else if (existingSampleData?.alpaca_recent_bars) {
             // Market is closed - use sample data
-            console.log(`  📦 Market closed. Using SAMPLE DATA for ${CONFIG.test.ticker}`);
+            console.log(`  📦 Market closed. Using sample data for ${CONFIG.test.ticker}...`);
             console.log(`     ⚠️ Data is from previous session, not live`);
             bars = existingSampleData.alpaca_recent_bars;
         } else {

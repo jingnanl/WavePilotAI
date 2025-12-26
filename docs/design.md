@@ -234,18 +234,30 @@ graph LR
     D --> E[完整 K 线]
 ```
 
-#### A. 自选股 (Watchlist) - "自动回补与拼接"
+#### A. 自选股 (Watchlist) - "双 WebSocket 实时修正"
+
+**数据流架构**：
+```mermaid
+graph LR
+    A[Alpaca WS] -->|IEX 实时| C[InfluxDB]
+    B[Massive WS] -->|SIP 15m延迟| C
+    C -->|同 timestamp 自动覆盖| D[准确数据]
+```
+
 *   **添加时 (Auto-Backfill)**: Fargate 执行 **三段式补全**：
     1.  **远端历史 (Stage 1)**: 调用 Massive `Aggregates` 获取 `1 Month Ago` ~ `Now - 15m` (SIP 数据，延迟但准确)。
     2.  **近端补缺 (Stage 2)**: 调用 Alpaca `Bars` API 获取 `Now - 15m` ~ `Now` (IEX 数据，实时填补空缺)。
     3.  **写入**: 将拼接后的数据写入 `stock_quotes_raw`。
 *   **实时 (Stage 3)**: 监听 Alpaca WebSocket (IEX)，实时写入 `stock_quotes_raw`。
-*   **修正 (Correction)**: 每日收盘后，调用 Massive SIP 数据修正当日历史。
+*   **滚动修正 (Stage 4)**: 监听 Massive WebSocket (SIP)，15 分钟后自动覆盖 IEX 数据。
+    *   Massive WS 保持连接至收盘后 15 分钟，确保当天所有数据都被 SIP 修正。
+*   **EOD 修正**: 收盘后调用 Massive API 修正全天数据（兜底）。
 
-#### B. 非自选股 - "延迟快照 + 实时透传"
-*   **全市场快照**: Fargate 每 5 分钟调用 Massive `Snapshot` (注意：这是 15m 延迟的数据)。
-    *   用途：主要用于热力图、涨幅榜等**非实时敏感**的宏观分析。
-    *   **每日清理**: 盘后清空分钟级快照。
+#### B. 非自选股 - "日线快照 + 实时透传"
+*   **全市场日线快照**: Fargate 每 5 分钟调用 Massive `Snapshot` API，写入 `stock_quotes_aggregated` 日线表。
+    *   数据特点：15 分钟延迟的当日汇总数据（day OHLCV）
+    *   用途：热力图、涨幅榜等**非实时敏感**的宏观分析
+    *   **EOD 自动覆盖**: 收盘后 `Grouped Daily` API 返回官方 SIP 数据，自动覆盖 Snapshot 的延迟数据（InfluxDB 同 timestamp + tags 自动覆盖）
 *   **详情页查看 (On-Demand)**:
     *   **历史**: 透传 Massive API (SIP, < -15m)。
     *   **近端**: 透传 Alpaca API (IEX, > -15m) 以获取最新走势。
@@ -858,5 +870,5 @@ git push origin main
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-19*
+*更新日期：2025-12-23*
 *作者：JN.L*

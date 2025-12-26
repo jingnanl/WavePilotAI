@@ -14,6 +14,10 @@ import type {
     Sentiment,
 } from '@wavepilot/shared';
 
+import { createLogger } from './logger';
+
+const logger = createLogger('Transformer');
+
 // ============================================================================
 // Massive API Transformers
 // ============================================================================
@@ -24,7 +28,7 @@ import type {
  * @param bar - Massive Aggregates API response item
  * @param ticker - Stock ticker symbol
  * @param market - Market identifier
- * @returns QuoteRecord for InfluxDB
+ * @returns QuoteRecord for InfluxDB or null if invalid data
  *
  * @example
  * // Massive API bar format:
@@ -43,7 +47,13 @@ export function transformMassiveBarToQuote(
     },
     ticker: string,
     market: Market
-): QuoteRecord {
+): QuoteRecord | null {
+    // Validate required fields
+    if (!bar.t || bar.o === undefined || bar.c === undefined) {
+        logger.warn(`Invalid bar data for ${ticker}: missing required fields`, { bar });
+        return null;
+    }
+
     return {
         time: new Date(bar.t),
         ticker,
@@ -103,6 +113,56 @@ export function transformMassiveBarToDaily(
         trades: bar.n,
         change,
         changePercent,
+    };
+}
+
+/**
+ * Transform Massive Snapshot ticker to DailyRecord
+ *
+ * @param ticker - Massive Snapshot API ticker item
+ * @param market - Market identifier
+ * @param date - Date for the record (typically today)
+ * @returns DailyRecord for InfluxDB
+ *
+ * @example
+ * // Massive Snapshot ticker format:
+ * // {
+ * //   ticker: "AAPL",
+ * //   day: { o: 150.0, h: 152.0, l: 149.5, c: 151.5, v: 1000000, vw: 150.8 },
+ * //   todaysChange: 1.5,
+ * //   todaysChangePerc: 1.0
+ * // }
+ */
+export function transformMassiveSnapshotToDaily(
+    item: {
+        ticker: string;
+        day?: {
+            o?: number;     // open
+            h?: number;     // high
+            l?: number;     // low
+            c?: number;     // close
+            v?: number;     // volume
+            vw?: number;    // vwap
+        };
+        todaysChange?: number;
+        todaysChangePerc?: number;
+    },
+    market: Market,
+    date: Date
+): DailyRecord {
+    return {
+        time: date,
+        ticker: item.ticker,
+        name: item.ticker,
+        market,
+        open: item.day?.o || 0,
+        high: item.day?.h || 0,
+        low: item.day?.l || 0,
+        close: item.day?.c || 0,
+        volume: item.day?.v || 0,
+        vwap: item.day?.vw,
+        change: item.todaysChange,
+        changePercent: item.todaysChangePerc,
     };
 }
 

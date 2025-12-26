@@ -14,19 +14,34 @@ import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { InfluxDBWriter } from './timestream-writer';
 import { JSDOM } from 'jsdom';
 import { Readability } from '@mozilla/readability';
+import { createLogger } from '../utils/logger';
+import { CONFIG } from '../config';
 import type { NewsRecord, NewsContent } from '@wavepilot/shared';
+import {
+    HTTP_TIMEOUT_MS,
+    MIN_ARTICLE_CONTENT_LENGTH,
+    MAX_ARTICLE_CONTENT_SIZE,
+    MAX_S3_METADATA_LENGTH,
+} from '../utils/constants';
 
-const DATA_BUCKET = process.env.DATA_BUCKET || '';
+const logger = createLogger('NewsService');
+
 const FETCH_CONTENT = process.env.FETCH_NEWS_CONTENT === 'true';
 
 export class NewsService {
     private s3Client: S3Client;
     private influxWriter: InfluxDBWriter;
+    private s3Enabled: boolean;
 
     constructor(influxWriter: InfluxDBWriter) {
-        this.s3Client = new S3Client({});
+        this.s3Client = new S3Client({ region: CONFIG.AWS_REGION });
         this.influxWriter = influxWriter;
-        console.log('[NewsService] Created.');
+        this.s3Enabled = !!CONFIG.DATA_BUCKET;
+
+        if (!this.s3Enabled) {
+            logger.warn('DATA_BUCKET not configured, S3 storage disabled.');
+        }
+        logger.info('Created.');
     }
 
     /**
@@ -34,7 +49,7 @@ export class NewsService {
      */
     private sanitizeForMetadata(value: string): string {
         // Remove non-ASCII characters and limit length
-        return value.replace(/[^\x20-\x7E]/g, '').substring(0, 200);
+        return value.replace(/[^\x20-\x7E]/g, '').substring(0, MAX_S3_METADATA_LENGTH);
     }
 
     /**
@@ -67,7 +82,7 @@ export class NewsService {
                     .trim();
             }
         } catch (error) {
-            console.warn('[NewsService] Readability extraction failed, falling back to simple cleaning:', error);
+            logger.warn('Readability extraction failed, falling back to simple cleaning:', { error: (error as Error).message });
         }
 
         // Fallback: simple tag stripping (much simplified from before as it's just a backup)
@@ -86,7 +101,7 @@ export class NewsService {
     private async fetchArticleContent(url: string): Promise<string | null> {
         try {
             const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+            const timeout = setTimeout(() => controller.abort(), HTTP_TIMEOUT_MS);
 
             const response = await fetch(url, {
                 signal: controller.signal,
@@ -100,7 +115,7 @@ export class NewsService {
             clearTimeout(timeout);
 
             if (!response.ok) {
-                console.warn(`[NewsService] Failed to fetch ${url}: ${response.status}`);
+                logger.warn(`Failed to fetch ${url}: ${response.status}`);
                 return null;
             }
 
@@ -108,15 +123,17 @@ export class NewsService {
             const content = this.extractArticleContent(html);
 
             // Skip if extracted content is too short (likely failed extraction)
-            if (content.length < 100) {
-                console.warn(`[NewsService] Extracted content too short for ${url}`);
+            if (content.length < MIN_ARTICLE_CONTENT_LENGTH) {
+                logger.warn(`Extracted content too short for ${url}`);
                 return null;
             }
 
-            // Limit content size to 50KB (plain text is much smaller than HTML)
-            return content.length > 50000 ? content.substring(0, 50000) : content;
+            // Limit content size
+            return content.length > MAX_ARTICLE_CONTENT_SIZE
+                ? content.substring(0, MAX_ARTICLE_CONTENT_SIZE)
+                : content;
         } catch (error) {
-            console.warn(`[NewsService] Error fetching ${url}:`, error);
+            logger.warn(`Error fetching ${url}:`, { error: (error as Error).message });
             return null;
         }
     }
@@ -130,7 +147,7 @@ export class NewsService {
     async saveNews(newsItems: NewsRecord[], fetchContent: boolean = FETCH_CONTENT): Promise<void> {
         if (newsItems.length === 0) return;
 
-        console.log(`[NewsService] Processing ${newsItems.length} news items (fetchContent: ${fetchContent})...`);
+        logger.info(`Processing ${newsItems.length} news items (fetchContent: ${fetchContent}, s3Enabled: ${this.s3Enabled})...`);
 
         const influxRecords: NewsRecord[] = [];
 
@@ -170,33 +187,35 @@ export class NewsService {
                     }
                 }
 
-                // Upload to S3 with metadata in object tags
-                // Note: S3 metadata only supports ASCII, so we sanitize values
-                await this.s3Client.send(new PutObjectCommand({
-                    Bucket: DATA_BUCKET,
-                    Key: s3Key,
-                    Body: JSON.stringify(s3Content, null, 2),
-                    ContentType: 'application/json',
-                    // Store key metadata in S3 object metadata for quick access
-                    // Title is excluded as it may contain non-ASCII characters
-                    Metadata: {
-                        'news-id': item.id,
-                        'ticker': item.ticker,
-                        'source': this.sanitizeForMetadata(item.source),
-                        'published-at': item.time.toISOString(),
-                        'sentiment': item.sentiment || 'unknown',
-                        'has-content': fetchContent && s3Content.content ? 'true' : 'false',
-                    },
-                }));
+                // Upload to S3 with metadata in object tags (only if S3 is enabled)
+                if (this.s3Enabled) {
+                    // Note: S3 metadata only supports ASCII, so we sanitize values
+                    await this.s3Client.send(new PutObjectCommand({
+                        Bucket: CONFIG.DATA_BUCKET,
+                        Key: s3Key,
+                        Body: JSON.stringify(s3Content, null, 2),
+                        ContentType: 'application/json',
+                        // Store key metadata in S3 object metadata for quick access
+                        // Title is excluded as it may contain non-ASCII characters
+                        Metadata: {
+                            'news-id': item.id,
+                            'ticker': item.ticker,
+                            'source': this.sanitizeForMetadata(item.source),
+                            'published-at': item.time.toISOString(),
+                            'sentiment': item.sentiment || 'unknown',
+                            'has-content': fetchContent && s3Content.content ? 'true' : 'false',
+                        },
+                    }));
+                }
 
                 // Prepare InfluxDB Record with S3 path
                 influxRecords.push({
                     ...item,
-                    s3Path: s3Key,
+                    s3Path: this.s3Enabled ? s3Key : undefined,
                 });
 
             } catch (error) {
-                console.error(`[NewsService] Failed to process news ${item.id}:`, error);
+                logger.error(`Failed to process news ${item.id}:`, error as Error);
                 // Continue to next item even if one fails
             }
         }
@@ -204,7 +223,7 @@ export class NewsService {
         // Batch write to InfluxDB
         if (influxRecords.length > 0) {
             await this.influxWriter.writeNews(influxRecords);
-            console.log(`[NewsService] Saved ${influxRecords.length} news items to InfluxDB and S3.`);
+            logger.info(`Saved ${influxRecords.length} news items to InfluxDB${this.s3Enabled ? ' and S3' : ''}.`);
         }
     }
 

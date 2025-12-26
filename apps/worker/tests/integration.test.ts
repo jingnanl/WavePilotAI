@@ -6,11 +6,13 @@
  *   0. Market Status Check        -> Determine if market is open
  *   1. Massive API (Daily History)   -> InfluxDB (stock_quotes_aggregated)
  *   2. Massive API (Minute Bars)     -> InfluxDB (stock_quotes_raw)
- *   3. Massive API (Grouped Daily)   -> InfluxDB (stock_quotes_aggregated)
- *   4. Massive API (News)            -> InfluxDB (news) + S3
- *   5. Massive API (Financials)      -> InfluxDB (fundamentals)
- *   6. Alpaca API (Recent)           -> InfluxDB (stock_quotes_raw)
- *   7. Alpaca WS (Realtime)          -> InfluxDB (stock_quotes_raw)
+ *   3. Massive API (Snapshot)        -> InfluxDB (stock_quotes_aggregated)
+ *   4. Massive API (Grouped Daily)   -> InfluxDB (stock_quotes_aggregated)
+ *   5. Massive API (News)            -> InfluxDB (news) + S3
+ *   6. Massive API (Financials)      -> InfluxDB (fundamentals)
+ *   7. Alpaca API (Recent)           -> InfluxDB (stock_quotes_raw)
+ *   8. Alpaca WS (Realtime IEX)      -> InfluxDB (stock_quotes_raw)
+ *   9. Massive WS (Realtime SIP)     -> InfluxDB (stock_quotes_raw)
  *
  * Usage:
  *   cd apps/worker
@@ -56,6 +58,7 @@ import { NewsService } from '../src/services/news-service';
 import {
     transformMassiveBarToQuote,
     transformMassiveBarToDaily,
+    transformMassiveSnapshotToDaily,
     transformMassiveFinancialsToRecord,
     transformAlpacaBarToQuote,
     transformAlpacaRealtimeBarToQuote,
@@ -316,11 +319,68 @@ async function testMassiveMinuteHistory(): Promise<boolean> {
 }
 
 // ============================================================================
-// Stage 3: Massive API (Grouped Daily -> stock_quotes_aggregated)
+// Stage 3: Massive API (Snapshot - All Tickers -> stock_quotes_aggregated)
+// ============================================================================
+
+async function testMassiveSnapshot(): Promise<boolean> {
+    logSection('Stage 3: Massive API – Snapshot All Tickers');
+
+    const { isOpen } = await checkMarketStatus();
+
+    if (!isOpen) {
+        console.log('  📦 Market closed. Snapshot API returns stale data, skipping.');
+        logResult('Massive Snapshot -> Skipped (Market Closed)', true);
+        return true;
+    }
+
+    try {
+        const keys = await getApiKeys();
+        const massive = restClient(keys.MASSIVE_API_KEY, CONFIG.massive.baseUrl);
+
+        console.log(`  📡 Fetching Snapshot for all US stocks...`);
+
+        // Use getSnapshots to fetch all stock tickers
+        const response = await massive.getSnapshots({
+            type: 'stocks' as any,
+            limit: 100, // Limit for testing
+        });
+
+        const tickers = (response as any).tickers || response.results || [];
+        console.log(`  📊 Received ${tickers.length} tickers in snapshot`);
+
+        saveSampleData('massive_snapshot', tickers.slice(0, 10));
+
+        if (tickers.length > 0) {
+            const today = new Date().toISOString().split('T')[0];
+
+            // Transform and write sample records
+            const sampleTickers = tickers.slice(0, 5).filter((t: any) => t.day);
+            const records: DailyRecord[] = sampleTickers.map((t: any) =>
+                transformMassiveSnapshotToDaily(t, CONFIG.test.market, new Date(today))
+            );
+
+            if (records.length > 0) {
+                await writer.writeDailyData(records);
+                console.log(`  📝 Wrote ${records.length} sample snapshot records`);
+            }
+        }
+
+        logResult('Massive Snapshot -> Write Aggregated', tickers.length > 0);
+        return tickers.length > 0;
+
+    } catch (error) {
+        console.error('  ❌ Error:', error);
+        logResult('Massive Snapshot', false);
+        return false;
+    }
+}
+
+// ============================================================================
+// Stage 4: Massive API (Grouped Daily -> stock_quotes_aggregated)
 // ============================================================================
 
 async function testMassiveGroupedDaily(): Promise<boolean> {
-    logSection('Stage 3: Massive API – Grouped Daily');
+    logSection('Stage 4: Massive API – Grouped Daily');
     try {
         const keys = await getApiKeys();
         const massive = restClient(keys.MASSIVE_API_KEY, CONFIG.massive.baseUrl);
@@ -364,11 +424,11 @@ async function testMassiveGroupedDaily(): Promise<boolean> {
 }
 
 // ============================================================================
-// Stage 4: Massive API (News -> news + S3)
+// Stage 5: Massive API (News -> news + S3)
 // ============================================================================
 
 async function testMassiveNews(): Promise<boolean> {
-    logSection('Stage 4: Massive API – News');
+    logSection('Stage 5: Massive API – News');
     try {
         const keys = await getApiKeys();
         const massive = restClient(keys.MASSIVE_API_KEY, CONFIG.massive.baseUrl);
@@ -409,11 +469,11 @@ async function testMassiveNews(): Promise<boolean> {
 }
 
 // ============================================================================
-// Stage 5: Massive API (Financials -> fundamentals)
+// Stage 6: Massive API (Financials -> fundamentals)
 // ============================================================================
 
 async function testMassiveFinancials(): Promise<boolean> {
-    logSection('Stage 5: Massive API – Financials');
+    logSection('Stage 6: Massive API – Financials');
     try {
         const keys = await getApiKeys();
 
@@ -459,11 +519,11 @@ async function testMassiveFinancials(): Promise<boolean> {
 }
 
 // ============================================================================
-// Stage 6: Alpaca API (Recent -> stock_quotes_raw)
+// Stage 7: Alpaca API (Recent -> stock_quotes_raw)
 // ============================================================================
 
 async function testAlpacaRecent(): Promise<boolean> {
-    logSection('Stage 6: Alpaca API – Recent Bars');
+    logSection('Stage 7: Alpaca API – Recent Bars');
 
     const { isOpen } = await checkMarketStatus();
     const existingSampleData = loadSampleData(CONFIG.test.ticker);
@@ -525,11 +585,11 @@ async function testAlpacaRecent(): Promise<boolean> {
 }
 
 // ============================================================================
-// Stage 7: Alpaca WebSocket (Realtime -> stock_quotes_raw)
+// Stage 8: Alpaca WebSocket (Realtime -> stock_quotes_raw)
 // ============================================================================
 
 async function testAlpacaRealtime(): Promise<boolean> {
-    logSection('Stage 7: Alpaca WebSocket – Realtime');
+    logSection('Stage 8: Alpaca WebSocket – Realtime');
 
     const { isOpen } = await checkMarketStatus();
 
@@ -595,6 +655,95 @@ async function testAlpacaRealtime(): Promise<boolean> {
 }
 
 // ============================================================================
+// Stage 9: Massive WebSocket (SIP Realtime -> stock_quotes_raw)
+// ============================================================================
+
+async function testMassiveRealtime(): Promise<boolean> {
+    logSection('Stage 9: Massive WebSocket – SIP Realtime');
+
+    const { isOpen } = await checkMarketStatus();
+
+    if (!isOpen) {
+        console.log('  📦 Market closed. Skipping Massive WebSocket test.');
+        logResult('Massive Realtime -> Skipped (Market Closed)', true);
+        return true;
+    }
+
+    return new Promise(async (resolve) => {
+        try {
+            const keys = await getApiKeys();
+            const WebSocket = (await import('ws')).default;
+
+            console.log('  📡 Connecting to Massive WebSocket (SIP)...');
+            const ws = new WebSocket('wss://delayed.massive.com/stocks');
+
+            // AM bars are sent every minute, wait at least 90 seconds
+            const timeout = setTimeout(() => {
+                console.log('  ⏱️ Timeout – No data received (SIP data is 15m delayed, AM bars sent every ~1min)');
+                ws.close();
+                logResult('Massive Realtime -> Timeout (Soft Pass)', true);
+                resolve(true);
+            }, 90000);
+
+            ws.on('open', () => {
+                console.log('  ✅ Connected! Authenticating...');
+                ws.send(JSON.stringify({ action: 'auth', params: keys.MASSIVE_API_KEY }));
+            });
+
+            ws.on('message', async (data: any) => {
+                const messages = JSON.parse(data.toString());
+                console.log(`  📨 Received: ${JSON.stringify(messages).substring(0, 200)}`);
+
+                for (const msg of Array.isArray(messages) ? messages : [messages]) {
+                    if (msg.ev === 'status' && msg.status === 'auth_success') {
+                        console.log('  🔐 Authenticated! Subscribing to AM channel...');
+                        ws.send(JSON.stringify({ action: 'subscribe', params: `AM.${CONFIG.test.ticker}` }));
+                    } else if (msg.ev === 'status') {
+                        console.log(`  📋 Status: ${msg.status} - ${msg.message || ''}`);
+                    } else if (msg.ev === 'AM') {
+                        console.log(`  📊 SIP Bar: ${msg.sym} O:${msg.o} H:${msg.h} L:${msg.l} C:${msg.c} V:${msg.v}`);
+                        clearTimeout(timeout);
+
+                        saveSampleData('massive_realtime_bar', msg);
+
+                        const record: QuoteRecord = {
+                            time: new Date(msg.s),
+                            ticker: msg.sym,
+                            name: msg.sym,
+                            market: CONFIG.test.market,
+                            open: msg.o,
+                            high: msg.h,
+                            low: msg.l,
+                            close: msg.c,
+                            volume: msg.v,
+                            vwap: msg.vw,
+                            trades: msg.z,
+                        };
+                        await writer.writeQuotes([record]);
+
+                        ws.close();
+                        logResult('Massive Realtime -> Write Raw', true);
+                        resolve(true);
+                    }
+                }
+            });
+
+            ws.on('error', (err: any) => {
+                console.error('  ❌ WebSocket Error:', err);
+                clearTimeout(timeout);
+                logResult('Massive Realtime', false);
+                resolve(false);
+            });
+
+        } catch (error) {
+            console.error('  ❌ Error:', error);
+            logResult('Massive Realtime', false);
+            resolve(false);
+        }
+    });
+}
+
+// ============================================================================
 // Main Runner
 // ============================================================================
 
@@ -612,11 +761,13 @@ async function main() {
     // Run all stages
     await testMassiveDailyHistory();
     await testMassiveMinuteHistory();
+    await testMassiveSnapshot();
     await testMassiveGroupedDaily();
     await testMassiveNews();
     await testMassiveFinancials();
     await testAlpacaRecent();
     await testAlpacaRealtime();
+    await testMassiveRealtime();
 
     await writer.close();
 

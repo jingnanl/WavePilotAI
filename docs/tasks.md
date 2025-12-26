@@ -56,23 +56,37 @@
 ### 2.1 数据摄取 Worker (Fargate - TypeScript) 🔴
 - ✅ **[M]** 创建 apps/worker TypeScript 项目
   - ✅ package.json, tsconfig.json, Dockerfile 配置
-  - ✅ src/index.ts 入口
+  - ✅ src/index.ts 入口（含健康检查服务器、优雅关闭）
   - ✅ src/services/ 目录结构
-- 🟦 **[L]** 实现 Alpaca WebSocket 监听
-  - 🟦 alpaca-websocket.ts 已创建（空壳）
-  - ⬜ 实时获取美股行情
-  - ⬜ 写入 InfluxDB (1m bar)
-- 🟦 **[M]** 实现 Massive API 集成
-  - 🟦 massive-scheduler.ts 已创建（空壳）
-  - ⬜ **[EOD]** 全市场日线回补 (`Grouped Daily` -> `stock_quotes_aggregated`)
-  - ⬜ **[EOD]** 自选股分钟修正 (`Aggregates` -> `stock_quotes_raw`)
-  - ⬜ **[EOD]** 非自选股分钟数据清理
-  - ⬜ **[Event]** 自选股添加自动回补 (Massive SIP + Alpaca IEX)
-  - ⬜ **[Intraday]** 全市场快照 (5m Polling, 15m Delayed)
+- ✅ **[L]** 实现 Alpaca WebSocket 监听
+  - ✅ alpaca-websocket.ts 完整实现
+  - ✅ 实时获取美股行情（IEX feed）
+  - ✅ 写入 InfluxDB (1m bar)
+  - ✅ 自动重连机制
+  - ✅ 动态订阅/取消订阅
+  - ✅ REST API 回补近端数据（15 分钟）
+  - ✅ 市场状态感知（仅开盘时连接）
+- ✅ **[L]** 实现 Massive WebSocket 监听
+  - ✅ massive-websocket.ts 完整实现
+  - ✅ 实时获取 SIP 数据（15 分钟延迟）
+  - ✅ 自动覆盖 IEX 数据（同 timestamp）
+  - ✅ 收盘后 15 分钟断开（确保当天数据完整修正）
+- ✅ **[M]** 实现 Massive API 集成
+  - ✅ massive-scheduler.ts 完整实现
+  - ✅ **[Snapshot]** 全市场快照 (`getSnapshots` -> `stock_quotes_aggregated`)
+  - ✅ **[EOD]** 全市场日线修正 (`Grouped Daily` -> `stock_quotes_aggregated`)
+  - ✅ **[EOD]** 自选股分钟数据修正 (`Aggregates` -> `stock_quotes_raw`)
+  - ✅ **[Scheduled]** 新闻定时获取 (15m)
+  - ✅ **[Scheduled]** 财务数据定时更新 (Daily)
+  - ✅ 手动任务触发接口
+  - ✅ 历史数据回补接口
 - ✅ **[M]** 实现新闻服务
-  - ✅ news-service.ts 已完整实现（S3 + InfluxDB 写入）
-  - ⬜ 集成到 MassiveScheduler 定时任务
-- ⬜ **[M]** 实现 Akshare 轮询（A 股实时行情）
+  - ✅ news-service.ts 完整实现（S3 + InfluxDB 写入）
+  - ✅ 集成到 MassiveScheduler 定时任务
+- ✅ **[S]** 实现市场状态工具
+  - ✅ market-status.ts（Massive API + 时间回退）
+  - ✅ 1 分钟缓存避免重复调用
+- ⬜ **[M]** 实现 Akshare 轮询（A 股实时行情 - Phase 8）
 - ⬜ **[M]** 在 Amplify 中定义 Fargate 资源
 
 ### 2.2 AppSync API 层 🔴
@@ -292,5 +306,5 @@ graph TD
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-19*
+*更新日期：2025-12-23*
 *作者：JN.L*

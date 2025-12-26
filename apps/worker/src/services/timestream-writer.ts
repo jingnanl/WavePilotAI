@@ -18,10 +18,10 @@ import type {
     FundamentalsRecord,
 } from '@wavepilot/shared';
 
-// Configuration
-const INFLUXDB_ENDPOINT = process.env.INFLUXDB_ENDPOINT || '';
-const INFLUXDB_SECRET_ARN = process.env.INFLUXDB_SECRET_ARN || '';
-const DATABASE = process.env.INFLUXDB_DATABASE || 'market_data';
+import { CONFIG } from '../config';
+import { createLogger } from '../utils/logger';
+
+const logger = createLogger('InfluxDBWriter');
 
 // Measurement names (InfluxDB "tables")
 const QUOTES_RAW_MEASUREMENT = 'stock_quotes_raw';
@@ -62,14 +62,20 @@ function sanitizeTag(value: string): string {
 // InfluxDB Writer Class
 // ============================================================================
 
+/** Maximum retry attempts for batch writes */
+const MAX_WRITE_RETRIES = 3;
+
+/** Delay between retries in milliseconds */
+const RETRY_DELAY_MS = 1000;
+
 export class InfluxDBWriter {
     private client: InfluxDBClient | null = null;
     private secretsClient: SecretsManagerClient;
     private initialized: boolean = false;
 
     constructor() {
-        this.secretsClient = new SecretsManagerClient({});
-        console.log('[InfluxDBWriter] Created.');
+        this.secretsClient = new SecretsManagerClient({ region: CONFIG.AWS_REGION });
+        logger.info('Created.');
     }
 
     /**
@@ -80,7 +86,7 @@ export class InfluxDBWriter {
 
         try {
             const secretResponse = await this.secretsClient.send(
-                new GetSecretValueCommand({ SecretId: INFLUXDB_SECRET_ARN })
+                new GetSecretValueCommand({ SecretId: CONFIG.INFLUXDB_SECRET_ARN })
             );
 
             if (!secretResponse.SecretString) {
@@ -91,17 +97,43 @@ export class InfluxDBWriter {
             const token = credentials.token || credentials.password;
 
             this.client = new InfluxDBClient({
-                host: `https://${INFLUXDB_ENDPOINT}:8181`,
+                host: `https://${CONFIG.INFLUXDB_ENDPOINT}:8181`,
                 token: token,
-                database: DATABASE,
+                database: CONFIG.INFLUXDB_DATABASE,
             });
 
             this.initialized = true;
-            console.log('[InfluxDBWriter] Initialized successfully.');
+            logger.info('Initialized successfully.');
         } catch (error) {
-            console.error('[InfluxDBWriter] Failed to initialize:', error);
+            logger.error('Failed to initialize:', error as Error);
             throw error;
         }
+    }
+
+    /**
+     * Write points with retry logic
+     */
+    private async writeWithRetry(points: Point[], batchName: string = 'batch'): Promise<void> {
+        const client = await this.ensureInitialized();
+        let lastError: Error | null = null;
+
+        for (let attempt = 1; attempt <= MAX_WRITE_RETRIES; attempt++) {
+            try {
+                await client.write(points);
+                return; // Success
+            } catch (error) {
+                lastError = error as Error;
+                logger.warn(`Write attempt ${attempt}/${MAX_WRITE_RETRIES} failed for ${batchName}:`, { error: lastError.message });
+
+                if (attempt < MAX_WRITE_RETRIES) {
+                    await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS * attempt));
+                }
+            }
+        }
+
+        // All retries failed
+        logger.error(`All ${MAX_WRITE_RETRIES} write attempts failed for ${batchName}:`, lastError!);
+        throw lastError;
     }
 
     /**
@@ -121,8 +153,9 @@ export class InfluxDBWriter {
      * Write real-time quote records to stock_quotes_raw
      */
     async writeQuotes(records: QuoteRecord[]): Promise<void> {
-        const client = await this.ensureInitialized();
-        console.log(`[InfluxDBWriter] Writing ${records.length} quote records...`);
+        if (records.length === 0) return;
+
+        logger.info(`Writing ${records.length} quote records...`);
 
         try {
             const points = records.map((record) => {
@@ -149,10 +182,10 @@ export class InfluxDBWriter {
                 return point;
             });
 
-            await client.write(points);
-            console.log(`[InfluxDBWriter] Successfully wrote ${records.length} quote records.`);
+            await this.writeWithRetry(points, `quotes(${records.length})`);
+            logger.info(`Successfully wrote ${records.length} quote records.`);
         } catch (error) {
-            console.error('[InfluxDBWriter] Failed to write quotes:', error);
+            logger.error('Failed to write quotes:', error as Error);
             throw error;
         }
     }
@@ -161,8 +194,9 @@ export class InfluxDBWriter {
      * Write daily aggregated records to stock_quotes_aggregated
      */
     async writeDailyData(records: DailyRecord[]): Promise<void> {
-        const client = await this.ensureInitialized();
-        console.log(`[InfluxDBWriter] Writing ${records.length} daily records...`);
+        if (records.length === 0) return;
+
+        logger.info(`Writing ${records.length} daily records...`);
 
         try {
             const points = records.map((record) => {
@@ -188,10 +222,10 @@ export class InfluxDBWriter {
                 return point;
             });
 
-            await client.write(points);
-            console.log(`[InfluxDBWriter] Successfully wrote ${records.length} daily records.`);
+            await this.writeWithRetry(points, `daily(${records.length})`);
+            logger.info(`Successfully wrote ${records.length} daily records.`);
         } catch (error) {
-            console.error('[InfluxDBWriter] Failed to write daily data:', error);
+            logger.error('Failed to write daily data:', error as Error);
             throw error;
         }
     }
@@ -201,8 +235,10 @@ export class InfluxDBWriter {
      * Note: Full content should be stored in S3, this only stores metadata
      */
     async writeNews(records: NewsRecord[]): Promise<void> {
+        if (records.length === 0) return;
+
         const client = await this.ensureInitialized();
-        console.log(`[InfluxDBWriter] Writing ${records.length} news records...`);
+        logger.info(`Writing ${records.length} news records...`);
 
         let successCount = 0;
         for (const record of records) {
@@ -210,10 +246,10 @@ export class InfluxDBWriter {
                 await this.writeNewsRecord(client, record);
                 successCount++;
             } catch (error) {
-                console.error(`[InfluxDBWriter] Failed to write news ${record.id}:`, error);
+                logger.error(`Failed to write news ${record.id}:`, error as Error);
             }
         }
-        console.log(`[InfluxDBWriter] Successfully wrote ${successCount}/${records.length} news records.`);
+        logger.info(`Successfully wrote ${successCount}/${records.length} news records.`);
     }
 
     /**
@@ -265,8 +301,9 @@ export class InfluxDBWriter {
      * Write fundamentals (financial) data records
      */
     async writeFundamentals(records: FundamentalsRecord[]): Promise<void> {
-        const client = await this.ensureInitialized();
-        console.log(`[InfluxDBWriter] Writing ${records.length} fundamentals records...`);
+        if (records.length === 0) return;
+
+        logger.info(`Writing ${records.length} fundamentals records...`);
 
         try {
             const points = records.map((record) => {
@@ -323,10 +360,10 @@ export class InfluxDBWriter {
                 return point;
             });
 
-            await client.write(points);
-            console.log(`[InfluxDBWriter] Successfully wrote ${records.length} fundamentals records.`);
+            await this.writeWithRetry(points, `fundamentals(${records.length})`);
+            logger.info(`Successfully wrote ${records.length} fundamentals records.`);
         } catch (error) {
-            console.error('[InfluxDBWriter] Failed to write fundamentals:', error);
+            logger.error('Failed to write fundamentals:', error as Error);
             throw error;
         }
     }
@@ -339,7 +376,7 @@ export class InfluxDBWriter {
             await this.client.close();
             this.client = null;
             this.initialized = false;
-            console.log('[InfluxDBWriter] Connection closed.');
+            logger.info('Connection closed.');
         }
     }
 }

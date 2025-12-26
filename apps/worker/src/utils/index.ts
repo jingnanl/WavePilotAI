@@ -1,5 +1,8 @@
 /**
- * Utility exports for WavePilotAI Worker
+ * Utils barrel export
  */
 
+export * from './constants';
+export * from './logger';
+export * from './market-status';
 export * from './transformers';

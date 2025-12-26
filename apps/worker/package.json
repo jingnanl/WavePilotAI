@@ -18,6 +18,8 @@
         "@massive.com/client-js": "^10.1.0",
         "@mozilla/readability": "^0.6.0",
         "@wavepilot/shared": "*",
+        "date-fns": "^4.1.0",
+        "date-fns-tz": "^3.2.0",
         "dotenv": "^16.3.0",
         "jsdom": "^27.3.0",
         "node-cron": "^3.0.3",

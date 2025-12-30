@@ -2,7 +2,7 @@
  * Utils barrel export
  */
 
-export * from './constants';
-export * from './logger';
-export * from './market-status';
-export * from './transformers';
+export * from './constants.js';
+export * from './logger.js';
+export * from './market-status.js';
+export * from './transformers.js';

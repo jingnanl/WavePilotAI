@@ -68,14 +68,16 @@
   - ✅ 市场状态感知（仅开盘时连接）
 - ✅ **[L]** 实现 Massive WebSocket 监听
   - ✅ massive-websocket.ts 完整实现
-  - ✅ 实时获取 SIP 数据（15 分钟延迟）
+  - ✅ 实时获取 SIP 数据（15 分钟延迟）- Layer 1
   - ✅ 自动覆盖 IEX 数据（同 timestamp）
   - ✅ 收盘后 15 分钟断开（确保当天数据完整修正）
+  - ⚠️ 受 Polygon.io 账户连接数限制，可能不可用
 - ✅ **[M]** 实现 Massive API 集成
   - ✅ massive-scheduler.ts 完整实现
   - ✅ **[Snapshot]** 全市场快照 (`getSnapshots` -> `stock_quotes_aggregated`)
-  - ✅ **[EOD]** 全市场日线修正 (`Grouped Daily` -> `stock_quotes_aggregated`)
-  - ✅ **[EOD]** 自选股分钟数据修正 (`Aggregates` -> `stock_quotes_raw`)
+  - ✅ **[SIP Correction]** 每分钟 SIP 数据修正 (`Aggregates` -> `stock_quotes_raw`) - Layer 2
+  - ✅ **[EOD]** 全市场日线修正 (`Grouped Daily` -> `stock_quotes_aggregated`) - Layer 3
+  - ✅ **[EOD]** 自选股分钟数据修正 (`Aggregates` -> `stock_quotes_raw`) - Layer 3
   - ✅ **[Scheduled]** 新闻定时获取 (15m)
   - ✅ **[Scheduled]** 财务数据定时更新 (Daily)
   - ✅ 手动任务触发接口
@@ -306,5 +308,5 @@ graph TD
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-23*
+*更新日期：2025-12-30*
 *作者：JN.L*

@@ -234,24 +234,38 @@ graph LR
     D --> E[完整 K 线]
 ```
 
-#### A. 自选股 (Watchlist) - "双 WebSocket 实时修正"
+#### A. 自选股 (Watchlist) - "三层 SIP 数据修正"
 
 **数据流架构**：
 ```mermaid
 graph LR
     A[Alpaca WS] -->|IEX 实时| C[InfluxDB]
-    B[Massive WS] -->|SIP 15m延迟| C
+    B1[Massive WS] -->|SIP 15m延迟 Layer1| C
+    B2[Massive REST] -->|SIP 16m延迟 Layer2| C
+    B3[Massive EOD] -->|SIP 全天 Layer3| C
     C -->|同 timestamp 自动覆盖| D[准确数据]
 ```
+
+**三层 SIP 数据修正策略**：
+
+| 层级 | 数据源 | 触发方式 | 延迟 | 说明 |
+|------|--------|----------|------|------|
+| Layer 1 | Massive WebSocket | 实时推送 | 15 分钟 | 如果连接数允许，实时接收 AM 数据 |
+| Layer 2 | Massive REST API | 每分钟轮询 | 16 分钟 | 稳定可靠，不受连接数限制 |
+| Layer 3 | Massive Aggregates | 收盘后 4:30 PM | 全天 | 兜底保障，确保数据完整 |
 
 *   **添加时 (Auto-Backfill)**: Fargate 执行 **三段式补全**：
     1.  **远端历史 (Stage 1)**: 调用 Massive `Aggregates` 获取 `1 Month Ago` ~ `Now - 15m` (SIP 数据，延迟但准确)。
     2.  **近端补缺 (Stage 2)**: 调用 Alpaca `Bars` API 获取 `Now - 15m` ~ `Now` (IEX 数据，实时填补空缺)。
     3.  **写入**: 将拼接后的数据写入 `stock_quotes_raw`。
 *   **实时 (Stage 3)**: 监听 Alpaca WebSocket (IEX)，实时写入 `stock_quotes_raw`。
-*   **滚动修正 (Stage 4)**: 监听 Massive WebSocket (SIP)，15 分钟后自动覆盖 IEX 数据。
+*   **滚动修正 (Layer 1)**: 监听 Massive WebSocket (SIP)，15 分钟后自动覆盖 IEX 数据。
     *   Massive WS 保持连接至收盘后 15 分钟，确保当天所有数据都被 SIP 修正。
-*   **EOD 修正**: 收盘后调用 Massive API 修正全天数据（兜底）。
+    *   ⚠️ 受 Polygon.io 账户连接数限制，可能不可用。
+*   **轮询修正 (Layer 2)**: 每分钟调用 Massive REST API 获取 16 分钟前的 SIP 数据。
+    *   稳定可靠，不受 WebSocket 连接数限制。
+    *   API 调用量可控（每分钟 N 个 ticker）。
+*   **EOD 修正 (Layer 3)**: 收盘后调用 Massive API 修正全天数据（兜底）。
 
 #### B. 非自选股 - "日线快照 + 实时透传"
 *   **全市场日线快照**: Fargate 每 5 分钟调用 Massive `Snapshot` API，写入 `stock_quotes_aggregated` 日线表。
@@ -870,5 +884,5 @@ git push origin main
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-23*
+*更新日期：2025-12-30*
 *作者：JN.L*

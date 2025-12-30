@@ -18,8 +18,8 @@ import type {
     FundamentalsRecord,
 } from '@wavepilot/shared';
 
-import { CONFIG } from '../config';
-import { createLogger } from '../utils/logger';
+import { CONFIG } from '../config.js';
+import { createLogger } from '../utils/logger.js';
 
 const logger = createLogger('InfluxDBWriter');
 
@@ -97,7 +97,7 @@ export class InfluxDBWriter {
             const token = credentials.token || credentials.password;
 
             this.client = new InfluxDBClient({
-                host: `https://${CONFIG.INFLUXDB_ENDPOINT}:8181`,
+                host: `https://${CONFIG.INFLUXDB_ENDPOINT}:${CONFIG.INFLUXDB_PORT}`,
                 token: token,
                 database: CONFIG.INFLUXDB_DATABASE,
             });

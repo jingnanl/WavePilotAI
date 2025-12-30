@@ -11,18 +11,18 @@
  */
 
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import { InfluxDBWriter } from './timestream-writer';
+import { InfluxDBWriter } from './timestream-writer.js';
 import { JSDOM } from 'jsdom';
 import { Readability } from '@mozilla/readability';
-import { createLogger } from '../utils/logger';
-import { CONFIG } from '../config';
+import { createLogger } from '../utils/logger.js';
+import { CONFIG } from '../config.js';
 import type { NewsRecord, NewsContent } from '@wavepilot/shared';
 import {
     HTTP_TIMEOUT_MS,
     MIN_ARTICLE_CONTENT_LENGTH,
     MAX_ARTICLE_CONTENT_SIZE,
     MAX_S3_METADATA_LENGTH,
-} from '../utils/constants';
+} from '../utils/constants.js';
 
 const logger = createLogger('NewsService');
 
@@ -253,7 +253,7 @@ export class NewsService {
         market: 'US' | 'CN' | 'HK' = 'US',
         fetchContent: boolean = FETCH_CONTENT
     ): Promise<void> {
-        const { transformMassiveNewsToRecord } = await import('../utils/transformers');
+        const { transformMassiveNewsToRecord } = await import('../utils/transformers.js');
 
         const records = items.map(item =>
             transformMassiveNewsToRecord(item, primaryTicker, market)

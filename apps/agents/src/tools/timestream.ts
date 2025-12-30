@@ -11,6 +11,7 @@ import { InfluxDBClient } from '@influxdata/influxdb3-client';
 import { SecretsManagerClient, GetSecretValueCommand } from '@aws-sdk/client-secrets-manager';
 
 const INFLUXDB_ENDPOINT = process.env.INFLUXDB_ENDPOINT || '';
+const INFLUXDB_PORT = process.env.INFLUXDB_PORT || '8181';
 const INFLUXDB_SECRET_ARN = process.env.INFLUXDB_SECRET_ARN || '';
 const DATABASE = process.env.INFLUXDB_DATABASE || 'market_data';
 
@@ -36,7 +37,7 @@ async function getClient(): Promise<InfluxDBClient> {
     const token = credentials.token || credentials.password;
 
     influxClient = new InfluxDBClient({
-        host: `https://${INFLUXDB_ENDPOINT}:8181`,
+        host: `https://${INFLUXDB_ENDPOINT}:${INFLUXDB_PORT}`,
         token: token,
         database: DATABASE,
     });

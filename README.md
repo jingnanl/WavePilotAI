@@ -178,15 +178,35 @@ curl -X POST http://localhost:8080/invocations \
 
 ### Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `AWS_REGION` | AWS region |
-| `INFLUXDB_ENDPOINT` | InfluxDB instance endpoint |
-| `INFLUXDB_SECRET_ARN` | Secrets Manager ARN for InfluxDB credentials |
-| `ALPACA_API_KEY` | Alpaca API key |
-| `MASSIVE_API_KEY` | Massive API key |
+Worker 环境变量通过 Amplify Console 配置，在部署时注入到 Fargate Task。
 
-> **Note**: InfluxDB 3 should be created manually via AWS Console.
+| Variable | Required | Description | Default |
+|----------|----------|-------------|---------|
+| `INFLUXDB_ENDPOINT` | ✅ | InfluxDB 实例地址 | - |
+| `INFLUXDB_PORT` | | InfluxDB 端口 | `8181` |
+| `INFLUXDB_SECRET_ARN` | ✅ | InfluxDB 凭证的 Secrets Manager ARN | - |
+| `INFLUXDB_DATABASE` | | 数据库名称 | `market_data` |
+| `AWS_REGION` | | AWS 区域 | `us-west-2` |
+| `LOG_LEVEL` | | 日志级别 (debug/info/warn/error) | `info` |
+| `FETCH_NEWS_CONTENT` | | 抓取新闻正文内容 | `true` |
+| `MASSIVE_BASE_URL` | | Massive REST API 地址 | `https://api.massive.com` |
+| `MASSIVE_WS_URL` | | Massive 实时 WebSocket 地址 | `wss://socket.massive.com/stocks` |
+| `MASSIVE_DELAYED_WS_URL` | | Massive 延迟 WebSocket 地址 | `wss://delayed.massive.com/stocks` |
+| `DEFAULT_WATCHLIST` | | 默认监控股票列表 | `AAPL,TSLA,NVDA,AMZN,GOOGL` |
+| `HEALTH_CHECK_PORT` | | 健康检查端口 | `8080` |
+| `ENABLE_REALTIME` | | 启用实时数据流 | `true` |
+| `ENABLE_SCHEDULER` | | 启用定时任务 | `true` |
+
+以下变量由基础设施自动生成，无需手动配置：
+- `NODE_ENV` - 固定为 `production`
+- `DATA_BUCKET` - S3 存储桶名称
+- `API_KEYS_SECRET_ARN` - API 密钥 Secret ARN
+
+敏感信息（API Keys、数据库密码）存储在 AWS Secrets Manager 中：
+- `wavepilot/api-keys` - Alpaca/Massive API 密钥
+- InfluxDB 凭证 - 由 Timestream for InfluxDB 自动创建
+
+> **Note**: InfluxDB 3 需要通过 AWS Console 手动创建。
 
 ---
 

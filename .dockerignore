@@ -1,0 +1,36 @@
+# Amplify build artifacts (prevent recursive copy)
+**/.amplify
+**/cdk.out
+
+# Node modules (will be installed in container)
+**/node_modules
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+
+# Build outputs (except what we need)
+**/dist
+!packages/shared/dist
+!apps/worker/dist
+
+# Test files
+**/*.test.ts
+**/*.spec.ts
+**/tests
+
+# Documentation
+docs
+*.md
+
+# Environment files (secrets should come from env vars)
+**/.env
+**/.env.*
+
+# Other
+.DS_Store
+*.log

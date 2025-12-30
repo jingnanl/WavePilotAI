@@ -3,9 +3,15 @@
  *
  * Schedules periodic API calls to Massive for:
  * - Full market snapshots (every 5 minutes during trading hours)
- * - Grouped daily data (EOD correction after market close)
+ * - SIP minute correction (every minute during trading hours) - Layer 2
+ * - Grouped daily data (EOD correction after market close) - Layer 3
  * - News fetching (every 15 minutes)
  * - Financials update (daily)
+ *
+ * Three-Layer SIP Data Correction Strategy:
+ * - Layer 1: Massive WebSocket (real-time, if connection limit allows)
+ * - Layer 2: Massive REST API (every minute polling) - correctRecentMinuteData()
+ * - Layer 3: EOD full correction (after market close) - correctWatchlistMinuteData()
  *
  * Uses node-cron for scheduling with market hours awareness.
  */
@@ -20,26 +26,26 @@ import {
     GetStocksAggregatesTimespanEnum,
     ListNewsSortEnum,
 } from '@massive.com/client-js';
-import type { InfluxDBWriter } from './timestream-writer';
-import { NewsService } from './news-service';
+import type { InfluxDBWriter } from './timestream-writer.js';
+import { NewsService } from './news-service.js';
 import {
     transformMassiveBarToQuote,
     transformMassiveBarToDaily,
     transformMassiveSnapshotToDaily,
     transformMassiveFinancialsToRecord,
-} from '../utils/transformers';
+} from '../utils/transformers.js';
 import {
     isMarketOpen,
-} from '../utils/market-status';
-import { createLogger } from '../utils/logger';
+} from '../utils/market-status.js';
+import { createLogger } from '../utils/logger.js';
 import {
     DB_WRITE_BATCH_SIZE,
     API_REQUEST_DELAY_MS,
     BACKFILL_REQUEST_DELAY_MS,
-} from '../utils/constants';
+} from '../utils/constants.js';
 import type { DailyRecord, FundamentalsRecord, QuoteRecord } from '@wavepilot/shared';
 
-import { CONFIG } from '../config';
+import { CONFIG } from '../config.js';
 
 const logger = createLogger('MassiveScheduler');
 
@@ -180,8 +186,19 @@ export class MassiveScheduler {
         }, { timezone: 'America/New_York' });
         this.tasks.push({ name: 'snapshot', task: snapshotTask });
 
-        // Schedule 2: EOD correction at 4:30 PM ET (after market close)
+        // Schedule 2: SIP minute correction every minute during trading hours
+        // Fetches 16-minute delayed SIP data to correct IEX data
+        // This is Layer 2 of the three-layer SIP correction strategy
+        const sipCorrectionTask = cron.schedule('* * * * 1-5', async () => {
+            if (await isMarketOpen()) {
+                await this.correctRecentMinuteData();
+            }
+        }, { timezone: 'America/New_York' });
+        this.tasks.push({ name: 'sipCorrection', task: sipCorrectionTask });
+
+        // Schedule 3: EOD correction at 4:30 PM ET (after market close)
         // Corrects both daily aggregated data and watchlist minute data
+        // This is Layer 3 of the three-layer SIP correction strategy
         const eodTask = cron.schedule('30 16 * * 1-5', async () => {
             const today = new Date().toISOString().split('T')[0];
             // Correct daily aggregated data (all tickers)
@@ -191,13 +208,13 @@ export class MassiveScheduler {
         }, { timezone: 'America/New_York' });
         this.tasks.push({ name: 'eod', task: eodTask });
 
-        // Schedule 3: News fetching every 15 minutes
+        // Schedule 4: News fetching every 15 minutes
         const newsTask = cron.schedule('*/15 * * * *', async () => {
             await this.fetchNews();
         });
         this.tasks.push({ name: 'news', task: newsTask });
 
-        // Schedule 4: Financials update daily at 6 AM ET
+        // Schedule 5: Financials update daily at 6 AM ET
         const financialsTask = cron.schedule('0 6 * * 1-5', async () => {
             await this.fetchFinancials();
         }, { timezone: 'America/New_York' });
@@ -205,6 +222,7 @@ export class MassiveScheduler {
 
         logger.info('Scheduled tasks:');
         logger.info('  - Market snapshot: every 5 min during trading hours');
+        logger.info('  - SIP minute correction: every 1 min during trading hours');
         logger.info('  - EOD correction: 4:30 PM ET Mon-Fri');
         logger.info('  - News fetching: every 15 min');
         logger.info('  - Financials update: 6 AM ET Mon-Fri');
@@ -235,10 +253,10 @@ export class MassiveScheduler {
             const keys = await this.getApiKeys();
             const massive = restClient(keys.MASSIVE_API_KEY, CONFIG.MASSIVE_BASE_URL);
 
-            // Use getSnapshots to fetch all stock tickers
-            const response = await massive.getSnapshots({
-                type: 'stocks' as any,
-                limit: 50000, // Get all tickers
+            // Use getStocksSnapshotTickers to fetch all stock tickers
+            // This calls GET /v2/snapshot/locale/us/markets/stocks/tickers
+            const response = await massive.getStocksSnapshotTickers({
+                includeOtc: false,
             }) as MassiveSnapshotResponse;
 
             const tickers = response.tickers || response.results || [];
@@ -397,7 +415,7 @@ export class MassiveScheduler {
     /**
      * Correct watchlist minute data using Massive SIP data (full day)
      * Called after market close to replace IEX data with official SIP data
-     * Note: During trading hours, MassiveWebSocketService handles real-time SIP correction
+     * This is Layer 3 of the three-layer SIP correction strategy
      */
     async correctWatchlistMinuteData(date: string): Promise<void> {
         logger.info(`Correcting watchlist minute data for ${date}...`);
@@ -445,18 +463,105 @@ export class MassiveScheduler {
     }
 
     /**
+     * Correct recent minute data using Massive REST API (Layer 2)
+     * 
+     * This is the second layer of the three-layer SIP correction strategy:
+     * - Layer 1: Massive WebSocket (real-time, if connection limit allows)
+     * - Layer 2: Massive REST API (every minute polling) ← This method
+     * - Layer 3: EOD full correction (after market close)
+     * 
+     * Fetches SIP data from 16-17 minutes ago to correct IEX data.
+     * The 16-minute delay accounts for:
+     * - 15 minutes Massive SIP delay
+     * - 1 minute buffer for API processing
+     */
+    async correctRecentMinuteData(): Promise<void> {
+        if (this.watchlistSymbols.size === 0) {
+            return;
+        }
+
+        try {
+            const keys = await this.getApiKeys();
+            const massive = restClient(keys.MASSIVE_API_KEY, CONFIG.MASSIVE_BASE_URL);
+
+            // Calculate target time: 16 minutes ago
+            const now = new Date();
+            const targetTime = new Date(now.getTime() - 16 * 60 * 1000);
+            
+            // Format timestamps for API (YYYY-MM-DD or Unix ms)
+            const fromTs = targetTime.getTime();
+            const toTs = fromTs + 60 * 1000; // 1 minute window
+
+            logger.debug(`SIP correction: fetching data for ${targetTime.toISOString()}`);
+
+            let correctedCount = 0;
+
+            for (const ticker of this.watchlistSymbols) {
+                try {
+                    const response = await massive.getStocksAggregates({
+                        stocksTicker: ticker,
+                        multiplier: 1,
+                        timespan: GetStocksAggregatesTimespanEnum.Minute,
+                        from: fromTs.toString(),
+                        to: toTs.toString(),
+                    });
+
+                    const bars = (response.results || []) as MassiveBar[];
+
+                    if (bars.length > 0) {
+                        const records: (QuoteRecord | null)[] = bars.map((b) =>
+                            transformMassiveBarToQuote(b, ticker, CONFIG.DEFAULT_MARKET)
+                        );
+                        const validRecords = records.filter((r): r is QuoteRecord => r !== null);
+                        
+                        if (validRecords.length > 0) {
+                            await this.writer.writeQuotes(validRecords);
+                            correctedCount += validRecords.length;
+                            
+                            // Log individual corrections at debug level
+                            for (const record of validRecords) {
+                                logger.debug(
+                                    `SIP correction: ${record.ticker} ` +
+                                    `O:${record.open} H:${record.high} L:${record.low} C:${record.close} ` +
+                                    `V:${record.volume} @ ${record.time.toISOString()}`
+                                );
+                            }
+                        }
+                    }
+                } catch (error) {
+                    // Log at debug level to avoid spam - individual ticker failures are expected occasionally
+                    logger.debug(`SIP correction failed for ${ticker}:`, { error: (error as Error).message });
+                }
+
+                // Small delay between requests to avoid rate limiting
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+
+            if (correctedCount > 0) {
+                logger.info(`SIP correction: corrected ${correctedCount} bars for ${targetTime.toISOString().substring(11, 16)}`);
+            }
+        } catch (error) {
+            logger.error('SIP correction failed:', error as Error);
+        }
+    }
+
+    /**
      * Manually trigger a task (for testing or on-demand execution)
      */
-    async runTask(taskName: 'snapshot' | 'eod' | 'news' | 'financials'): Promise<void> {
+    async runTask(taskName: 'snapshot' | 'eod' | 'news' | 'financials' | 'sipCorrection'): Promise<void> {
         logger.info(`Manually running task: ${taskName}`);
 
         switch (taskName) {
             case 'snapshot':
                 await this.fetchSnapshot();
                 break;
+            case 'sipCorrection':
+                await this.correctRecentMinuteData();
+                break;
             case 'eod':
                 const today = new Date().toISOString().split('T')[0];
                 await this.fetchGroupedDaily(today);
+                await this.correctWatchlistMinuteData(today);
                 break;
             case 'news':
                 await this.fetchNews();

@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 public.ecr.aws/docker/library/node:20-alpine
+FROM --platform=linux/amd64 node:20-alpine
 
 WORKDIR /app
 
@@ -21,8 +21,8 @@ COPY apps/worker/dist/ ./apps/worker/dist/
 
 WORKDIR /app/apps/worker
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+# Health check (start-period matches CDK task definition)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:8080/health || exit 1
 
 # Run the worker

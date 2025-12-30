@@ -12,16 +12,24 @@
  *   6. Massive API (Financials)      -> InfluxDB (fundamentals)
  *   7. Alpaca API (Recent)           -> InfluxDB (stock_quotes_raw)
  *   8. Alpaca WS (Realtime IEX)      -> InfluxDB (stock_quotes_raw)
- *   9. Massive WS (Realtime SIP)     -> InfluxDB (stock_quotes_raw)
+ *   9. Massive WS (Realtime SIP)     -> InfluxDB (stock_quotes_raw) - Layer 1
+ *  10. Massive API (SIP Correction)  -> InfluxDB (stock_quotes_raw) - Layer 2
+ *
+ * Three-Layer SIP Data Correction Strategy:
+ *   - Layer 1: Massive WebSocket (real-time, if connection limit allows)
+ *   - Layer 2: Massive REST API (every minute polling)
+ *   - Layer 3: EOD full correction (after market close)
  *
  * Usage:
  *   cd apps/worker
- *   npx tsx tests/integration.test.ts
+ *   npx tsc && node --env-file=.env dist/tests/integration.test.js
+ *   # Or with tsx (handles TypeScript directly):
+ *   npx tsx --env-file=.env tests/integration.test.ts
  */
 
 import 'dotenv/config';
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 // Disable TLS verification for SSH tunnel scenarios
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
@@ -53,8 +61,8 @@ import {
     ListNewsSortEnum,
     restClient
 } from '@massive.com/client-js';
-import { InfluxDBWriter } from '../src/services/timestream-writer';
-import { NewsService } from '../src/services/news-service';
+import { InfluxDBWriter } from '../src/services/timestream-writer.js';
+import { NewsService } from '../src/services/news-service.js';
 import {
     transformMassiveBarToQuote,
     transformMassiveBarToDaily,
@@ -62,7 +70,7 @@ import {
     transformMassiveFinancialsToRecord,
     transformAlpacaBarToQuote,
     transformAlpacaRealtimeBarToQuote,
-} from '../src/utils/transformers';
+} from '../src/utils/transformers.js';
 import type {
     QuoteRecord,
     DailyRecord,
@@ -303,9 +311,9 @@ async function testMassiveMinuteHistory(): Promise<boolean> {
         saveSampleData('massive_minute_bars', bars.slice(0, 10));
 
         if (bars.length > 0) {
-            const records: QuoteRecord[] = bars.map(b =>
-                transformMassiveBarToQuote(b as any, CONFIG.test.ticker, CONFIG.test.market)
-            );
+            const records: QuoteRecord[] = bars
+                .map(b => transformMassiveBarToQuote(b as any, CONFIG.test.ticker, CONFIG.test.market))
+                .filter((r): r is QuoteRecord => r !== null);
             await writer.writeQuotes(records);
         }
 
@@ -744,6 +752,71 @@ async function testMassiveRealtime(): Promise<boolean> {
 }
 
 // ============================================================================
+// Stage 10: Massive API (SIP Correction - Layer 2)
+// ============================================================================
+
+async function testMassiveSipCorrection(): Promise<boolean> {
+    logSection('Stage 10: Massive API – SIP Correction (Layer 2)');
+
+    try {
+        const keys = await getApiKeys();
+        const massive = restClient(keys.MASSIVE_API_KEY, CONFIG.massive.baseUrl);
+
+        // Calculate target time: 16 minutes ago (15m SIP delay + 1m buffer)
+        const now = new Date();
+        const targetTime = new Date(now.getTime() - 16 * 60 * 1000);
+        const fromTs = targetTime.getTime();
+        const toTs = fromTs + 60 * 1000; // 1 minute window
+
+        console.log(`  📡 Fetching SIP data for ${CONFIG.test.ticker} @ ${targetTime.toISOString()}...`);
+        console.log(`     This simulates the Layer 2 SIP correction (every minute polling)`);
+
+        const response = await massive.getStocksAggregates({
+            stocksTicker: CONFIG.test.ticker,
+            multiplier: 1,
+            timespan: GetStocksAggregatesTimespanEnum.Minute,
+            from: fromTs.toString(),
+            to: toTs.toString(),
+        });
+
+        const bars = response.results || [];
+        console.log(`  📊 Received ${bars.length} SIP bars for correction`);
+
+        saveSampleData('massive_sip_correction', bars);
+
+        if (bars.length > 0) {
+            const records: QuoteRecord[] = bars
+                .map(b => transformMassiveBarToQuote(b as any, CONFIG.test.ticker, CONFIG.test.market))
+                .filter((r): r is QuoteRecord => r !== null);
+
+            if (records.length > 0) {
+                await writer.writeQuotes(records);
+                console.log(`  📝 Corrected ${records.length} bars with SIP data`);
+
+                // Log the correction details
+                for (const record of records) {
+                    console.log(
+                        `     SIP: ${record.ticker} ` +
+                        `O:${record.open} H:${record.high} L:${record.low} C:${record.close} ` +
+                        `V:${record.volume} @ ${record.time.toISOString()}`
+                    );
+                }
+            }
+        } else {
+            console.log('  ⚠️ No SIP data available for the target time (market may be closed)');
+        }
+
+        logResult('Massive SIP Correction -> Write Raw', true);
+        return true;
+
+    } catch (error) {
+        console.error('  ❌ Error:', error);
+        logResult('Massive SIP Correction', false);
+        return false;
+    }
+}
+
+// ============================================================================
 // Main Runner
 // ============================================================================
 
@@ -768,6 +841,7 @@ async function main() {
     await testAlpacaRecent();
     await testAlpacaRealtime();
     await testMassiveRealtime();
+    await testMassiveSipCorrection();
 
     await writer.close();
 

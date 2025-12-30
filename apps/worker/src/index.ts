@@ -16,12 +16,12 @@
  */
 
 import 'dotenv/config';
-import { AlpacaWebSocketService } from './services/alpaca-websocket';
-import { MassiveWebSocketService } from './services/massive-websocket';
-import { MassiveScheduler } from './services/massive-scheduler';
-import { InfluxDBWriter } from './services/timestream-writer';
-import { CONFIG } from './config';
-import { createLogger } from './utils/logger';
+import { AlpacaWebSocketService } from './services/alpaca-websocket.js';
+import { MassiveWebSocketService } from './services/massive-websocket.js';
+import { MassiveScheduler } from './services/massive-scheduler.js';
+import { InfluxDBWriter } from './services/timestream-writer.js';
+import { CONFIG } from './config.js';
+import { createLogger } from './utils/logger.js';
 
 const logger = createLogger('Main');
 
@@ -129,28 +129,39 @@ async function main(): Promise<void> {
 
     // Initialize InfluxDB writer
     const influxWriter = new InfluxDBWriter();
-    await influxWriter.initialize();
 
-    // Initialize services
+    // Initialize services (before health check so they can report status)
     const alpacaWs = new AlpacaWebSocketService(influxWriter);
     const massiveWs = new MassiveWebSocketService(influxWriter);
     const massiveScheduler = new MassiveScheduler(influxWriter);
 
+    // Start health check server FIRST to pass Fargate health checks
+    await startHealthCheckServer(alpacaWs, massiveWs, massiveScheduler);
+    logger.info('Health check server started, proceeding with initialization...');
+
+    // Now initialize InfluxDB (may take time or fail)
+    try {
+        await influxWriter.initialize();
+    } catch (err) {
+        logger.error('Failed to initialize InfluxDB, continuing without it', err as Error);
+    }
+
     // Set initial watchlist
     massiveScheduler.updateWatchlist(CONFIG.DEFAULT_WATCHLIST);
 
-    // Initial Stage 1 Backfill (blocking or async? blocking is safer for data integrity)
-    await massiveScheduler.backfillHistory(CONFIG.DEFAULT_WATCHLIST);
-
     // Start real-time WebSocket connections
     if (CONFIG.ENABLE_REALTIME) {
-        // Alpaca WS for real-time IEX data
-        await alpacaWs.connect();
-        await alpacaWs.subscribe(CONFIG.DEFAULT_WATCHLIST);
+        try {
+            // Alpaca WS for real-time IEX data
+            await alpacaWs.connect();
+            await alpacaWs.subscribe(CONFIG.DEFAULT_WATCHLIST);
 
-        // Massive WS for SIP data correction (15m delayed)
-        await massiveWs.connect();
-        massiveWs.subscribe(CONFIG.DEFAULT_WATCHLIST);
+            // Massive WS for SIP data correction (15m delayed)
+            await massiveWs.connect();
+            massiveWs.subscribe(CONFIG.DEFAULT_WATCHLIST);
+        } catch (err) {
+            logger.error('Failed to connect WebSocket, will retry', err as Error);
+        }
     } else {
         logger.info('Real-time WebSocket disabled by configuration.');
     }
@@ -161,9 +172,6 @@ async function main(): Promise<void> {
     } else {
         logger.info('Scheduler disabled by configuration.');
     }
-
-    // Start health check server
-    await startHealthCheckServer(alpacaWs, massiveWs, massiveScheduler);
 
     logger.info('Worker started successfully');
     logger.info('Watching symbols', { symbols: CONFIG.DEFAULT_WATCHLIST });

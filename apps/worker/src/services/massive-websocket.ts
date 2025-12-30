@@ -19,15 +19,15 @@ import {
     SecretsManagerClient,
     GetSecretValueCommand,
 } from '@aws-sdk/client-secrets-manager';
-import type { InfluxDBWriter } from './timestream-writer';
-import { transformMassiveBarToQuote } from '../utils/transformers';
-import { shouldConnectSipWebSocket } from '../utils/market-status';
-import { createLogger } from '../utils/logger';
-import { WS_PING_INTERVAL_MS, WS_PONG_TIMEOUT_MS } from '../utils/constants';
+import type { InfluxDBWriter } from './timestream-writer.js';
+import { transformMassiveBarToQuote } from '../utils/transformers.js';
+import { shouldConnectSipWebSocket } from '../utils/market-status.js';
+import { createLogger } from '../utils/logger.js';
+import { WS_PING_INTERVAL_MS, WS_PONG_TIMEOUT_MS } from '../utils/constants.js';
 import type { QuoteRecord } from '@wavepilot/shared';
 
 // Configuration
-import { CONFIG } from '../config';
+import { CONFIG } from '../config.js';
 
 const logger = createLogger('MassiveWS');
 
@@ -256,6 +256,12 @@ export class MassiveWebSocketService {
                     case 'AM':
                         await this.handleAggregateMinute(msg);
                         break;
+                    default:
+                        // Log unknown event types for debugging
+                        if (msg.ev) {
+                            logger.info(`Unknown event type: ${msg.ev}`);
+                        }
+                        break;
                 }
             }
         } catch (error) {
@@ -282,8 +288,13 @@ export class MassiveWebSocketService {
             }
         } else if (msg.status === 'auth_failed') {
             logger.error(`Authentication failed: ${msg.message}`);
+        } else if (msg.status === 'max_connections') {
+            logger.error(`Max connections exceeded: ${msg.message}`);
         } else if (msg.status === 'success') {
             logger.info(msg.message);
+        } else {
+            // Log any other status for debugging
+            logger.info(`Status: ${msg.status} - ${msg.message || ''}`);
         }
     }
 

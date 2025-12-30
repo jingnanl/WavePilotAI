@@ -11,14 +11,14 @@ import {
 } from '@aws-sdk/client-secrets-manager';
 import { toZonedTime } from 'date-fns-tz';
 import { getHours, getMinutes, getDay } from 'date-fns';
-import { CONFIG } from '../config';
-import { createLogger } from './logger';
+import { CONFIG } from '../config.js';
+import { createLogger } from './logger.js';
 import {
     PRE_MARKET_START_MINUTES,
     MARKET_OPEN_MINUTES,
     MARKET_CLOSE_MINUTES,
     AFTER_HOURS_END_MINUTES,
-} from './constants';
+} from './constants.js';
 
 const logger = createLogger('MarketStatus');
 

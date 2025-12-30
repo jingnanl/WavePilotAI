@@ -18,14 +18,14 @@ import {
     SecretsManagerClient,
     GetSecretValueCommand,
 } from '@aws-sdk/client-secrets-manager';
-import type { InfluxDBWriter } from './timestream-writer';
-import { transformAlpacaRealtimeBarToQuote } from '../utils/transformers';
-import { getMarketStatus } from '../utils/market-status';
-import { createLogger } from '../utils/logger';
+import type { InfluxDBWriter } from './timestream-writer.js';
+import { transformAlpacaRealtimeBarToQuote } from '../utils/transformers.js';
+import { getMarketStatus } from '../utils/market-status.js';
+import { createLogger } from '../utils/logger.js';
 import type { QuoteRecord } from '@wavepilot/shared';
 
 // Configuration
-import { CONFIG } from '../config';
+import { CONFIG } from '../config.js';
 
 const logger = createLogger('AlpacaWS');
 
@@ -36,7 +36,8 @@ interface ApiKeys {
 
 export class AlpacaWebSocketService {
     private writer: InfluxDBWriter;
-    private alpaca: Alpaca | null = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    private alpaca: any = null;
     private stream: any = null;
     private subscriptions: Set<string> = new Set();
     private connected: boolean = false;
@@ -150,6 +151,7 @@ export class AlpacaWebSocketService {
         try {
             const keys = await this.getApiKeys();
 
+            // @ts-expect-error - Alpaca uses CommonJS export
             this.alpaca = new Alpaca({
                 keyId: keys.ALPACA_API_KEY,
                 secretKey: keys.ALPACA_API_SECRET,
@@ -400,6 +402,7 @@ export class AlpacaWebSocketService {
     ): Promise<QuoteRecord[]> {
         if (!this.alpaca) {
             const keys = await this.getApiKeys();
+            // @ts-expect-error - Alpaca uses CommonJS export
             this.alpaca = new Alpaca({
                 keyId: keys.ALPACA_API_KEY,
                 secretKey: keys.ALPACA_API_SECRET,

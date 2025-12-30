@@ -14,7 +14,7 @@ import type {
     Sentiment,
 } from '@wavepilot/shared';
 
-import { createLogger } from './logger';
+import { createLogger } from './logger.js';
 
 const logger = createLogger('Transformer');
 

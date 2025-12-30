@@ -1,0 +1,2 @@
+# Ignore local grafana data if mapped locally (though we use named volume in compose, good practice)
+grafana/data/

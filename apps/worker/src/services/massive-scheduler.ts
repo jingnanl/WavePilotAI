@@ -43,6 +43,7 @@ import {
     API_REQUEST_DELAY_MS,
     BACKFILL_REQUEST_DELAY_MS,
 } from '../utils/constants.js';
+import { filterBarsByTicker, shouldIncludeTicker } from '../utils/ticker-filter.js';
 import type { DailyRecord, FundamentalsRecord, QuoteRecord } from '@wavepilot/shared';
 
 import { CONFIG } from '../config.js';
@@ -245,6 +246,7 @@ export class MassiveScheduler {
      * Fetch full market snapshot using Snapshot - All Tickers API
      * Returns current price data for all tickers (15-minute delayed)
      * Used for heatmap, gainers/losers during trading hours
+     * Filters out OTC, warrants, units, and other non-common stocks
      */
     async fetchSnapshot(): Promise<void> {
         logger.info('Fetching market snapshot...');
@@ -259,8 +261,10 @@ export class MassiveScheduler {
                 includeOtc: false,
             }) as MassiveSnapshotResponse;
 
-            const tickers = response.tickers || response.results || [];
-            logger.info(`Received ${tickers.length} tickers in snapshot.`);
+            const allTickers = response.tickers || response.results || [];
+            // Filter to common stocks only
+            const tickers = allTickers.filter((t) => shouldIncludeTicker(t.ticker, 'common'));
+            logger.info(`Received ${allTickers.length} tickers, filtered to ${tickers.length} common stocks.`);
 
             if (tickers.length > 0) {
                 const today = new Date().toISOString().split('T')[0];
@@ -285,6 +289,7 @@ export class MassiveScheduler {
 
     /**
      * Fetch grouped daily data for EOD correction
+     * Filters out OTC, warrants, units, and other non-common stocks
      */
     async fetchGroupedDaily(date: string): Promise<void> {
         logger.info(`Fetching grouped daily for ${date}...`);
@@ -297,11 +302,13 @@ export class MassiveScheduler {
                 date: date,
             });
 
-            const bars = (response.results || []) as MassiveBar[];
-            logger.info(`Received ${bars.length} tickers for EOD correction.`);
+            const allBars = (response.results || []) as MassiveBar[];
+            // Filter to common stocks only (exclude OTC, warrants, units, etc.)
+            const bars = filterBarsByTicker(allBars, 'common');
+            logger.info(`Received ${allBars.length} tickers, filtered to ${bars.length} common stocks.`);
 
             if (bars.length > 0) {
-                // Store all tickers for EOD (this is the authoritative daily data)
+                // Store filtered tickers for EOD (this is the authoritative daily data)
                 const records: DailyRecord[] = bars.map((b) =>
                     transformMassiveBarToDaily(b, b.T!, CONFIG.DEFAULT_MARKET, new Date(date))
                 );

@@ -82,3 +82,6 @@ coverage/
 *.bak
 *.swp
 *~
+
+# Market Data (backfill downloads)
+/data/

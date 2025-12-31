@@ -634,7 +634,94 @@ s3://wavepilot-data-{account}/
 
 ## 🤖 Multi-Agent 系统设计
 
-### 1. Strands Agents TypeScript 架构
+### 1. Agent SDK 选型决策
+
+经过深度对比三种 Agent SDK，选择 **Strands Agents 统一后端 + Vercel AI SDK 前端渲染** 的混合架构：
+
+| SDK | 多 Agent 编排 | 托管部署 | Memory 管理 | AWS 集成 | 前端集成 | 选择 |
+|-----|-------------|---------|------------|---------|---------|------|
+| **Claude SDK** | ❌ 需自建 | ❌ 无 | ❌ 需自建 | ⚠️ 弱 | ⚠️ 一般 | ❌ 不采用 |
+| **Vercel AI SDK** | ❌ 不支持 | ❌ 无 | ❌ 需自建 | ⚠️ 一般 | ✅ 最佳 | ✅ 仅前端 UI |
+| **Strands Agents** | ✅ Graph Pattern | ✅ AgentCore | ✅ AgentCore Memory | ✅ 原生 | ⚠️ 需封装 | ✅ 后端核心 |
+
+**架构决策**：
+- **后端 Agent 系统**：Strands Agents SDK（所有 AI 逻辑 + Tools）
+- **前端对话 UI**：Vercel AI SDK（仅 `useChat` hook 做流式渲染，不定义 tools）
+- **Tools 统一**：所有工具在 Strands Agents 中定义一次，用户对话和深度分析共享
+
+### 2. 系统架构
+
+```mermaid
+flowchart TB
+    subgraph Frontend["🖥️ Frontend (Next.js 15)"]
+        ChatUI["Chat UI<br/>Vercel AI SDK (useChat)<br/>流式对话"]
+        AnalysisUI["Analysis UI<br/>分析结果展示页面<br/>结构化数据"]
+    end
+
+    subgraph API["🔌 API 层"]
+        ChatAPI["/api/chat<br/>流式对话接口"]
+        AnalysisAPI["/api/analysis<br/>分析触发/结果接口"]
+    end
+
+    subgraph AgentCore["🤖 Strands Agents @ AgentCore Runtime"]
+        ChatAgent["Chat Agent<br/>用户对话入口"]
+        
+        subgraph Orchestrator["Graph Pattern 编排"]
+            direction TB
+            subgraph Analysts["并行分析"]
+                FA["Fundamentals<br/>Analyst"]
+                MA["Market<br/>Analyst"]
+                NA["News<br/>Analyst"]
+            end
+            
+            subgraph Debate["辩论模式"]
+                Bull["Bull<br/>Researcher"]
+                Bear["Bear<br/>Researcher"]
+            end
+            
+            Trader["Trader<br/>最终决策"]
+        end
+        
+        subgraph Tools["Tools（统一定义）"]
+            T1["get_stock_price"]
+            T2["get_financials"]
+            T3["get_news"]
+            T4["calculate_indicators"]
+        end
+        
+        Memory["AgentCore Memory (STM + LTM)"]
+    end
+
+    subgraph Storage["💾 存储"]
+        DynamoDB["DynamoDB<br/>分析结果持久化"]
+    end
+
+    ChatUI -->|"SSE 流式"| ChatAPI
+    AnalysisUI -->|"REST JSON"| AnalysisAPI
+    
+    ChatAPI -->|"流式响应"| ChatAgent
+    AnalysisAPI -->|"触发分析"| Orchestrator
+    AnalysisAPI <-->|"读写结果"| DynamoDB
+    
+    ChatAgent -->|"触发深度分析"| Analysts
+    FA & MA & NA --> Debate
+    Bull <-->|"辩论"| Bear
+    Debate --> Trader
+    Trader -->|"保存结果"| DynamoDB
+    
+    ChatAgent -.-> Tools
+    Analysts -.-> Tools
+    ChatAgent -.-> Memory
+```
+
+**两种调用模式**：
+
+| 模式 | 入口 | 响应格式 | 适用场景 |
+|------|------|---------|---------|
+| **对话模式** | `/api/chat` → Chat Agent | SSE 流式文本 | 用户自然语言交互、简单查询 |
+| **分析模式** | `/api/analysis` → Orchestrator | JSON 结构化数据 | 深度分析、结果展示页面、历史记录 |
+
+### 3. Strands Agents TypeScript 实现
 
 使用 Strands Agents TypeScript SDK 的 **Graph Pattern** 实现复杂的分析流程：
 
@@ -668,7 +755,169 @@ export const fundamentalsAnalyst = new strands.Agent({
 });
 ```
 
-### 2. Agent 服务入口 (Express)
+### 4. Chat Agent（用户对话入口）
+
+用户对话通过 Strands Agent 处理，共享同一套 tools：
+
+```typescript
+// apps/agents/src/agents/chat-agent.ts
+import { z } from 'zod';
+import * as strands from '@strands-agents/sdk';
+
+export const chatAgent = new strands.Agent({
+  model: new strands.BedrockModel({
+    region: 'us-west-2',
+    modelId: 'anthropic.claude-sonnet-4-5-20241022-v2:0',
+  }),
+  tools: [
+    getStockPriceTool,      // 查询股价
+    getFinancialsTool,      // 查询财务数据
+    getNewsTool,            // 查询新闻
+    triggerAnalysisTool,    // 触发深度分析（调用 orchestrator）
+  ],
+  systemPrompt: `You are WavePilot AI assistant. Help users query stock data and trigger analysis.
+  
+  You can:
+  - Query real-time and historical stock prices
+  - Retrieve financial data and fundamentals
+  - Fetch related news
+  - Trigger deep analysis using multiple specialized agents
+  
+  Always respond in Chinese. Use tools to get accurate data.`,
+});
+```
+
+### 5. 前端调用方式
+
+#### 5.1 对话模式（流式）
+
+前端使用 Vercel AI SDK 做流式渲染：
+
+```typescript
+// apps/frontend/app/api/chat/route.ts
+import { BedrockAgentCoreClient, InvokeAgentCommand } from '@aws-sdk/client-bedrock-agentcore';
+
+export async function POST(req: Request) {
+  const { messages, sessionId } = await req.json();
+  
+  // 调用 AgentCore Runtime，返回流式响应
+  const client = new BedrockAgentCoreClient({ region: 'us-west-2' });
+  const response = await client.send(new InvokeAgentCommand({
+    runtimeName: 'wavepilot_chat_agent',
+    prompt: messages[messages.length - 1].content,
+    sessionId,
+  }));
+  
+  return new Response(response.body, {
+    headers: { 'Content-Type': 'text/event-stream' },
+  });
+}
+
+// apps/frontend/app/chat/page.tsx
+'use client';
+import { useChat } from 'ai/react';
+
+export default function ChatPage() {
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: '/api/chat',
+  });
+  
+  return (
+    <div>
+      {messages.map(m => (
+        <div key={m.id}>{m.role}: {m.content}</div>
+      ))}
+      <form onSubmit={handleSubmit}>
+        <input value={input} onChange={handleInputChange} />
+      </form>
+    </div>
+  );
+}
+```
+
+#### 5.2 分析模式（结构化 API）
+
+深度分析通过 REST API 触发，返回结构化 JSON：
+
+```typescript
+// apps/frontend/app/api/analysis/route.ts
+import { BedrockAgentCoreClient, InvokeAgentCommand } from '@aws-sdk/client-bedrock-agentcore';
+import { DynamoDBClient, PutItemCommand, GetItemCommand } from '@aws-sdk/client-dynamodb';
+
+// POST: 触发分析
+export async function POST(req: Request) {
+  const { ticker, depth } = await req.json(); // depth: 'quick' | 'standard' | 'deep'
+  
+  const analysisId = `${ticker}-${Date.now()}`;
+  
+  // 调用 Orchestrator 执行多 Agent 分析
+  const client = new BedrockAgentCoreClient({ region: 'us-west-2' });
+  const response = await client.send(new InvokeAgentCommand({
+    runtimeName: 'wavepilot_orchestrator',
+    prompt: JSON.stringify({ ticker, depth, analysisId }),
+  }));
+  
+  // 解析结构化结果
+  const result = JSON.parse(await streamToString(response.body));
+  
+  // 持久化到 DynamoDB
+  const dynamodb = new DynamoDBClient({ region: 'us-west-2' });
+  await dynamodb.send(new PutItemCommand({
+    TableName: 'agent_analysis',
+    Item: { analysisId: { S: analysisId }, ...result },
+  }));
+  
+  return Response.json({ analysisId, ...result });
+}
+
+// GET: 获取历史分析结果
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const analysisId = searchParams.get('id');
+  
+  const dynamodb = new DynamoDBClient({ region: 'us-west-2' });
+  const result = await dynamodb.send(new GetItemCommand({
+    TableName: 'agent_analysis',
+    Key: { analysisId: { S: analysisId! } },
+  }));
+  
+  return Response.json(result.Item);
+}
+```
+
+```typescript
+// 前端调用示例
+// apps/frontend/app/stock/[ticker]/analysis/page.tsx
+'use client';
+
+export default function AnalysisPage({ params }: { params: { ticker: string } }) {
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  
+  const triggerAnalysis = async (depth: 'quick' | 'standard' | 'deep') => {
+    setLoading(true);
+    const res = await fetch('/api/analysis', {
+      method: 'POST',
+      body: JSON.stringify({ ticker: params.ticker, depth }),
+    });
+    setResult(await res.json());
+    setLoading(false);
+  };
+  
+  return (
+    <div>
+      <button onClick={() => triggerAnalysis('quick')}>快速分析</button>
+      <button onClick={() => triggerAnalysis('standard')}>标准分析</button>
+      <button onClick={() => triggerAnalysis('deep')}>深度分析</button>
+      
+      {loading && <p>分析中...</p>}
+      {result && <AnalysisResultCard data={result} />}
+    </div>
+  );
+}
+```
+
+### 6. Agent 服务入口 (Express)
 
 ```typescript
 // apps/agents/src/index.ts
@@ -703,7 +952,7 @@ app.listen(PORT, () => {
 });
 ```
 
-### 3. Agent 部署（使用 CDK 集成到 Amplify）
+### 7. Agent 部署（使用 CDK 集成到 Amplify）
 
 在 `apps/frontend/amplify/backend.ts` 中添加 AgentCore 资源：
 
@@ -829,10 +1078,19 @@ applications:
 
 ### 为什么选择 Strands Agents + AgentCore？
 
-- 与 Bedrock 深度集成
-- 支持多种协作模式（Graph Pattern）
-- 生产就绪，可观测性好
-- CDK 原生支持，简化部署
+- **多 Agent 编排原生支持**：Graph Pattern 支持并行、顺序、条件分支
+- **托管部署**：AgentCore Runtime 自动管理容器、扩缩容、会话隔离
+- **Memory 托管**：AgentCore Memory 支持短期/长期记忆，自动学习用户偏好
+- **AWS 深度集成**：IAM、Secrets Manager、CloudWatch 原生支持
+- **CDK 原生支持**：可直接集成到 Amplify backend.ts
+- **TypeScript SDK**：与项目全栈 TypeScript 一致
+
+### 为什么前端使用 Vercel AI SDK？
+
+- **流式 UI 最佳体验**：`useChat` hook 开箱即用
+- **仅做渲染层**：不在前端定义 tools，避免维护两套 Agent
+- **与 Next.js 深度集成**：支持 App Router、Server Components
+- **可选**：也可以用原生 fetch + SSE 替代
 
 ### 为什么选择 AppSync？
 
@@ -884,5 +1142,5 @@ git push origin main
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-30*
+*更新日期：2025-12-31*
 *作者：JN.L*

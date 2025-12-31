@@ -83,15 +83,33 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 ### 3. 多智能体分析系统
 
 #### 3.1 技术框架
+
+**SDK 选型决策**
+
+经过对比 Claude Agent SDK、Vercel AI SDK、Amazon Strands Agents SDK 三种方案，选择 **Strands Agents 统一后端 + AI SDK 前端渲染** 的混合架构：
+
+| SDK | 角色 | 理由 |
+|-----|------|------|
+| **Strands Agents** | 后端 Agent 系统（核心） | 原生支持多 Agent 编排（Graph Pattern）、托管部署（AgentCore）、Memory 管理、AWS 深度集成 |
+| **Vercel AI SDK** | 前端流式渲染（辅助） | `useChat` hook 简化对话 UI 开发，仅做渲染层，不定义 tools |
+| ~~Claude SDK~~ | 不采用 | 无多 Agent 编排、无托管部署、与 AWS 集成弱 |
+
+**核心技术栈**
 - **Agent 开发**：`@strands-agents/sdk` (TypeScript SDK)
 - **Agent 部署**：`@aws-cdk/aws-bedrock-agentcore-alpha` (CDK L2 构造，Experimental)
   - `AgentRuntimeArtifact.fromAsset()` - 从本地 Dockerfile 构建
   - `Runtime` - AgentCore Runtime 资源
   - `Memory` - AgentCore Memory 资源（支持 STM + LTM）
 - **Agent 调用**：`@aws-sdk/client-bedrock-agentcore` (Runtime SDK)
+- **前端渲染**：`ai` (Vercel AI SDK) - 仅用于流式 UI 渲染
 - **协作模式**：Graph Pattern（支持条件分支和复杂流程）
 - **部署平台**：Amazon Bedrock AgentCore Runtime
 - **LLM 模型**：Claude Sonnet 4.5 / Opus 4.5
+
+**架构原则**
+- **Tools 统一定义**：所有工具（查询 InfluxDB、获取新闻等）在 Strands Agents 中实现，用户对话和深度分析共享同一套 tools
+- **AI 逻辑集中**：前端不做任何 AI 逻辑，仅透传 AgentCore API 响应并渲染
+- **单一 Agent 代码库**：避免维护两套 Agent 实现
 
 #### 3.2 Agent 团队架构
 
@@ -150,12 +168,13 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 ### 4. 用户界面
 
 #### 4.1 技术栈
-- **框架**：Next.js 16 (App Router with Turbopack)
+- **框架**：Next.js 15 (App Router with Turbopack)
 - **部署**：AWS Amplify Gen 2（自动 CI/CD，环境管理）
 - **UI 组件**：shadcn/ui
 - **图表库**：TradingView Lightweight Charts
 - **状态管理**：Zustand / TanStack Query
 - **样式**：Tailwind CSS
+- **AI 对话 UI**：Vercel AI SDK (`useChat` hook) - 仅用于流式渲染，调用后端 AgentCore API
 
 #### 4.2 核心功能模块
 
@@ -173,9 +192,10 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 - 支持 K 线级别和分时级别分析
 
 **对话交互**
-- 与 LLM 对话查询股票信息
+- 与 AI Agent 对话查询股票信息（通过 Strands Chat Agent）
+- Agent 可调用 tools 获取实时数据（InfluxDB）
 - 历史对话记录
-- 上下文理解能力
+- 上下文理解能力（AgentCore Memory）
 
 **自选股管理**
 - 添加/删除自选股
@@ -384,6 +404,7 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 - [Strands Agents + Bedrock AgentCore Deploy Guide](https://strandsagents.com/latest/documentation/docs/user-guide/deploy/deploy_to_bedrock_agentcore/typescript/)
 - [AWS Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)
 - [AWS Amplify Gen 2 Documentation](https://docs.amplify.aws/react/)
+- [Vercel AI SDK](https://sdk.vercel.ai/docs) - 前端流式 UI 渲染
 
 ### 数据源
 - [Massive Documentation](https://massive.com/docs)
@@ -402,5 +423,5 @@ WavePilotAI 是一个基于 AWS 云服务和 Claude 大语言模型的智能股�
 ---
 
 *本文档版本：1.0*
-*更新日期：2025-12-19*
+*更新日期：2025-12-31*
 *作者：JN.L*
